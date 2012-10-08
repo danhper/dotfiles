@@ -1,0 +1,9 @@
+@wicd-client --tray
+@devmon
+@pnmixer
+@xcompmgr -c -t-5 -l-5 -r4.2 -o.55
+@lxterminal
+@cairo-dock -c
+@xmodmap ~/.Xmodmap
+@conky -p 3
+@xautolock -time 15 -locker slimlock
