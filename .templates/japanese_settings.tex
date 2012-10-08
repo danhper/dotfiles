@@ -1,0 +1,51 @@
+\RequirePackage{xltxtra}
+% Fonts
+\setmainfont[RawFeature=-palt,BoldFont=TakaoPGothic]{TakaoPMincho}
+\setsansfont[RawFeature=-palt]{TakaoPGothic}
+\setmonofont[RawFeature=-palt]{TakaoPGothic}
+% Japanese lineskip
+\XeTeXlinebreaklocale "ja"
+\XeTeXlinebreakskip=0pt plus 1pt minus 0.1pt
+\XeTeXlinebreakpenalty=0
+
+% 半角分戻る
+\def\<{\@ifstar{\zx@hwback\nobreak}{\zx@hwback\relax}}
+\def\zx@hwback#1{\leavevmode#1\hskip-.5em\relax}
+
+% Title settings
+\def\prepartname{\if@english Part~\else 第\fi}
+\def\postpartname{\if@english\else 部\fi}
+\def\presectionname{}%  第
+\def\postsectionname{}% 節
+\def\contentsname{\if@english Contents\else 目次\fi}
+\def\listfigurename{\if@english List of Figures\else 図目次\fi}
+\def\listtablename{\if@english List of Tables\else 表目次\fi}
+\def\refname{\if@english References\else 参考文献\fi}
+\def\bibname{\if@english Bibliography\else 参考文献\fi}
+\def\indexname{\if@english Index\else 索引\fi}
+\def\figurename{\if@english Fig.~\else 図\fi}
+\def\tablename{\if@english Table.~\else 表\fi}
+\def\appendixname{\if@english Appendix~\else 付録\fi}
+\def\abstractname{\if@english Abstract\else 概要\fi}
+
+\newif\if西暦 \西暦true
+\def\西暦{\西暦true}
+\def\和暦{\西暦false}
+\newcount\heisei \heisei\year \advance\heisei-1988\relax
+\def\today{%
+  \if@english
+    \ifcase\month\or
+      January\or February\or March\or April\or May\or June\or
+      July\or August\or September\or October\or November\or December\fi
+      \space\number\day, \number\year
+  \else
+    \if西暦
+      \number\year 年
+      \number\month 月
+      \number\day 日
+    \else
+      平成\number\heisei 年
+      \number\month 月
+      \number\day 日
+    \fi
+  \fi}
