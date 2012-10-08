@@ -256,7 +256,8 @@
 
 (custom-set-faces
  '(flymake-errline ((t (:underline "LightSalmon" ))))
- '(flymake-warnline ((t (:underline "LightSteelBlue")))))
+ '(flymake-warnline ((t (:underline "LightSteelBlue"))))
+ '(font-latex-sectioning-5-face ((t (:foreground "#917EA6")))))
 
 ;;flymake c/c++
 (defun flymake-simple-generic-init (cmd &optional opts)

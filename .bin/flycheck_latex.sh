@@ -11,7 +11,7 @@ nkf --ic=UTF-8 --oc=EUC-JP  "$real_file_name" | kakasi -ieuc -Ha -Ka -Ja -Ea -ka
 
 mkdir -p $tmp_dir
 cp $tmp_file $fake_name
-chktex -g0 -r -l ~/.chktexrc -I -q -v0 -n26 -n12 $fake_name 
+chktex -g0 -r -l ~/.chktexrc -I -q -v0 -n1 -n26 -n12 $fake_name 
 
 # clean up                                                                                                                                     
 rm -fr "$tmp_file"
