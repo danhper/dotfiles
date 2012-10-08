@@ -1,4 +1,6 @@
 ;;(setq debug-on-error t)
+;;(setq flymake-log-level 3)
+
 
 ;;global settings
 (setq inhibit-startup-screen 't)
@@ -281,10 +283,6 @@
 
 (push '("\\.[cC]\\'" flymake-c-init) flymake-allowed-file-name-masks)
 (push '("\\.\\(?:cc\|cpp\|CC\|CPP\\)\\'" flymake-cc-init) flymake-allowed-file-name-masks)
-
-;;flymake tex
-(defun flymake-get-tex-args (file-name)
-  (list "xelatex" (list "-file-line-error" "-draftmode" "-interaction=nonstopmode" file-name)))
 
 ;;flymake haskell
 (defun flymake-haskell-init ()
