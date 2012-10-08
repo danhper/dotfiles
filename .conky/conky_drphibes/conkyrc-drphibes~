@@ -1,0 +1,90 @@
+alignment top_right
+background yes
+border_width 1
+cpu_avg_samples 2
+default_color cornflowerblue
+default_outline_color white
+default_shade_color white
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+gap_x 25
+gap_y 15 
+maximum_width 330
+max_port_monitor_connections 64
+max_specials 512
+max_user_text 16384
+minimum_size 330 10
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+wm_class_name Conky
+own_window_colour black
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type normal
+own_window yes
+stippled_borders 2
+update_interval 2
+uppercase no
+use_spacer yes
+use_xft yes
+xftalpha 0.8
+xftfont  Bitstream Vera Sans Mono:size=9
+
+TEXT
+${color #0077ff}$nodename     ${alignc}$sysname $kernel ${alignr}$color${time %l:%M:%p}
+
+${color #0077ff}Uptime:$color $uptime ${color #0077ff} Load:$color $loadavg
+${color #0077ff}CPU:$color ${cpu}% ${color #0077ff}${cpubar 5,85}   ${color #0077ff}Disk I/O: $color${diskio}
+${color #0077ff}${cpugraph 0 32,155 104E8B 0077ff} $alignr${color #0077ff}${diskiograph 32,155 104E8B 0077ff 750}
+${color #0077ff}RAM Usage:$color $mem${color #0077ff}/${color}$memmax - $memperc% ${color #0077ff}$membar
+${color #0077ff}Swap Usage:$color $swap${color #0077ff}/${color}$swapmax - $swapperc% ${color #0077ff}${swapbar}
+${color #0077ff}Procs:$color $processes ${color #0077ff}Run:$color $running_processes ${color #0077ff}CPU:$color ${i2c 0-002d temp 2}${color #0077ff} MB:$color ${i2c 0-002d temp 1} ${color #0077ff}HD:$color ${hddtemp /dev/hda}
+${color #0077ff}Entropy: ${color}${entropy_avail}${color #0077ff}/${color}${entropy_poolsize} ${color #0077ff}${entropy_bar}
+${color #0077ff}Net Down:$color ${downspeed eth0} k/s      ${color #0077ff}Net Up:$color ${upspeed eth0} k/s
+${color #0077ff}${downspeedgraph eth0 32,155 104E8B 0077ff} $alignr${color #0077ff}${upspeedgraph eth0 32,155 104E8B 0077ff}
+${color #0077ff}File systems:
+ ${color #0077ff}/          $color${fs_used /}/${fs_size /}${alignr}${color #0077ff}${fs_bar 5,120 /}
+ ${color #0077ff}/home      $color${fs_used /home}/${fs_size /home}${alignr}${color #0077ff}${fs_bar 5,120 /home}
+ ${color #0077ff}/opt       $color${fs_used /opt}/${fs_size /opt}${alignr}${color #0077ff}${fs_bar 5,120 /opt}
+ ${color #0077ff}/usr/local $color${fs_used /usr/local}/${fs_size /usr/local}${alignr}${color #0077ff}${fs_bar 5,120 /usr/local}
+ ${color #0077ff}/var       $color${fs_used /var}/${fs_size /var}${alignr}${color #0077ff}${fs_bar 5,120 /var}
+ ${color #0077ff}/share1    $color${fs_used /share1}/${fs_size /share1}${alignr}${color #0077ff}${fs_bar 5,120 /share1}
+
+${color #0077ff}Top Processes:
+${color #0077ff}Name              PID     CPU%   MEM%
+$color ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+$color ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+$color ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color #0077ff}Mem usage
+$color ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
+$color ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+$color ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
+ 
+${color #0077ff}Port(s)${alignr}#Connections
+$color Inbound: ${tcp_portmon 1 32767 count}  Outbound: ${tcp_portmon 32768 61000 count}${alignr}ALL: ${tcp_portmon 1 65535 count}
+${color #0077ff}Inbound Connection ${alignr} Local Service/Port$color
+ ${tcp_portmon 1 32767 rhost 0} ${alignr} ${tcp_portmon 1 32767 lservice 0}
+ ${tcp_portmon 1 32767 rhost 1} ${alignr} ${tcp_portmon 1 32767 lservice 1}
+ ${tcp_portmon 1 32767 rhost 2} ${alignr} ${tcp_portmon 1 32767 lservice 2}
+ ${tcp_portmon 1 32767 rhost 3} ${alignr} ${tcp_portmon 1 32767 lservice 3}
+ ${tcp_portmon 1 32767 rhost 4} ${alignr} ${tcp_portmon 1 32767 lservice 4}
+${color #0077ff}Outbound Connection ${alignr} Remote Service/Port$color
+ ${tcp_portmon 32768 61000 rhost 0} ${alignr} ${tcp_portmon 32768 61000 rservice 0}
+ ${tcp_portmon 32768 61000 rhost 1} ${alignr} ${tcp_portmon 32768 61000 rservice 1}
+ ${tcp_portmon 32768 61000 rhost 2} ${alignr} ${tcp_portmon 32768 61000 rservice 2}
+ ${tcp_portmon 32768 61000 rhost 3} ${alignr} ${tcp_portmon 32768 61000 rservice 3}
+ ${tcp_portmon 32768 61000 rhost 4} ${alignr} ${tcp_portmon 32768 61000 rservice 4}
+
+$color ${audacious_title}
+ ${color #0077ff}${audacious_bar} $color
+ ${texeci 60 imap_status.sh inbox UNSEEN} ${tab 15} Inbox
+ ${texeci 60 imap_status.sh conky-commits UNSEEN} ${tab 15} conky-commits
+ ${texeci 60 imap_status.sh conky-development UNSEEN} ${tab 15} conky-development
+ ${texeci 60 imap_status.sh gtk-app-devel-list UNSEEN} ${tab 15} gtk-app-devel-list
+ ${texeci 60 imap_status.sh gtk-doc-list UNSEEN} ${tab 15} gtk-doc-list
+ ${texeci 60 imap_status.sh libdexter-commits UNSEEN} ${tab 15} libdexter-commits
+ ${texeci 60 imap_status.sh libdexter-development UNSEEN} ${tab 15} libdexter-development
