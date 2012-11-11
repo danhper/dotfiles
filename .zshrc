@@ -51,3 +51,4 @@ for dir in $pathdirs; do
   fi
 done
 
+export EDITOR=vim
