@@ -21,7 +21,7 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#8d585d:#657b83:#4f6fa2:#6c71c4:#c0e8e8:#fdf6e3"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#b45b64:#657b83:#779dd9:#6c71c4:#c0e8e8:#fdf6e3"
     background_darkness = 0.8
     background_type = transparent
     use_system_font = False
@@ -29,7 +29,7 @@
     foreground_color = "#eee8d5"
     show_titlebar = False
     font = Inconsolata-dz for Powerline Medium 12
-    background_color = "#002b36"
+    background_color = "#00181e"
 [layouts]
   [[default]]
     [[[child1]]]
