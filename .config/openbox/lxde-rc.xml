@@ -34,7 +34,7 @@
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is -->
-    <primaryMonitor>1</primaryMonitor>
+    <primaryMonitor>2</primaryMonitor>
   </placement>
   <theme>
     <name>Onyx</name>
@@ -346,7 +346,7 @@
           <enabled>yes</enabled>
           <name>Terminal</name>
         </startupnotify>
-        <command>lxterminal</command>
+        <command>terminator --geometry=800x600</command>
       </action>
     </keybind>
     <keybind key="C-A-f">

@@ -18,18 +18,6 @@
 (column-number-mode 1)
 (setq-default process-coding-system-alist nil)
 
-;;background/foreground color
-(defun dark-background() 
-  (interactive)
-  (set-foreground-color "white")
-  (set-background-color "black")
-  (set-cursor-color "white"))
-(defun light-background() 
-  (interactive)
-  (set-foreground-color "black")
-  (set-background-color "white")
-  (set-cursor-color "black"))
-
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-railscasts)
@@ -48,8 +36,6 @@
 (global-set-key (kbd "s-=") 'enlarge-window-horizontally)
 (global-set-key (kbd "s-+") 'enlarge-window)
 (global-set-key (kbd "M-p") 'show-paren-mode)
-(global-set-key (kbd "<f11>") 'dark-background)
-(global-set-key (kbd "<f12>") 'light-background)
 (global-set-key (kbd "<C-return>") 'newline-and-indent)
 (global-set-key (kbd "s-x") 'clipboard-kill-region)
 (global-set-key (kbd "s-c") 'clipboard-kill-ring-save)
@@ -65,6 +51,7 @@
 (global-set-key (kbd "s-k") 'uncomment-region)
 (global-set-key (kbd "s-;") 'comment-or-uncomment-region)
 (global-set-key (kbd "s-u") 'undo)
+(global-set-key (kbd "s-<f11>") 'center-text-horizontally)
 
 ;;c/c++
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
@@ -115,6 +102,10 @@
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/plugins/yasnippet-0.6.1b/snippets")
 
+;;typescript
+(require 'typescript)
+(add-to-list 'auto-mode-alist '("\\.ts$" . typescript-mode))
+
 
 ;;auto pair brackets
 (require 'autopair)
@@ -151,11 +142,7 @@
 
 
 ;;sml-mode
-                                        ;(add-to-list 'load-path "~/.emacs.d/plugins/sml-mode")
-                                        ;(autoload 'sml-mode "sml-mode" "Major mode for editing SML." t)
-                                        ;(autoload 'run-sml "sml-proc" "Run an inferior SML process." t)
-                                        ;(add-to-list 'auto-mode-alist '("\\.\\(sml\\|sig\\)\\'" . sml-mode))
-
+(load "~/.emacs.d/plugins/sml-mode/sml-mode-startup")
 
 ;;php-mode
 (load "~/.emacs.d/plugins/php-mode/php-mode")
@@ -340,6 +327,16 @@
                        'flymake-create-temp-with-folder-structure))))
 (add-to-list 'flymake-allowed-file-name-masks '("\\.java$" my-java-flymake-init flymake-simple-cleanup))
 
+
+;;80 words line and horizontal center
+(setq whitespace-style '(face lines-tail trailing)
+      whitespace-line-column 81)
+(require 'horizontal-center)
+
+
+
+
+
 ;;flymake python
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()
@@ -373,4 +370,3 @@
          (15 118 65535)  ; c-o katakana
          )
        iiimcf-keycode-spec-alist))
-
