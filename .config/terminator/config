@@ -20,30 +20,16 @@
   switch_to_tab_9 = <Alt>9
 [profiles]
   [[default]]
-    use_system_font = False
+    scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#8d585d:#657b83:#4f6fa2:#6c71c4:#c0e8e8:#fdf6e3"
     background_darkness = 0.8
     background_type = transparent
-    scrollbar_position = hidden
-    show_titlebar = False
-    font = Inconsolata-dz for Powerline Medium 12
-  [[solarized-light]]
-    scrollbar_position = hidden
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    cursor_color = "#eee8d5"
-    foreground_color = "#eee8d5"
-    show_titlebar = False
-    background_color = "#002b36"
-  [[solarized-dark]]
-    scrollbar_position = hidden
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#9e324b:#657b83:#5989ae:#6c71c4:#c8f2ff:#fdf6e3"
-    background_darkness = 0.82
-    background_type = transparent
     use_system_font = False
     cursor_color = "#eee8d5"
     foreground_color = "#eee8d5"
     show_titlebar = False
     font = Inconsolata-dz for Powerline Medium 12
-    background_color = "#002029"
+    background_color = "#002b36"
 [layouts]
   [[default]]
     [[[child1]]]
