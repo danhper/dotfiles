@@ -36,6 +36,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+[[ -f ~/.connect_ssh.sh ]] && . ~/.connect_ssh.sh
+
 # Customize to your needs...
 #
 pathdirs=(
@@ -52,3 +54,4 @@ for dir in $pathdirs; do
 done
 
 export EDITOR=vim
+export CLASSPATH=

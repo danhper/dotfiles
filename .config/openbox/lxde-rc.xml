@@ -34,7 +34,7 @@
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is -->
-    <primaryMonitor>2</primaryMonitor>
+    <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
     <name>Onyx</name>
@@ -347,6 +347,11 @@
           <name>Terminal</name>
         </startupnotify>
         <command>terminator --geometry=800x600</command>
+      </action>
+    </keybind>
+    <keybind key="C-W-A-p">
+      <action name="Execute">
+        <command>lxpanel -p LXDE</command>
       </action>
     </keybind>
     <keybind key="C-A-f">

@@ -1,5 +1,6 @@
 @devmon
 @pnmixer
+@wicd-client -t
 @xcompmgr -c -t-5 -l-5 -r4.2 -o.55
 @terminator --geometry=800x600
 @cairo-dock -c

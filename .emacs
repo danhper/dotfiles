@@ -27,6 +27,7 @@
 (global-set-key (kbd "s-SPC") 'toggle-input-method)
 (global-set-key (kbd "<zenkaku-hankaku>") 'toggle-input-method)
 (global-set-key (kbd "<hiragana-katakana>") 'toggle-input-method)
+(global-set-key (kbd "s-t") 'toggle-input-method)
 (global-set-key (kbd "s-i") 'indent-region)
 (global-set-key (kbd "s-f") 'forward-paragraph)
 (global-set-key (kbd "s-b") 'backward-paragraph)
@@ -52,6 +53,8 @@
 (global-set-key (kbd "s-;") 'comment-or-uncomment-region)
 (global-set-key (kbd "s-u") 'undo)
 (global-set-key (kbd "s-<f11>") 'center-text-horizontally)
+(global-set-key (kbd "C-x C-u") 'upcase-word)
+(global-set-key (kbd "C-x C-l") 'downcase-word)
 
 ;;c/c++
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
