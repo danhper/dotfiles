@@ -2,3 +2,8 @@ colorscheme vimplight
 imap <C-h> <nop>
 imap <C-k> <nop>
 imap <C-d> <nop>
+cmap <C-h> <nop>
+cmap <C-k> <nop>
+cmap <C-d> <nop>
+
+

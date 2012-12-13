@@ -24,6 +24,7 @@
 
 ;;key bindings
 (global-set-key (kbd "M-ù") 'query-replace)
+(global-set-key (kbd "M-%") 'query-replace)
 (global-set-key (kbd "s-SPC") 'toggle-input-method)
 (global-set-key (kbd "<zenkaku-hankaku>") 'toggle-input-method)
 (global-set-key (kbd "<hiragana-katakana>") 'toggle-input-method)
@@ -69,10 +70,7 @@
 (setq TeX-style-path
       '("style/" "auto/"
         "/usr/share/emacs/site-lisp/auctex/style/"))
-(setq TeX-output-view-style
-      (quote
-       (("^dvi$" "." "xdvi %o"))))
-
+(setq TeX-output-view-style '("^pdf$" "." "evince -w %o"))
 (setq preview-image-type 'dvipng)
 
 
@@ -83,6 +81,7 @@
 (setq japanese-LaTeX-default-style "article")
 (setq TeX-engine 'xetex)
 (setq TeX-PDF-mode t)
+
 
 
 ;;scala
@@ -351,6 +350,10 @@
       (list "pycheckers"  (list local-file))))
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pyflakes-init)))
+
+;;twittering mode
+(add-to-list 'load-path "~/.emacs.d/plugins/twittering-mode")
+(require 'twittering-mode)
 
 ;;atok shortcuts
 (setq iiimcf-keycode-spec-alist
