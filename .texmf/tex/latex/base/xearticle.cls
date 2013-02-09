@@ -1,21 +1,13 @@
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\usepackage{amsmath,amssymb,amsfonts, yhmath}
-\usepackage{listings}
-\usepackage{courier}
-\usepackage{enumerate}
-\usepackage{graphicx}
-\usepackage{fancyvrb}
-\usepackage{fontspec}
-\usepackage{ifthen}
-\usepackage{ifplatform}
-\usepackage{keyval}
-\usepackage{float}
-\usepackage{calc}
-\usepackage{minted}
-\usepackage{algorithmicx}
-\usepackage{drawstack}
-\usepackage{caption}
-\usepackage[unicode=true]{hyperref}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{xearticle}
+\LoadClassWithOptions{article}
+\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\RequirePackage{listings}
+\RequirePackage{courier}
+\RequirePackage{caption}
+\RequirePackage[log-declarations=false]{xparse}
+\RequirePackage[quiet]{fontspec}
+\RequirePackage[unicode=true]{hyperref}
 \hypersetup{%
   colorlinks=false,
   urlbordercolor=blue,
@@ -26,11 +18,11 @@
 \RequirePackage[scale=0.8]{geometry}
 \RequirePackage{indentfirst}
 \RequirePackage{setspace}
-\setstretch{1.3}
+%\setstretch{1.3}
 \parindent=1em
 
 \makeatletter
-\renewcommand{\maketitle}{\begin{titlepage}%
+\def\maketitle{\begin{titlepage}%
     \let\footnotesize\small
     \let\footnoterule\relax
     \parindent \z@
@@ -52,7 +44,7 @@
     \begin{minipage}{0.5\textwidth}
       \begin{flushright}
         \large \@author\par
-        \large \@studnb        
+        \large \@studnb
       \end{flushright}
     \end{minipage}
     \vskip 5\p@
@@ -62,9 +54,8 @@
   \end{titlepage}%
   \setcounter{footnote}{0}%
 }
-\def\author#1{\def\@author{名前: #1}}
-\def\deadline#1#2#3{\def\@deadline{締切日: #1年#2月#3日}}
-\def\studnb#1{\def\@studnb{学籍番号: #1}}
+\def\deadline#1{\def\@deadline{Deadline: #1}}
+\def\studnb#1{\def\@studnb{Student Nb: #1}}
 \makeatother
 %
 \definecolor{lightgray}{RGB}{235,235,235}
@@ -99,9 +90,5 @@
   showstringspaces=false,
   captionpos=b,
 }
-
-\def\lstlistingname{ソース}
 %
-\author{PEREZ HERNANDEZ Daniel}
-\studnb{1W09C753-8}
-\date{提出日: \today}
+
