@@ -1,0 +1,4 @@
+remove Shift = Shift_R
+keycode 62 = Up NoSymbol Up
+keycode  111 = Shift_R ISO_Next_Group Shift_R ISO_Next_Group
+add Shift = Shift_R

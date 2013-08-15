@@ -1,6 +1,2 @@
-remove Lock = Caps_Lock
-keysym Caps_Lock = Control_L
-add Control = Control_L
-remove Control = Control_R
-keysym Control_R = Caps_Lock
-add Lock = Caps_Lock
+keycode  100 = KP_Add KP_Add KP_Add KP_Add KP_Add KP_Add XF86Next_VMode KP_Add KP_Add XF86Next_VMode KP_Add KP_Add KP_Add KP_Add XF86Next_VMode KP_Add KP_Add KP_Add KP_Add XF86Next_VMode
+keycode  102 = KP_Subtract KP_Subtract KP_Subtract KP_Subtract KP_Subtract KP_Subtract XF86Prev_VMode KP_Subtract KP_Subtract XF86Prev_VMode
