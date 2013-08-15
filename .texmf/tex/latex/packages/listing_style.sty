@@ -1,0 +1,39 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{listing_style}
+  [2012/04/18 v0.01 LaTeX package for to format listings]
+
+\RequirePackage{listings}
+\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\RequirePackage{fontspec}
+\RequirePackage{courier}
+\definecolor{lightgray}{RGB}{235,235,235}
+\setmonofont{FreeMono}
+\newfontfamily{\myttfamily}[Scale=MatchLowercase]{FreeMono}
+\newfontfamily{\myrmfamily}[Scale=MatchLowercase]{DejaVu Serif}
+\lstset{%
+  language=C,
+  basicstyle=\ttfamily,
+  numbers=none,               
+  numberstyle=\tiny,
+  numbersep=5pt,             
+  tabsize=2,
+  extendedchars=true,
+  breaklines=true,        
+  frame=single,
+  frameround=tttt,
+  keywordstyle=[1]\color{RoyalPurple}\myttfamily\bfseries,
+  keywordstyle=[2]\color{Fuchsia}\myttfamily,   
+  keywordstyle=[3]\color{RoyalBlue}\myttfamily, 
+  keywordstyle=[4]\myttfamily\mdseries,
+  stringstyle=\color{Bittersweet}\myrmfamily,
+  commentstyle=\color{Brown}\myrmfamily,
+  showspaces=false,
+  showtabs=false, 
+  xleftmargin=17pt,
+  framexleftmargin=17pt,
+  framexrightmargin=5pt,
+  framexbottommargin=4pt,
+  backgroundcolor=\color{lightgray},
+  showstringspaces=false,
+  captionpos=b,
+}
