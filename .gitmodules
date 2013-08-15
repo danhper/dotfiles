@@ -1,0 +1,6 @@
+[submodule ".config/sublime-text-3"]
+	path = .config/sublime-text-3
+	url = https://github.com/tuvistavie/st3-config.git
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = https://github.com/tuvistavie/.emacs.d.git
