@@ -1,0 +1,9 @@
+[user]
+	name = tuvistavie
+	email = tuvistavie@gmail.com
+[push]
+	default = simple
+[core]
+	excludesfile = /home/daniel/.gitignore_global
+[credential]
+	helper = cache
