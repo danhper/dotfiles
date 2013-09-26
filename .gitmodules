@@ -3,4 +3,4 @@
 	url = https://github.com/tuvistavie/st3-config.git
 [submodule ".emacs.d"]
 	path = .emacs.d
-	url = https://github.com/tuvistavie/.emacs.d.git
+	url = git@github.com:tuvistavie/.emacs.d.git
