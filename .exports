@@ -17,8 +17,8 @@ pathdirs=(
   $HOME/.mipsel/usr/bin
   $HOME/.heroku-client/bin
   $HOME/.perl5/bin
-  $HOME/.rvm/bin
   $HOME/.pyenv/bin
+  $HOME/.rvm/bin:$PATH
 )
 
 for dir in $pathdirs; do
