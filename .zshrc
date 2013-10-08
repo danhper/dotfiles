@@ -1,5 +1,7 @@
 which pyenv > /dev/null && eval "$(pyenv init -)"
 
+[[ -f ~/.rvm/scripts/rvm ]]  && . ~/.rvm/scripts/rvm
+
 [[ -f ~/.exports ]] && . ~/.exports
 
 [[ -f ~/.connect_ssh.sh ]] && . ~/.connect_ssh.sh
