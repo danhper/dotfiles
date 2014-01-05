@@ -5,5 +5,8 @@ imap <C-d> <nop>
 cmap <C-h> <nop>
 cmap <C-k> <nop>
 cmap <C-d> <nop>
+noremap j 3j
+noremap k 3k
 
+:set editor="emacs"
 
