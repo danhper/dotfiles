@@ -24,7 +24,7 @@ keyUnbindings =
   [
     "M-h"
   , "M-l"
-  ] ++ ["M-" ++ [n] | n <- ['1'..'9']]
+  ] ++ concat [("M-" ++ [n]):["M-S-" ++ [n]] | n <- ['1'..'9']]
 
 mCustomKeys = customKeys delkeys inskeys where
   delkeys :: XConfig l -> [(KeyMask, KeySym)]
