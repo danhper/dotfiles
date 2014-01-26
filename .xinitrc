@@ -7,10 +7,11 @@ export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 export XMODIFIERS="@im=ibus"
 
-setxkbmap -layout jp,fr -option grp:shift_toggle,grp_led:scroll,terminate:ctrl_alt_bksp
+setxkbmap -layout jp,fr -option grp_led:scroll,terminate:ctrl_alt_bksp
 
 xset -dpms
 xset s off
+xsetroot -cursor_name left_ptr
 
 xmodmap ~/.Xmodmap
 grep "PFU" /proc/bus/input/devices > /dev/null
@@ -19,4 +20,14 @@ if [ $? -eq 1 ]; then
     xmodmap ~/.capsmodmap
 fi
 
-exec startlxde
+
+DEFAULTSESSION=startlxde
+
+case "$1" in
+     lxde)
+        exec startlxde ;;
+     xmonad)
+        [[ -f ~/.xmonad/autostart.sh ]] && . ~/.xmonad/autostart.sh
+        exec xmonad ;;
+     *) exec $DEFAULTSESSION ;;
+esac
