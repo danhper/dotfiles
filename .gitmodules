@@ -7,3 +7,6 @@
 [submodule ".vim"]
 	path = .vim
 	url = https://github.com/tuvistavie/vim-config.git
+[submodule ".config/sublime-text-3"]
+	path = .config/sublime-text-3
+	url = https://github.com/tuvistavie/st3-config.git
