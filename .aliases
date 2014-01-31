@@ -1,3 +1,4 @@
 alias sudo='nocorrect sudo'
 alias bower='noglob bower'
+alias bi='bundle install'
 

@@ -2,7 +2,7 @@
 
 which pyenv > /dev/null && eval "$(pyenv init -)"
 
-[[ -f ~/.rvm/scripts/rvm ]]  && . ~/.rvm/scripts/rvm
+which rbenv > /dev/null && eval "$(rbenv init -)"
 
 [[ -f ~/.connect_ssh.sh ]] && . ~/.connect_ssh.sh
 
