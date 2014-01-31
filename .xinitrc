@@ -24,7 +24,7 @@ fi
 DEFAULTSESSION=startlxde
 
 case "$1" in
-     lxde)
+     LXDE)
         exec startlxde ;;
      xmonad)
         [[ -f ~/.xmonad/autostart.sh ]] && . ~/.xmonad/autostart.sh
