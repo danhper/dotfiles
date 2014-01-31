@@ -2,7 +2,7 @@ launch() {
     eval $1 >> ~/.autostart.log 2>&1 &
 }
 
-launch "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x000000 --height 12 --alpha 0"
+launch "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 12 --alpha 0"
 launch "devmon"
 launch "xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55"
 launch "feh --bg-scale ~/.background/skyward.jpg"
