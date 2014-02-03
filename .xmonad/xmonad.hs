@@ -47,7 +47,11 @@ mCustomKeys = customKeys delkeys inskeys where
           | (i, k) <- zip (workspaces' conf) [xK_1 .. xK_9]
           , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
-manageHooks = composeOne [isFullscreen -?> doFullFloat]
+manageHooks = composeAll
+  [
+    isFullscreen --> doFullFloat
+  , title =? "Eclipse" --> doFloat ]
+
 
 workspaceNames = [show n | n <- [1..9]]
 
