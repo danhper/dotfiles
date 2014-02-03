@@ -7,6 +7,10 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.IndependentScreens
 import qualified XMonad.StackSet as W
 
+titleColor     = "#7488a4"
+currentWSColor = "#e0b167"
+
+
 keysBindings :: [(String, X())]
 keysBindings =
   [
@@ -63,7 +67,12 @@ configWithKeys n = mainConfig n `removeKeysP` keyUnbindings
                                 `additionalKeysP` keysBindings
 
 barCommand = "xmobar -x1 /home/daniel/.xmobar/xmobarrc"
-myPP = xmobarPP
+
+myPP = xmobarPP {
+  ppCurrent = xmobarColor currentWSColor "" . wrap "[" "]"
+, ppTitle = xmobarColor titleColor ""
+}
+
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_z)
 
 configWithBar n = statusBar barCommand myPP toggleStrutsKey (configWithKeys n)

@@ -1,4 +1,5 @@
-Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+Config { 
+         font    = "xft:Ricty-Regular:size=13:antialias=true"
        , bgColor = "#000000"
        , fgColor = "grey"
        , position = TopW L 90
