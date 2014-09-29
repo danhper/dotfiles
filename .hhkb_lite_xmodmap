@@ -1,0 +1,8 @@
+remove mod1 = Alt_L
+remove mod4 = Super_L
+keycode 49 = Alt_L Meta_L Alt_L Meta_L Alt_L Meta_L Alt_L Meta_L
+keycode 64 = Super_L NoSymbol Super_L
+keycode 133 = Zenkaku_Hankaku Kanji Zenkaku_Hankaku Kanji
+add mod4 = Super_L
+add mod1 = Alt_L 
+
