@@ -7,7 +7,7 @@ ZSH_THEME="candy"
 
 setopt extended_glob
 
-plugins=(git git-flow mvn archlinux rails ant npm gem)
+plugins=(git git-extra git-flow mvn archlinux rails ant npm mercurial golang knife bower vagrant kitchen)
 
 if [ -d $COMPLETION_DIR ]; then
   fpath+=$COMPLETION_DIR

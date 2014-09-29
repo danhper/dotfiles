@@ -14,7 +14,7 @@ currentWSColor = "#e0b167"
 keysBindings :: [(String, X())]
 keysBindings =
   [
-    ("C-M1-f"   , spawn "firefox")
+    ("C-M1-f"   , spawn "google-chrome-stable")
   , ("C-M1-t"   , spawn "terminator")
   , ("M1-<F4>"  , kill)
   , ("M1-<Tab>" , windows W.focusDown)
@@ -55,11 +55,13 @@ manageHooks = composeAll
 
 workspaceNames = [show n | n <- [1..9]]
 
+layout = layoutHook defaultConfig
+
 mainConfig n = defaultConfig
   { terminal           = "terminator"
   , normalBorderColor  = "#cccccc"
   , focusedBorderColor = "#7ec7ea"
-  , borderWidth        = 1
+  , borderWidth        = 0
   , focusFollowsMouse  = False
   , keys               = mCustomKeys
   , startupHook        = setWMName "LG3D"

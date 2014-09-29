@@ -1,33 +1,15 @@
-[[ -f ~/.setscreen.sh ]] && . ~/.setscreen.sh
-
-export XIM=ibus
-export XIM_PROGRAM=/usr/bin/ibus-daemon
-export XIM_ARGS="--xim"
-export GTK_IM_MODULE="ibus"
-export QT_IM_MODULE="ibus"
-export XMODIFIERS="@im=ibus"
-
-setxkbmap -layout jp,fr -option grp_led:scroll,terminate:ctrl_alt_bksp
+[[ -f ~/.setxorg.sh ]] && . ~/.setxorg.sh
+[[ -f ~/.keyboard_setup.sh ]] && . ~/.keyboard_setup.sh
+[[ -f ~/.ime_setup.sh ]] && . ~/.ime_setup.sh
 
 xset -dpms
 xset s off
 xsetroot -cursor_name left_ptr
 
-xmodmap ~/.Xmodmap
-grep "PFU" /proc/bus/input/devices > /dev/null
-if [ $? -eq 1 ]; then
-    xmodmap ~/.upmodmap
-    xmodmap ~/.capsmodmap
-fi
-
-
-DEFAULTSESSION=startlxde
-
 case "$1" in
-     LXDE)
+     lxde)
         exec startlxde ;;
-     xmonad)
+     xmonad|*)
         [[ -f ~/.xmonad/autostart.sh ]] && . ~/.xmonad/autostart.sh
         exec xmonad ;;
-     *) exec $DEFAULTSESSION ;;
 esac
