@@ -7,3 +7,5 @@ which rbenv > /dev/null && eval "$(rbenv init -)"
 [[ -f ~/.phpbrew/bashrc ]] && . ~/.phpbrew/bashrc
 
 [[ -f ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
+
+[[ -f ~/.gvm/scripts/gvm ]] && . ~/.gvm/scripts/gvm
