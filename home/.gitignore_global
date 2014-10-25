@@ -1,0 +1,26 @@
+# Editor generated
+*~
+*\#
+.\#*
+*.sublime-project
+*.sublime-workspace
+.codeintel/
+*.swp
+
+# Binaries
+*.so
+*.class
+*.o
+
+# Misc
+*.log
+
+# Java/Scala 
+
+target/
+.ensime_lucene/
+
+# TeX
+*.aux
+*.pdf
+

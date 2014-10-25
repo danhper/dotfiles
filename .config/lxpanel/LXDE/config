@@ -1,4 +1,0 @@
-[Command]
-FileManager=thundar %s
-Terminal=lxterminal
-Logout=lxde-logout

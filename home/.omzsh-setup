@@ -1,0 +1,19 @@
+ZSH=$HOME/.oh-my-zsh
+COMPLETION_DIR="$HOME/.zsh-completions"
+
+ZSH_THEME="candy"
+
+# COMPLETION_WAITING_DOTS="true"
+
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
+setopt extended_glob
+
+plugins=(git git-flow mvn archlinux rails ant npm gem golang vagrant heroku cabal nvm kitchen bower)
+
+if [ -d $COMPLETION_DIR ]; then
+  fpath+=$COMPLETION_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh

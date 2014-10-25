@@ -1,0 +1,48 @@
+export DEFAULT_USER=daniel
+export EDITOR=vim
+export BROWSER=google-chrome-stable
+export CLASSPATH="."
+export NODE_PATH=/usr/lib/node_modules
+export CHROME_BIN=chromium
+export VMAIL_BROWSER=firefox
+
+export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:$HOME/.perl5";
+export PERL_MB_OPT="--install_base $HOME/.perl5";
+export PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5";
+export PERL5LIB="$HOME/.perl5/lib/perl5:$PERL5LIB";
+export TEXMFCNF=$HOME/.texlive/texmf-config/web2c:
+
+export GOPATH="$HOME/workspaces/go"
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
+export EC2_URL=https://ec2.ap-northeast-1.amazonaws.com
+
+if [ -d $HOME/.homesick/repos/homeshick/completions ]; then
+  fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+fi
+
+pathdirs=(
+  $HOME/.bin
+  $HOME/.php53/bin
+  $HOME/.cabal/bin
+  $HOME/.mipsel/usr/bin
+  $HOME/.heroku-client/bin
+  $HOME/.perl5/bin
+  $HOME/.pyenv/bin
+  $HOME/.rbenv/bin
+  $HOME/.phpbrew/bin
+  $GOPATH/bin
+  /opt/java/bin
+  /usr/local/heroku/bin
+  /usr/local/ec2/ec2-api-tools-1.6.13.0/bin
+  /opt/android-sdk/platform-tools
+  $PATH
+)
+
+for dir in $pathdirs; do
+  if [ -d $dir ]; then
+    path+=$dir
+  fi
+done
+
+[[ -f ~/.secret_exports ]] && . ~/.secret_exports
+
