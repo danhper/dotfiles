@@ -35,6 +35,7 @@ pathdirs=(
   /usr/local/heroku/bin
   /usr/local/ec2/ec2-api-tools-1.6.13.0/bin
   /opt/android-sdk/platform-tools
+  /opt/android-sdk/tools
   $PATH
 )
 

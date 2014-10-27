@@ -1,7 +1,6 @@
 [global_config]
   title_transmit_bg_color = "#4ef0ac"
   tab_position = bottom
-  borderless = True
 [keybindings]
   cycle_prev = Henkan_Mode
   cycle_next = Muhenkan
