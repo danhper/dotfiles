@@ -22,6 +22,8 @@ keysBindings =
   , ("M4-l"     , sendMessage Expand)
   , ("<Print>"  , spawn "xwd | convert - /tmp/screenshot-$(date +%s).png")
   , ("C-<Print>", spawn "xwd -root | convert - /tmp/screenshot-$(date +%s).png")
+  , ("<XF86MonBrightnessDown>", spawn "xbacklight -20")
+  , ("<XF86MonBrightnessUp>",   spawn "xbacklight +20")
   ]
   ++
   [
