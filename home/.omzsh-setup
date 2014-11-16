@@ -1,6 +1,8 @@
 ZSH=$HOME/.oh-my-zsh
 COMPLETION_DIR="$HOME/.zsh-completions"
 
+DISABLE_AUTO_UPDATE="true"
+
 ZSH_THEME="candy"
 
 # COMPLETION_WAITING_DOTS="true"
@@ -10,7 +12,7 @@ alias mmv='noglob zmv -W'
 
 setopt extended_glob
 
-plugins=(git git-flow mvn archlinux rails ant npm gem golang vagrant heroku cabal nvm kitchen bower)
+plugins=(git git-flow mvn archlinux rails ant npm gem golang vagrant heroku cabal nvm kitchen bower composer)
 
 if [ -d $COMPLETION_DIR ]; then
   fpath+=$COMPLETION_DIR
