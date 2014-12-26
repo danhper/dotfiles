@@ -12,10 +12,12 @@ alias mmv='noglob zmv -W'
 
 setopt extended_glob
 
-plugins=(git git-flow mvn archlinux rails ant npm gem golang vagrant heroku cabal nvm kitchen bower composer)
+plugins=(git git-flow mvn archlinux rails ant npm gem golang vagrant heroku cabal nvm kitchen bower composer meteor)
 
 if [ -d $COMPLETION_DIR ]; then
   fpath+=$COMPLETION_DIR
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+unset GREP_OPTIONS
