@@ -8,4 +8,5 @@ alias be='bundle exec'
 alias package_sizes='expac "%m\t%n" | sort -h | awk '\''{ printf("%-35s %dM\n", $2, $1 / 1024 / 1024) }'\'
 alias ch='google-chrome-stable'
 alias sl='ls'
+alias v='vim'
 
