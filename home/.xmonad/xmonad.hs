@@ -16,7 +16,7 @@ keysBindings :: [(String, X())]
 keysBindings =
   [
     ("C-M1-f"   , spawn "google-chrome-stable")
-  , ("C-M1-t"   , spawn "terminator")
+  , ("C-M1-t"   , spawn "urxvt")
   , ("M1-<F4>"  , kill)
   , ("M4-h"     , sendMessage Shrink)
   , ("M4-l"     , sendMessage Expand)

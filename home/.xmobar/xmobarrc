@@ -7,7 +7,7 @@ Config {
                     , Run BatteryP ["BAT1"] ["-t","<left>% / <timeleft>","-L","50","-H","75","-h","grey","-n","yell","-l","red"] 10
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Date "%a %b %_d %l:%M" "date" 10
+                    , Run Date "%a %b %_d %H:%M" "date" 10
                     , Run StdinReader
                     , Run CommandReader "/home/daniel/.xmobar/ledmon" "LED"
                     ]

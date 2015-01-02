@@ -3,7 +3,7 @@ COMPLETION_DIR="$HOME/.zsh-completions"
 
 DISABLE_AUTO_UPDATE="true"
 
-ZSH_THEME="candy"
+ZSH_THEME="afowler"
 
 # COMPLETION_WAITING_DOTS="true"
 
