@@ -32,11 +32,12 @@ URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 ! Perl extensions
-URxvt.perl-ext-common:      default,matcher,tabbedex,keyboard-select,clipboard
-URxvt.matcher.button:       1
-URxvt.urlLauncher:          google-chrome-stable
+URxvt.perl-ext-common:      default,url-select,tabbedex,keyboard-select,clipboard
 
-URxvt.tabbed.autohide:         yes
+URxvt.url-select.launcher:  /bin/xdg-open
+URxvt.tabbed.autohide:      yes
+URxvt.tabbed.no-tabbedex-keys: true
+
 URxvt.tabbed.tabbar-fg: 2
 URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 3
@@ -47,12 +48,12 @@ URxvt.keysym.Mod4-p: perl:tabbedex:prev_tab
 URxvt.keysym.Mod4-n: perl:tabbedex:next_tab
 URxvt.keysym.Mod4-r: perl:tabbedex:rename_tab
 
+URxvt.keysym.C-i: perl:url-select:select_next
+
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 URxvt.keysym.M-c:   perl:clipboard:copy
 URxvt.keysym.M-v:   perl:clipboard:paste
-
-URxvt.tabbed.no-tabbedex-keys: true
 
 
 ! Cursor
