@@ -25,3 +25,5 @@ target/
 *.aux
 *.pdf
 
+# Cache
+*.pyc
