@@ -9,4 +9,5 @@ alias package_sizes='expac "%m\t%n" | sort -h | awk '\''{ printf("%-35s %dM\n", 
 alias ch='google-chrome-stable'
 alias sl='ls'
 alias v='vim'
+alias s='subl'
 
