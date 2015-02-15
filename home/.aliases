@@ -10,4 +10,5 @@ alias ch='google-chrome-stable'
 alias sl='ls'
 alias v='vim'
 alias s='subl'
-
+alias py='python'
+alias ki='kitchen'

@@ -64,7 +64,7 @@ configWithDzen = withUrgencyHook dzenUrgencyHook
   } $ defaultConfig
 
 mainConfig n = configWithDzen
-  { terminal           = "terminator"
+  { terminal           = "urxvt"
   , normalBorderColor  = "#cccccc"
   , focusedBorderColor = "#7ec7ea"
   , borderWidth        = 1

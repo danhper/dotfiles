@@ -20,4 +20,7 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+PROMPT='%m %{${fg_bold[blue]}%}:: %{$reset_color%}%{${fg[green]}%}%3~ $(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}
+»%{${reset_color}%} '
+
 unset GREP_OPTIONS
