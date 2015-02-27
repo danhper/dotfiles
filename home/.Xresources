@@ -69,8 +69,8 @@ URxvt.pointerBlank:         true
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
 
-*foreground:   #c5c8c6
-*background:   #1d1f21
+URxvt.foreground:  #c5c8c6
+URxvt.background:  #1d1f21
 *color0:       #000000
 *color1:       #912226
 *color2:       #778900
