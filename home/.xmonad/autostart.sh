@@ -12,4 +12,4 @@ launch "xautolock -time 15 -locker slimlock"
 launch "pulseaudio --start"
 launch "nm-applet"
 sleep 3
-launch "dropboxd"
+launch "dropbox"
