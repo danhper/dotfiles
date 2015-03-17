@@ -32,7 +32,7 @@ URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 ! Perl extensions
-URxvt.perl-ext-common:      default,url-select,tabbedex,keyboard-select,clipboard
+URxvt.perl-ext-common:      default,url-select,keyboard-select,clipboard
 
 URxvt.url-select.launcher:  /bin/xdg-open
 URxvt.tabbed.autohide:      yes
@@ -43,10 +43,10 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 3
 URxvt.tabbed.tab-bg: 0
 
-URxvt.keysym.Mod4-t: perl:tabbedex:new_tab
-URxvt.keysym.Mod4-p: perl:tabbedex:prev_tab
-URxvt.keysym.Mod4-n: perl:tabbedex:next_tab
-URxvt.keysym.Mod4-r: perl:tabbedex:rename_tab
+! URxvt.keysym.Mod4-t: perl:tabbedex:new_tab
+! URxvt.keysym.Mod4-p: perl:tabbedex:prev_tab
+! URxvt.keysym.Mod4-n: perl:tabbedex:next_tab
+! URxvt.keysym.Mod4-r: perl:tabbedex:rename_tab
 
 URxvt.keysym.C-i: perl:url-select:select_next
 
