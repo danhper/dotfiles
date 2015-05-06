@@ -9,9 +9,5 @@
 
 [[ -f ~/.aliases ]] && . ~/.aliases
 
-
-# added by travis gem
-[ -f /home/daniel/.travis/travis.sh ] && source /home/daniel/.travis/travis.sh
-
 # added by leaves setup.
 [[ -f $HOME/.leaves/zsh/leaves-init.sh ]] && . $HOME/.leaves/zsh/leaves-init.sh
