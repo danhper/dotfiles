@@ -8,4 +8,4 @@ which rbenv > /dev/null && eval "$(rbenv init -)"
 
 [[ -f ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
 
-[[ -f ~/.gvm/scripts/gvm ]] && . ~/.gvm/scripts/gvm
+[[ -f ~/.gimme/envs/latest.env ]] && . ~/.gimme/envs/latest.env
