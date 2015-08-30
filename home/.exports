@@ -4,6 +4,7 @@ export BROWSER=google-chrome-stable
 export CLASSPATH="."
 export CHROME_BIN=chromium
 export VMAIL_BROWSER=firefox
+export NODE_REPL_HISTORY_FILE=~/.node_history
 
 export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:$HOME/.perl5";
 export PERL_MB_OPT="--install_base $HOME/.perl5";
@@ -19,23 +20,29 @@ if [ -d $HOME/.homesick/repos/homeshick/completions ]; then
   fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 fi
 
+unset $PATH
+
 pathdirs=(
+  $HOME/.local/bin
   $HOME/.bin
   $HOME/.php53/bin
   $HOME/.cabal/bin
   $HOME/.mipsel/usr/bin
   $HOME/.heroku-client/bin
-  $HOME/.perl5/bin
   $HOME/.pyenv/bin
   $HOME/.rbenv/bin
   $HOME/.phpbrew/bin
+  $HOME/.cask/bin
+  $HOME/.stack/programs/x86_64-linux/ghc-7.10.2/bin/ghc
   $GOPATH/bin
   /opt/java/bin
   /usr/local/heroku/bin
   /usr/local/ec2/ec2-api-tools-1.6.13.0/bin
   /opt/android-sdk/platform-tools
   /opt/android-sdk/tools
-  $PATH
+  /usr/local/bin
+  /bin
+  /usr/bin
 )
 
 for dir in $pathdirs; do
