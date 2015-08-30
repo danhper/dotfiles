@@ -11,6 +11,9 @@ export PERL_MB_OPT="--install_base $HOME/.perl5";
 export PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5";
 export PERL5LIB="$HOME/.perl5/lib/perl5:$PERL5LIB";
 export TEXMFCNF=$HOME/.texlive/texmf-config/web2c:
+export NODE_REPL_HISTORY_FILE=$HOME/.noderepl.history
+
+export ANDROID_SDK_ROOT=/opt/android-sdk
 
 export GOPATH="$HOME/workspaces/go"
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
@@ -20,7 +23,7 @@ if [ -d $HOME/.homesick/repos/homeshick/completions ]; then
   fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 fi
 
-unset $PATH
+unset PATH
 
 pathdirs=(
   $HOME/.local/bin
@@ -32,8 +35,7 @@ pathdirs=(
   $HOME/.pyenv/bin
   $HOME/.rbenv/bin
   $HOME/.phpbrew/bin
-  $HOME/.cask/bin
-  $HOME/.stack/programs/x86_64-linux/ghc-7.10.2/bin/ghc
+  $HOME/.stack/programs/x86_64-linux/ghc-7.10.2/bin
   $GOPATH/bin
   /opt/java/bin
   /usr/local/heroku/bin

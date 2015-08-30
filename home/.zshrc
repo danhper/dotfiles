@@ -14,3 +14,6 @@
 
 # added by ohh setup
 [[ -f $HOME/.ohh/zsh/ohh-init.sh ]] && . $HOME/.ohh/zsh/ohh-init.sh
+
+# added by travis gem
+[ -f /home/daniel/.travis/travis.sh ] && source /home/daniel/.travis/travis.sh

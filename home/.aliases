@@ -14,3 +14,6 @@ alias py='python'
 alias ki='kitchen'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+alias e='emacsclient -c -a emacs'
+
+s2u() { echo $@ | sed -e 's/ /_/g' }

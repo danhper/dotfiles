@@ -16,7 +16,7 @@
 *.log
 .tags*
 
-# Java/Scala 
+# Java/Scala
 
 target/
 .ensime_lucene/
@@ -27,3 +27,7 @@ target/
 
 # Cache
 *.pyc
+
+node_modules/
+
+.tern-port

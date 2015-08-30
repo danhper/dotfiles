@@ -11,6 +11,7 @@ launch "xautolock -time 15 -locker slimlock"
 launch "pulseaudio --start"
 launch "nm-applet"
 launch "owncloud"
+launch "emacs --daemon"
 launch "mutate --hidden"
 sleep 3
 launch "dropbox"

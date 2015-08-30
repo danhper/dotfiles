@@ -35,6 +35,7 @@ URxvt.scrollBar:            false
 URxvt.perl-ext-common:      default,url-select,keyboard-select,clipboard
 
 URxvt.url-select.launcher:  /bin/xdg-open
+URxvt.url-select.underline:  true
 URxvt.tabbed.autohide:      yes
 URxvt.tabbed.no-tabbedex-keys: true
 
