@@ -11,3 +11,6 @@
 
 # added by leaves setup.
 [[ -f $HOME/.leaves/zsh/leaves-init.sh ]] && . $HOME/.leaves/zsh/leaves-init.sh
+
+# added by ohh setup
+[[ -f $HOME/.ohh/zsh/ohh-init.sh ]] && . $HOME/.ohh/zsh/ohh-init.sh
