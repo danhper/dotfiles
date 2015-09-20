@@ -89,3 +89,4 @@ URxvt.background:  #1d1f21
 *color14:      #8abeb7
 *color15:      #ecebec
 
+Emacs*UseXIM: false
