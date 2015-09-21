@@ -1,8 +1,8 @@
 [[ -f ~/.exports ]] && . ~/.exports
 
-which pyenv > /dev/null && eval "$(pyenv init -)"
+which pyenv > /dev/null && eval "$(pyenv init - --no-rehash)"
 
-which rbenv > /dev/null && eval "$(rbenv init -)"
+which rbenv > /dev/null && eval "$(rbenv init - --no-rehash)"
 
 [[ -f ~/.phpbrew/bashrc ]] && . ~/.phpbrew/bashrc
 
