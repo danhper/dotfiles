@@ -1,0 +1,1 @@
+alias yaupg='yaourt -Syu'
