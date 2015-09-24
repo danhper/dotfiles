@@ -1,12 +1,13 @@
 [user]
-name=Daniel Perez
+    name=Daniel Perez
 	email = daniel@claudetech.com
 
 [push]
-default=simple
+    default=simple
 
 [core]
-excludesfile=/home/daniel/.gitignore_global
+    excludesfile=/home/daniel/.gitignore_global
+	pager = lv
 [branch "master"]
 	rebase = true
 [alias]
