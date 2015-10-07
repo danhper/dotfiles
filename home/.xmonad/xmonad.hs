@@ -17,6 +17,8 @@ keysBindings =
   [
     ("C-M1-f"   , spawn "google-chrome-stable")
   , ("C-M1-t"   , spawn "urxvt")
+  , ("C-M1-9"   , spawn "xkb-switch -s jp")
+  , ("C-M1-0"   , spawn "xkb-switch -s fr")
   , ("M1-<F4>"  , kill)
   , ("M4-h"     , sendMessage Shrink)
   , ("M4-l"     , sendMessage Expand)
