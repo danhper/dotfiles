@@ -1,0 +1,11 @@
+alias d='dirhist -l -n'
+
+alias 1='cd_num 1'
+alias 2='cd_num 2'
+alias 3='cd_num 3'
+alias 4='cd_num 4'
+alias 5='cd_num 5'
+alias 6='cd_num 6'
+alias 7='cd_num 7'
+alias 8='cd_num 8'
+alias 9='cd_num 9'
