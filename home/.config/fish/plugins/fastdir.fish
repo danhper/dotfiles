@@ -1,4 +1,5 @@
 alias d='dirhist -l -n'
+alias -='cd -'
 
 alias 1='cd_num 1'
 alias 2='cd_num 2'
