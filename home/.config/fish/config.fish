@@ -6,8 +6,6 @@ set plugins_directory $HOME/.config/fish/plugins
 
 set fish_greeting
 
-source $HOME/.config/fish/settings/prompt.fish
-source $HOME/.config/fish/settings/ssh-agent.fish
 source $HOME/.config/fish/settings/aliases.fish
 
 source $HOME/.config/fish/plugins.fish
