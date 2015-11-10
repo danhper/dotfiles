@@ -8,6 +8,7 @@
 [core]
     excludesfile=/home/daniel/.gitignore_global
 	pager = lv
+	askPass =
 [branch "master"]
 	rebase = true
 [alias]
