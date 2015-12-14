@@ -6,3 +6,4 @@ fundle plugin 'tuvistavie/fish-gcalcli'
 
 fundle plugin 'edc/bass'
 fundle plugin 'tuvistavie/fish-nvm'
+fundle plugin 'joehillen/to-fish'

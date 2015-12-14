@@ -1,3 +1,3 @@
-alias yaupg='yaourt -Syu --aur'
-alias yai='yaourt -S'
-alias yas='yaourt -Ss'
+function yaupg; 'yaourt -Syu --aur'; end
+function yai;   'yaourt -S'; end
+function yas;   'yaourt -Ss'; end

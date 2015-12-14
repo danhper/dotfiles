@@ -1,2 +1,2 @@
-alias rc='rails console'
-alias rs='rails server'
+function rc; 'rails console'; end
+function rs; 'rails server'; end

@@ -8,4 +8,6 @@ which rbenv > /dev/null && eval "$(rbenv init - --no-rehash)"
 
 [[ -f ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
 
+[[ -f ~/.kiex/scripts/kiex ]] && ~/.kiex/scripts/kiex
+
 [[ -f ~/.gimme/envs/latest.env ]] && . ~/.gimme/envs/latest.env

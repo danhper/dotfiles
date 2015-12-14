@@ -1,7 +1,7 @@
-alias g='git'
-alias gst='git status'
-alias glg='git log --stat --color'
-alias glgga='git log --graph --decorate --all'
+function g;     'git'; end
+function gst;   'git status'; end
+function glg;   'git log --stat --color'; end
+function glgga; 'git log --graph --decorate --all'; end
 
 abbr -a ga='git add'
 abbr -a gco='git checkout'
