@@ -1,7 +1,7 @@
-function g;     'git'; end
-function gst;   'git status'; end
-function glg;   'git log --stat --color'; end
-function glgga; 'git log --graph --decorate --all'; end
+function g;     git; end
+function gst;   git status; end
+function glg;   git log --stat --color; end
+function glgga; git log --graph --decorate --all; end
 
 abbr -a ga='git add'
 abbr -a gco='git checkout'
