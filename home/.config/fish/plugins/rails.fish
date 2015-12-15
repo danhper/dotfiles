@@ -1,2 +1,2 @@
-function rc; rails console; end
-function rs; rails server; end
+function rc; rails console $argv; end
+function rs; rails server $argv; end

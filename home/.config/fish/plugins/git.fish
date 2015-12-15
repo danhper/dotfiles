@@ -1,7 +1,7 @@
-function g;     git; end
-function gst;   git status; end
-function glg;   git log --stat --color; end
-function glgga; git log --graph --decorate --all; end
+function g;     git $argv; end
+function gst;   git status $argv; end
+function glg;   git log --stat --color $argv; end
+function glgga; git log --graph --decorate --all $argv; end
 
 abbr -a ga='git add'
 abbr -a gco='git checkout'
@@ -13,3 +13,5 @@ abbr -a gp='git push'
 abbr -a gl='git pull'
 abbr -a gb='git branch'
 abbr -a gm='git merge'
+
+complete -c g -w git
