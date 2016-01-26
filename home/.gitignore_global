@@ -31,3 +31,5 @@ target/
 node_modules/
 
 .tern-port
+
+.imdone/
