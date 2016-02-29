@@ -14,7 +14,7 @@
 
 # Misc
 *.log
-tags*
+tags
 
 # Java/Scala
 
@@ -33,3 +33,5 @@ node_modules/
 .tern-port
 
 .imdone/
+
+.projectile

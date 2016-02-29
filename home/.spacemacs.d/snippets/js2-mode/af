@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: arrow function
+# key: af
+# binding: direct-keybinding
+# --
+($1) => ${}
