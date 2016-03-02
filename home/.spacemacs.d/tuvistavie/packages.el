@@ -33,8 +33,11 @@
   '(editorconfig
     mozc
     yasnippet
+    web-mode
     js2-mode
-    projectile))
+    wakatime-mode
+    projectile
+    feature-mode))
 
 (defun tuvistavie/init-editorconfig ()
   (use-package editorconfig
@@ -50,15 +53,33 @@
     (progn
       (setq default-input-method "japanese-mozc"))))
 
+(defun tuvistavie/init-feature-mode ()
+  (use-package feature-mode
+    :defer t
+    :init
+    (progn
+      (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode)))))
+
 (defun tuvistavie/post-init-yasnippet ()
   (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand))
 
+(defun tuvistavie/post-init-web-mode ()
+  (add-to-list 'auto-mode-alist '("\\.tag$" . web-mode)))
+
 (defun tuvistavie/post-init-js2-mode ()
   (add-to-list 'auto-mode-alist '("\\.es6$" . js2-mode))
+  (setq js2-basic-offset 2)
   (add-hook 'js2-mode-hook 'js2-mode-hide-warnings-and-errors))
 
 (defun tuvistavie/post-init-projectile ()
   (setq projectile-enable-caching t)
   (setq projectile-indexing-method 'alien))
+
+(defun tuvistavie/init-wakatime-mode ()
+  (use-package wakatime-mode
+    :defer t
+    :init
+    (progn
+      (global-wakatime-mode))))
 
 ;;; packages.el ends here

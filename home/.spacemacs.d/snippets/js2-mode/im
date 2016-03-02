@@ -3,4 +3,4 @@
 # key: im
 # binding: direct-keybinding
 # --
-import ${1:mod} from '${2:$1}'${}
+import ${1:mod} from '${2:$1}'$0

@@ -3,4 +3,4 @@
 # key: let
 # binding: direct-keybinding
 # --
-let $1 = ${}
+let $1 = $0
