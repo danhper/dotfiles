@@ -30,7 +30,7 @@ keysBindings =
   ++
   [
     (mask ++ "M4-" ++ [key], screenWorkspace scr >>= flip whenJust (windows . action))
-         | (key, scr)  <- zip "asd" [1,0,2] -- was [0..] *** change to match your screen order ***
+         | (key, scr)  <- zip "asd" [2,0,1] -- was [0..] *** change to match your screen order ***
          , (action, mask) <- [ (W.view, "") , (W.shift, "S-")]
   ]
 

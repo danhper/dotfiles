@@ -15,6 +15,10 @@
 (global-set-key (kbd "C-1") 'tuvistavie/goto-match-paren)
 (define-key input-decode-map "\C-m" [?\C-1])
 
+(add-hook 'server-visit-hook
+          (lambda ()
+            (define-key input-decode-map "\C-m" [?\C-1])))
+
 
 (global-set-key (kbd "C-j") 'helm-projectile)
 (global-set-key (kbd "s-SPC") 'mc/mark-next-like-this)
