@@ -15,6 +15,7 @@
      git
      version-control
      syntax-checking
+     shell
 
      markdown
      emacs-lisp
@@ -26,6 +27,8 @@
      ruby
      go
      yaml
+
+     ruby-on-rails
 
      tuvistavie
      secret
@@ -206,6 +209,8 @@
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+  (setq c-basic-offset 2)
+  (setq erlang-indent-level 2)
   )
 
 (defun dotspacemacs/user-config ()
