@@ -27,6 +27,7 @@
      ruby
      go
      yaml
+     python
 
      ruby-on-rails
 
