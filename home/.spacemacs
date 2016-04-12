@@ -28,6 +28,8 @@
      go
      yaml
      python
+     shell-scripts
+     dockerfile
 
      ruby-on-rails
 

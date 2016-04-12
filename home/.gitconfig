@@ -1,6 +1,7 @@
 [user]
 	name = Daniel Perez
 	email = daniel@claudetech.com
+	signingkey = tuvistavie@gmail.com
 
 [push]
     default=simple
