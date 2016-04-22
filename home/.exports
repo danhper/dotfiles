@@ -5,6 +5,7 @@ export CLASSPATH="."
 export CHROME_BIN=chromium
 export VMAIL_BROWSER=firefox
 export NODE_REPL_HISTORY_FILE=~/.node_history
+export MIX_HOME=$HOME/.mix
 
 export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:$HOME/.perl5";
 export PERL_MB_OPT="--install_base $HOME/.perl5";
@@ -38,6 +39,8 @@ pathdirs=(
   $HOME/.rbenv/bin
   $HOME/.phpbrew/bin
   $HOME/.stack/programs/x86_64-linux/ghc-7.10.2/bin
+  $HOME/.mix/escripts
+  $HOME/.asdf/shims
   $GOPATH/bin
   /opt/java/bin
   /usr/local/heroku/bin

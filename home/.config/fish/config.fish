@@ -11,8 +11,7 @@ for file in (ls $plugins_directory)
 end
 
 set -l sourced \
-    "$HOME/.homesick/repos/homeshick/homeshick.fish" \
-    "$HOME/.kiex/scripts/kiex.fish"
+    "$HOME/.homesick/repos/homeshick/homeshick.fish"
 
 for file in $sourced
     test -s $file; and source $file

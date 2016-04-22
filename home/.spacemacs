@@ -30,13 +30,14 @@
      python
      shell-scripts
      dockerfile
+     clojure
 
      ruby-on-rails
 
      tuvistavie
      secret
      nodemisc
-     wanderlust
+     ;; wanderlust
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -209,16 +210,10 @@
    ))
 
 (defun dotspacemacs/user-init ()
-  "Initialization function for user code.
-It is called immediately after `dotspacemacs/init'.  You are free to put almost
-any user code here.  The exception is org related code, which should be placed
-in `dotspacemacs/user-config'."
   (setq c-basic-offset 2)
   (setq erlang-indent-level 2)
-  )
+  (setq css-indent-offset 2)
+  (setq ruby-insert-encoding-magic-comment nil))
 
 (defun dotspacemacs/user-config ()
-  "Configuration function for user code.
-This function is called at the very end of Spacemacs initialization after
-layers configuration. You are free to put any user code."
   )
