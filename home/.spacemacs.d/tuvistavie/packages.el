@@ -69,8 +69,8 @@
     :defer t
     :init
     (progn
-      (setq wakatime-python-bin "~/.pyenv/shims/python2")
-      (setq wakatime-cli-path "~/.pyenv/versions/2.7.11/bin/wakatime")
+      (setq wakatime-python-bin "~/.asdf/installs/python/2.7.11/bin/python")
+      (setq wakatime-cli-path "~/.asdf/installs/python/2.7.11/bin/wakatime")
       (global-wakatime-mode))))
 
 ;;; packages.el ends here

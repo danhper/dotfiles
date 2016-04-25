@@ -35,8 +35,6 @@ pathdirs=(
   $HOME/.cabal/bin
   $HOME/.mipsel/usr/bin
   $HOME/.heroku-client/bin
-  $HOME/.pyenv/bin
-  $HOME/.rbenv/bin
   $HOME/.phpbrew/bin
   $HOME/.stack/programs/x86_64-linux/ghc-7.10.2/bin
   $HOME/.mix/escripts
