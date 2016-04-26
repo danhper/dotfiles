@@ -11,7 +11,6 @@
     wakatime-mode
     company
     projectile
-    feature-mode
     helm
     neotree))
 
@@ -28,13 +27,6 @@
     :init
     (progn
       (setq default-input-method "japanese-mozc"))))
-
-(defun tuvistavie/init-feature-mode ()
-  (use-package feature-mode
-    :defer t
-    :init
-    (progn
-      (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode)))))
 
 (defun tuvistavie/post-init-yasnippet ()
   (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand))
