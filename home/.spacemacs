@@ -210,6 +210,7 @@
    ))
 
 (defun dotspacemacs/user-init ()
+  (setq create-lockfiles nil)
   (setq use-dialog-box nil)
   (setq c-basic-offset 2)
   (setq erlang-indent-level 2)
