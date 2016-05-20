@@ -18,6 +18,7 @@
      shell
 
      markdown
+     common-lisp
      emacs-lisp
      javascript
      html
