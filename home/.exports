@@ -6,6 +6,7 @@ export CHROME_BIN=chromium
 export VMAIL_BROWSER=firefox
 export NODE_REPL_HISTORY_FILE=~/.node_history
 export MIX_HOME=$HOME/.mix
+export VAULT_ADDR=https://vault.claudetech.com
 
 export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:$HOME/.perl5";
 export PERL_MB_OPT="--install_base $HOME/.perl5";
