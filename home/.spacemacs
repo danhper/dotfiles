@@ -34,6 +34,7 @@
      clojure
 
      ruby-on-rails
+     react
 
      tuvistavie
      secret
@@ -216,7 +217,20 @@
   (setq c-basic-offset 2)
   (setq erlang-indent-level 2)
   (setq css-indent-offset 2)
-  (setq ruby-insert-encoding-magic-comment nil))
+  (setq ruby-insert-encoding-magic-comment nil)
+
+  (setq-default
+   js2-basic-offset 2
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
+
+  (add-hook 'comint-mode-hook
+            (function (lambda ()
+                        (evil-define-key 'insert comint-mode-map (kbd "C-p") 'comint-previous-input)
+                        (evil-define-key 'insert comint-mode-map (kbd "C-n") 'comint-next-input)))))
 
 (defun dotspacemacs/user-config ()
   )

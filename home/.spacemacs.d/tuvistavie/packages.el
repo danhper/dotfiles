@@ -12,7 +12,11 @@
     company
     projectile
     helm
-    neotree))
+    neotree
+    mmm-mode
+    (vue-mode :location (recipe
+                         :fetcher github
+                         :repo "codefalling/vue-mode"))))
 
 (defun tuvistavie/init-editorconfig ()
   (use-package editorconfig
@@ -64,5 +68,11 @@
       (setq wakatime-python-bin "~/.asdf/installs/python/2.7.11/bin/python")
       (setq wakatime-cli-path "~/.asdf/installs/python/2.7.11/bin/wakatime")
       (global-wakatime-mode))))
+
+(defun tuvistavie/mmm-mode ()
+  (use-package mmm-mode))
+
+(defun tuvistavie/init-vue-mode ()
+  (use-package vue-mode))
 
 ;;; packages.el ends here
