@@ -6,6 +6,9 @@
 *.sublime-workspace
 .codeintel/
 *.swp
+.imdone/
+.projectile
+.tern-port
 
 # Binaries
 *.so
@@ -16,7 +19,6 @@
 *.log
 
 # Java/Scala
-
 target/
 .ensime_lucene/
 
@@ -24,13 +26,12 @@ target/
 *.aux
 *.pdf
 
-# Cache
+# Python
 *.pyc
 
+# NodeJS
 node_modules/
 
-.tern-port
-
-.imdone/
-
-.projectile
+# Elixir/erlang
+erl_crash.dump
+*.beam
