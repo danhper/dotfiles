@@ -6,33 +6,42 @@ import XMonad.Hooks.SetWMName
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.IndependentScreens
 import XMonad.Hooks.UrgencyHook
+import System.Environment (getEnv)
 import qualified XMonad.StackSet as W
 
 titleColor     = "#7488a4"
 currentWSColor = "#e0b167"
 
+getScreenOrder :: IO [ScreenId]
+getScreenOrder = do
+  currentEnv <- getEnv "CURRENT_ENV"
+  return $ case currentEnv of
+    "lab" -> [1, 0, 2]
+    _     -> [2, 0, 1]
 
-keysBindings :: [(String, X())]
-keysBindings =
-  [
-    ("C-M1-f"   , spawn "google-chrome-stable")
-  , ("C-M1-t"   , spawn "urxvt")
-  , ("C-M1-9"   , spawn "xkb-switch -s jp")
-  , ("C-M1-0"   , spawn "xkb-switch -s fr")
-  , ("M1-<F4>"  , kill)
-  , ("M4-h"     , sendMessage Shrink)
-  , ("M4-l"     , sendMessage Expand)
-  , ("<Print>"  , spawn "xwd | convert - /tmp/screenshot-$(date +%s).png")
-  , ("C-<Print>", spawn "xwd -root | convert - /tmp/screenshot-$(date +%s).png")
-  , ("<XF86MonBrightnessDown>", spawn "xbacklight -20")
-  , ("<XF86MonBrightnessUp>",   spawn "xbacklight +20")
-  ]
-  ++
-  [
-    (mask ++ "M4-" ++ [key], screenWorkspace scr >>= flip whenJust (windows . action))
-         | (key, scr)  <- zip "asd" [2,0,1] -- was [0..] *** change to match your screen order ***
-         , (action, mask) <- [ (W.view, "") , (W.shift, "S-")]
-  ]
+
+keysBindings :: IO [(String, X())]
+keysBindings = do
+  screenOrder <- getScreenOrder
+  return ([
+      ("C-M1-f"   , spawn "google-chrome-stable")
+    , ("C-M1-t"   , spawn "urxvt")
+    , ("C-M1-9"   , spawn "xkb-switch -s jp")
+    , ("C-M1-0"   , spawn "xkb-switch -s fr")
+    , ("M1-<F4>"  , kill)
+    , ("M4-h"     , sendMessage Shrink)
+    , ("M4-l"     , sendMessage Expand)
+    , ("<Print>"  , spawn "xwd | convert - /tmp/screenshot-$(date +%s).png")
+    , ("C-<Print>", spawn "xwd -root | convert - /tmp/screenshot-$(date +%s).png")
+    , ("<XF86MonBrightnessDown>", spawn "xbacklight -20")
+    , ("<XF86MonBrightnessUp>",   spawn "xbacklight +20")
+    ]
+    ++
+    [
+      (mask ++ "M4-" ++ [key], screenWorkspace scr >>= flip whenJust (windows . action))
+           | (key, scr)  <- zip "asd" screenOrder
+           , (action, mask) <- [ (W.view, "") , (W.shift, "S-")]
+    ])
 
 keyUnbindings :: [String]
 keyUnbindings =
@@ -77,10 +86,14 @@ mainConfig n = configWithDzen
   , workspaces         = withScreens n workspaceNames
 }
 
-configWithKeys n = mainConfig n `removeKeysP` keyUnbindings
-                                `additionalKeysP` keysBindings
+makeConfigWithKeys n = do
+  keys <- keysBindings
+  return $ mainConfig n `removeKeysP` keyUnbindings `additionalKeysP` keys
 
-barCommand = "xmobar -x1 /home/daniel/.xmobar/xmobarrc"
+getBarCommand :: IO String
+getBarCommand = do
+  home <- getEnv "HOME"
+  return $ "xmobar -x1 " ++ home ++ "/.xmobar/xmobarrc"
 
 myPP = xmobarPP {
   ppCurrent = xmobarColor currentWSColor "" . wrap "[" "]"
@@ -89,7 +102,10 @@ myPP = xmobarPP {
 
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_z)
 
-configWithBar n = statusBar barCommand myPP toggleStrutsKey (configWithKeys n)
+configWithBar n = do
+  barCommand <- getBarCommand
+  configWithKeys <- makeConfigWithKeys n
+  statusBar barCommand myPP toggleStrutsKey configWithKeys
 
 
 main = do

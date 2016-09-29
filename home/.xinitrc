@@ -1,6 +1,7 @@
-[[ -f ~/.setxorg.sh ]] && . ~/.setxorg.sh
-[[ -f ~/.keyboard_setup.sh ]] && . ~/.keyboard_setup.sh
-[[ -f ~/.ime_setup.sh ]] && . ~/.ime_setup.sh
+[[ -f ~/.boot/setenv.sh ]] && . ~/.boot/setenv.sh
+[[ -f ~/.boot/xorg.sh ]] && . ~/.boot/xorg.sh
+[[ -f ~/.boot/keyboard.sh ]] && . ~/.boot/keyboard.sh
+[[ -f ~/.boot/ime.sh ]] && . ~/.boot/ime.sh
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 xset -dpms

@@ -18,7 +18,7 @@ export CAML_LD_LIBRARY_PATH=$HOME/.opam/4.02.3/lib/stublibs
 
 export ANDROID_SDK_ROOT=/opt/android-sdk
 
-export GOROOT="$HOME/.asdf/installs/golang/1.6/go"
+export GOROOT="$HOME/.asdf/installs/golang/1.7/go"
 export GOPATH="$HOME/workspaces/go"
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export EC2_URL=https://ec2.ap-northeast-1.amazonaws.com

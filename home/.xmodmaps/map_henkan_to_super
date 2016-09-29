@@ -1,0 +1,4 @@
+remove mod4 = Super_L
+keycode 102 = Super_L NoSymbol Super_L
+add mod4 = Super_L
+
