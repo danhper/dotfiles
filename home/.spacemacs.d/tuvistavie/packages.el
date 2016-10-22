@@ -8,7 +8,6 @@
     yasnippet
     web-mode
     js2-mode
-    wakatime-mode
     company
     projectile
     helm
@@ -60,14 +59,6 @@
     (define-key company-active-map (kbd "C-n") 'company-select-next)
     (define-key company-active-map (kbd "C-p") 'company-select-previous)))
 
-(defun tuvistavie/init-wakatime-mode ()
-  (use-package wakatime-mode
-    :defer t
-    :init
-    (progn
-      (setq wakatime-python-bin "~/.asdf/installs/python/2.7.11/bin/python")
-      (setq wakatime-cli-path "~/.asdf/installs/python/2.7.11/bin/wakatime")
-      (global-wakatime-mode))))
 
 (defun tuvistavie/mmm-mode ()
   (use-package mmm-mode))
