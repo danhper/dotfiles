@@ -1,3 +1,4 @@
+rm $HOME/.logs/boot_setup.log
 [[ -f ~/.boot/setenv.sh ]] && . ~/.boot/setenv.sh
 [[ -f ~/.boot/xorg.sh ]] && . ~/.boot/xorg.sh
 [[ -f ~/.boot/keyboard.sh ]] && . ~/.boot/keyboard.sh

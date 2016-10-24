@@ -4,7 +4,13 @@ if [ $? -eq 0 ]; then
     xmodmap ~/.xmodmaps/map_henkan_to_super
     xmodmap ~/.xmodmaps/map_alt_to_zenkaku
     xmodmap ~/.xmodmaps/swap_colon_semicolon
+elif [ "$CURRENT_ENV" = "laptop-vaio-2016" ]; then
+    echo "settings layout to us and swapping semicolon" >> $HOME/.logs/boot_setup.log
+    setxkbmap -layout us,fr -option grp_led:scroll,terminate:ctrl_alt_bksp
+    xmodmap ~/.xmodmaps/swap_colon_semicolon
+    xmodmap .xmodmaps/map_alt_to_zenkaku
 else
+    echo "settings layout to jp" >> $HOME/.logs/boot_setup.log
     setxkbmap -layout jp,fr -option grp_led:scroll,terminate:ctrl_alt_bksp
     xmodmap ~/.xmodmaps/remap_henkan_to_fns
 fi
@@ -12,8 +18,12 @@ fi
 # When using note keyboard
 grep -E "(PFU|HHKB)" /proc/bus/input/devices > /dev/null
 if [ $? -eq 1 ]; then
-    xmodmap ~/.xmodmaps/remap_up_to_shift
+    echo "remapping caps lock" >> $HOME/.logs/boot_setup.log
     xmodmap ~/.xmodmaps/remap_capslock_to_ctrl
+    if [ $CURRENT_ENV != "laptop-vaio-2016" ]; then
+        echo "remapping up to shift" >> $HOME/.logs/boot_setup.log
+        xmodmap ~/.xmodmaps/remap_up_to_shift
+    fi
 fi
 
 # When using japanese HHKB lite

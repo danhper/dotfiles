@@ -34,6 +34,7 @@ getKeyboardLanguage = do
   currentEnv <- getCurrentEnv
   return $ case currentEnv of
     "lab" -> "us"
+    "laptop-vaio-2016" -> "us"
     _     -> "jp"
 
 makeKeyBindings :: IO [(String, X())]
@@ -44,14 +45,14 @@ makeKeyBindings = do
       ("C-M1-f"   , spawn "google-chrome-stable")
     , ("C-M1-t"   , spawn "urxvt")
     , ("C-M1-9"   , spawn $ "xkb-switch -s " ++ keyboardLanguage)
-    , ("C-M1-0"   , spawn $ "xkb-switch -s " ++ keyboardLanguage)
+    , ("C-M1-0"   , spawn $ "xkb-switch -s fr")
     , ("M1-<F4>"  , kill)
     , ("M4-h"     , sendMessage Shrink)
     , ("M4-l"     , sendMessage Expand)
     , ("<Print>"  , spawn "xwd | convert - /tmp/screenshot-$(date +%s).png")
     , ("C-<Print>", spawn "xwd -root | convert - /tmp/screenshot-$(date +%s).png")
-    , ("<XF86MonBrightnessDown>", spawn "xbacklight -20")
-    , ("<XF86MonBrightnessUp>",   spawn "xbacklight +20")
+    , ("<XF86MonBrightnessDown>", spawn "xbacklight -5")
+    , ("<XF86MonBrightnessUp>",   spawn "xbacklight +5")
     ]
     ++
     [

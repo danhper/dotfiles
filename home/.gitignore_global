@@ -35,3 +35,5 @@ node_modules/
 # Elixir/erlang
 erl_crash.dump
 *.beam
+
+.tags*
