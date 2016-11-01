@@ -49,8 +49,8 @@ makeKeyBindings = do
     , ("M1-<F4>"  , kill)
     , ("M4-h"     , sendMessage Shrink)
     , ("M4-l"     , sendMessage Expand)
-    , ("<Print>"  , spawn "xwd | convert - /tmp/screenshot-$(date +%s).png")
-    , ("C-<Print>", spawn "xwd -root | convert - /tmp/screenshot-$(date +%s).png")
+    , ("<Print>"  , spawn "xwd | convert xwd:- /tmp/screenshot-$(date +%s).png")
+    , ("C-<Print>", spawn "xwd -root | convert xwd:- /tmp/screenshot-$(date +%s).png")
     , ("<XF86MonBrightnessDown>", spawn "xbacklight -5")
     , ("<XF86MonBrightnessUp>",   spawn "xbacklight +5")
     ]
