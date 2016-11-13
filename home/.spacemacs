@@ -30,14 +30,15 @@
      yaml
      python
      shell-scripts
-     dockerfile
+     ;; dockerfile
      clojure
+     latex
 
      ruby-on-rails
      react
 
      tuvistavie
-     secret
+     ;; secret
      nodemisc
      wanderlust
      )
@@ -234,3 +235,8 @@
 
 (defun dotspacemacs/user-config ()
   )
+
+(custom-set-variables
+ '(evil-want-Y-yank-to-eol t))
+(custom-set-faces
+ '(font-latex-sectioning-5-face ((t (:inherit variable-pitch :foreground "DodgerBlue3" :weight bold)))))
