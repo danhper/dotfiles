@@ -19,7 +19,7 @@ is_lab() {
 }
 
 is_office() {
-    is_env "1920x1080" "1920x1080"
+    is_env "1920x1080" "1920x1080" || is_env "1920x1080" "false"
 }
 
 if is_office; then
