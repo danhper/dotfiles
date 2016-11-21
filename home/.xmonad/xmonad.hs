@@ -14,7 +14,7 @@ import qualified XMonad.StackSet as W
 import Data.Monoid (Endo)
 
 titleColor :: String
-titleColor     = "#7488a4"
+titleColor = "#7488a4"
 
 currentWSColor :: String
 currentWSColor = "#e0b167"
@@ -22,29 +22,22 @@ currentWSColor = "#e0b167"
 getCurrentEnv :: IO String
 getCurrentEnv = getEnv "CURRENT_ENV"
 
-getScreenOrder :: IO [ScreenId]
-getScreenOrder = do
-  currentEnv <- getCurrentEnv
-  return $ case currentEnv of
-    "lab" -> [1, 0, 2]
-    _     -> [2, 0, 1]
+getScreenOrder :: String -> [ScreenId]
+getScreenOrder "lab" = [1, 0, 2]
+getScreenOrder _env  = [2, 0, 1]
 
-getKeyboardLanguage :: IO String
-getKeyboardLanguage = do
-  currentEnv <- getCurrentEnv
-  return $ case currentEnv of
-    "lab" -> "us"
-    "laptop-vaio-2016" -> "us"
-    _     -> "jp"
+getKeyboardLanguage :: String -> String
+getKeyboardLanguage "lab" = "us"
+getKeyboardLanguage "laptop-vaio-2016" = "us"
+getKeyboardLanguage _env = "jp"
 
 makeKeyBindings :: IO [(String, X())]
 makeKeyBindings = do
-  screenOrder <- getScreenOrder
-  keyboardLanguage <- getKeyboardLanguage
+  currentEnv <- getCurrentEnv
   return ([
       ("C-M1-f"   , spawn "google-chrome-stable")
     , ("C-M1-t"   , spawn "urxvt")
-    , ("C-M1-9"   , spawn $ "xkb-switch -s " ++ keyboardLanguage)
+    , ("C-M1-9"   , spawn $ "xkb-switch -s " ++ getKeyboardLanguage currentEnv)
     , ("C-M1-0"   , spawn $ "xkb-switch -s fr")
     , ("M1-<F4>"  , kill)
     , ("M4-h"     , sendMessage Shrink)
@@ -57,7 +50,7 @@ makeKeyBindings = do
     ++
     [
       (mask ++ "M4-" ++ [key], screenWorkspace scr >>= flip whenJust (windows . action))
-           | (key, scr)  <- zip "asd" screenOrder
+           | (key, scr)  <- zip "asd" $ getScreenOrder currentEnv
            , (action, mask) <- [ (W.view, "") , (W.shift, "S-")]
     ])
 
