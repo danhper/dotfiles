@@ -15,17 +15,17 @@ is_env() {
 }
 
 is_lab() {
-    is_env "1920x1200" "1200x1600" || is_env "1920x1200" "false"
+    is_env "2560x1440" "1200x1600" || is_env "2560x1440" "false"
 }
 
 is_office() {
     is_env "1920x1080" "1920x1080" || is_env "1920x1080" "false"
 }
 
-if is_office; then
-    export CURRENT_ENV="office"
-elif is_lab; then
+if is_lab; then
     export CURRENT_ENV="lab"
+elif is_office; then
+    export CURRENT_ENV="office"
 elif [ -f "$HOME/.current_env" ]; then
     export CURRENT_ENV="$(cat $HOME/.current_env)"
 else
