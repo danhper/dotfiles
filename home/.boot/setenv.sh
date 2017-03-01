@@ -14,11 +14,19 @@ is_env() {
     [ $hdmi_connected -eq 0 -a $vga_connected -eq 0 ]
 }
 
+keyboard_connected() {
+    ls /dev/input/by-id/*-kbd > /dev/null 2>&1
+}
+
 is_lab() {
     is_env "2560x1440" "1200x1600" || is_env "2560x1440" "false"
 }
 
 is_office() {
+    is_env "1920x1080" "1920x1080" || is_env "1920x1080" "false" && keyboard_connected
+}
+
+is_home() {
     is_env "1920x1080" "1920x1080" || is_env "1920x1080" "false"
 }
 
@@ -26,6 +34,8 @@ if is_lab; then
     export CURRENT_ENV="lab"
 elif is_office; then
     export CURRENT_ENV="office"
+elif is_home; then
+    export CURRENT_ENV="home"
 elif [ -f "$HOME/.current_env" ]; then
     export CURRENT_ENV="$(cat $HOME/.current_env)"
 else

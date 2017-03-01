@@ -29,6 +29,7 @@ getScreenOrder _env  = [2, 0, 1]
 getKeyboardLanguage :: String -> String
 getKeyboardLanguage "lab" = "us"
 getKeyboardLanguage "laptop-vaio-2016" = "us"
+getKeyboardLanguage "home" = "us"
 getKeyboardLanguage _env = "jp"
 
 makeKeyBindings :: IO [(String, X())]
@@ -76,20 +77,21 @@ manageHooks :: Query (Data.Monoid.Endo WindowSet)
 manageHooks = composeAll
   [
     isFullscreen --> doFullFloat
-  , title =? "Eclipse" --> doFloat ]
+  , title =? "Eclipse" --> doFloat 
+  , className =? "albert" --> doCenterFloat ]
 
 
 workspaceNames :: [String]
 workspaceNames = [show n | n <- ([1..9] :: [Integer])]
 
-configWithDzen :: XConfig (Choose Tall (Choose (Mirror Tall) Full))
+-- configWithDzen :: XConfig (Choose Tall (Choose (Mirror Tall) Full))
 configWithDzen = withUrgencyHook dzenUrgencyHook
   {
     args = ["-bg", "darkgreen", "-xs", "2"]
   , duration = 100
   } $ defaultConfig
 
-mainConfig :: ScreenId -> XConfig (Choose Tall (Choose (Mirror Tall) Full))
+-- mainConfig :: ScreenId -> XConfig (Choose Tall (Choose (Mirror Tall) Full))
 mainConfig n = configWithDzen
   { terminal           = "urxvt"
   , normalBorderColor  = "#cccccc"
@@ -102,7 +104,7 @@ mainConfig n = configWithDzen
   , workspaces         = withScreens n workspaceNames
 }
 
-makeConfigWithKeys :: ScreenId -> IO (XConfig (Choose Tall (Choose (Mirror Tall) Full)))
+-- makeConfigWithKeys :: ScreenId -> IO (XConfig (Choose Tall (Choose (Mirror Tall) Full)))
 makeConfigWithKeys n = do
   keyBindings <- makeKeyBindings
   return $ mainConfig n `removeKeysP` keyUnbindings `additionalKeysP` keyBindings
@@ -121,7 +123,7 @@ myPP = xmobarPP {
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig {XMonad.modMask = mask} = (mask, xK_z)
 
-configWithBar :: ScreenId -> IO (XConfig (ModifiedLayout AvoidStruts (Choose Tall (Choose (Mirror Tall) Full))))
+-- configWithBar :: ScreenId -> IO (XConfig (ModifiedLayout AvoidStruts (Choose Tall (Choose (Mirror Tall) Full))))
 configWithBar n = do
   barCommand <- getBarCommand
   configWithKeys <- makeConfigWithKeys n
