@@ -2,7 +2,7 @@ launch() {
     eval $1 >> ~/.autostart.log 2>&1 &
 }
 
-if [ "$CURRENT_ENV" = "lab" ]; then
+if [ "$CURRENT_ENV" = "lab" -o "$CURRENT_ENV" = "home-desktop" ]; then
     launch "trayer --edge top --align left --margin 1728 --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 22 --alpha 0"
 else
     launch "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 22 --alpha 0"

@@ -24,8 +24,9 @@ getCurrentEnv :: IO String
 getCurrentEnv = getEnv "CURRENT_ENV"
 
 getScreenOrder :: String -> [ScreenId]
-getScreenOrder "lab" = [1, 0, 2]
-getScreenOrder _env  = [2, 0, 1]
+getScreenOrder "lab"          = [1, 0, 2]
+getScreenOrder "home-desktop" = [1, 0, 2]
+getScreenOrder _env           = [2, 0, 1]
 
 getKeyboardLanguage :: String -> String
 getKeyboardLanguage "lab" = "us"
