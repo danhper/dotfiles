@@ -28,6 +28,7 @@ target/
 
 # Python
 *.pyc
+.eggs/
 
 # NodeJS
 node_modules/
@@ -37,5 +38,6 @@ erl_crash.dump
 *.beam
 
 .tags*
+TAGS
 
 .venv/

@@ -14,5 +14,5 @@ case "$1" in
         exec startlxde ;;
      xmonad|*)
         [[ -f ~/.xmonad/autostart.sh ]] && . ~/.xmonad/autostart.sh
-        exec xmonad ;;
+        exec stack exec -- xmonad ;;
 esac

@@ -8,6 +8,7 @@ import XMonad.Layout.IndependentScreens
 import XMonad.Layout.LayoutModifier (ModifiedLayout)
 import XMonad.Hooks.UrgencyHook
 import qualified Data.Map as M
+import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Hooks.ManageDocks (AvoidStruts)
 import System.Environment (getEnv)
 import qualified XMonad.StackSet as W
@@ -101,6 +102,7 @@ mainConfig n = configWithDzen
   , keys               = mCustomKeys
   , startupHook        = setWMName "LG3D"
   , manageHook         = manageHooks
+  , layoutHook         = smartBorders $ layoutHook defaultConfig
   , workspaces         = withScreens n workspaceNames
 }
 
