@@ -18,6 +18,7 @@ export CAML_LD_LIBRARY_PATH=$HOME/.opam/4.02.3/lib/stublibs
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 export ANDROID_SDK_ROOT=/opt/android-sdk
+export ANDROID_HOME=/opt/android-sdk
 export PASSWORD_STORE_DIR="$HOME/Dropbox/passwords"
 
 export GOROOT="$HOME/.asdf/installs/golang/1.7/go"

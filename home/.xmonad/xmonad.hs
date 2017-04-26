@@ -29,10 +29,7 @@ getScreenOrder "home-desktop" = [1, 0, 2]
 getScreenOrder _env           = [2, 0, 1]
 
 getKeyboardLanguage :: String -> String
-getKeyboardLanguage "lab" = "us"
-getKeyboardLanguage "laptop-vaio-2016" = "us"
-getKeyboardLanguage "home" = "us"
-getKeyboardLanguage _env = "jp"
+getKeyboardLanguage _env = "us"
 
 makeKeyBindings :: IO [(String, X())]
 makeKeyBindings = do

@@ -4,6 +4,8 @@ launch() {
 
 if [ "$CURRENT_ENV" = "lab" -o "$CURRENT_ENV" = "home-desktop" ]; then
     launch "trayer --edge top --align left --margin 1728 --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 22 --alpha 0"
+elif [ "$CURRENT_ENV" = "lab-desktop" ]; then
+    launch "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 256 --widthtype pixel --transparent true --tint 0x000000 --height 22 --alpha 0"
 else
     launch "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 22 --alpha 0"
 fi
