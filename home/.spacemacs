@@ -32,7 +32,7 @@
      shell-scripts
      ;; dockerfile
      clojure
-     latex
+     (latex :variables latex-build-command "LatexMk")
 
      ruby-on-rails
      react
