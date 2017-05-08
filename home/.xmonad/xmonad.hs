@@ -1,15 +1,14 @@
 import XMonad
 import XMonad.Util.EZConfig
 import XMonad.Util.CustomKeys
+import XMonad.Layout.ResizableTile
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.IndependentScreens
-import XMonad.Layout.LayoutModifier (ModifiedLayout)
 import XMonad.Hooks.UrgencyHook
 import qualified Data.Map as M
 import XMonad.Layout.NoBorders (smartBorders)
-import XMonad.Hooks.ManageDocks (AvoidStruts)
 import System.Environment (getEnv)
 import qualified XMonad.StackSet as W
 import Data.Monoid (Endo)
@@ -42,6 +41,8 @@ makeKeyBindings = do
     , ("M1-<F4>"  , kill)
     , ("M4-h"     , sendMessage Shrink)
     , ("M4-l"     , sendMessage Expand)
+    , ("M4-j"     , sendMessage MirrorShrink)
+    , ("M4-k"     , sendMessage MirrorExpand)
     , ("<Print>"  , spawn "xwd | convert xwd:- /tmp/screenshot-$(date +%s).png")
     , ("C-<Print>", spawn "xwd -root | convert xwd:- /tmp/screenshot-$(date +%s).png")
     , ("<XF86MonBrightnessDown>", spawn "xbacklight -5")
@@ -76,12 +77,15 @@ manageHooks :: Query (Data.Monoid.Endo WindowSet)
 manageHooks = composeAll
   [
     isFullscreen --> doFullFloat
-  , title =? "Eclipse" --> doFloat 
+  , title =? "Eclipse" --> doFloat
   , className =? "albert" --> doCenterFloat ]
 
 
 workspaceNames :: [String]
 workspaceNames = [show n | n <- ([1..9] :: [Integer])]
+
+resizableLayout = ResizableTall 1 (3/100) (1/2) []
+myLayoutHook = resizableLayout ||| Mirror resizableLayout ||| Full
 
 -- configWithDzen :: XConfig (Choose Tall (Choose (Mirror Tall) Full))
 configWithDzen = withUrgencyHook dzenUrgencyHook
@@ -100,7 +104,7 @@ mainConfig n = configWithDzen
   , keys               = mCustomKeys
   , startupHook        = setWMName "LG3D"
   , manageHook         = manageHooks
-  , layoutHook         = smartBorders $ layoutHook defaultConfig
+  , layoutHook         = smartBorders $ myLayoutHook
   , workspaces         = withScreens n workspaceNames
 }
 
@@ -109,10 +113,14 @@ makeConfigWithKeys n = do
   keyBindings <- makeKeyBindings
   return $ mainConfig n `removeKeysP` keyUnbindings `additionalKeysP` keyBindings
 
+xmobarConfig "laptop-vaio-2016" = "xmobarrc-laptop"
+xmobarConfig _ = "xmobarrc"
+
 getBarCommand :: IO String
 getBarCommand = do
   home <- getEnv "HOME"
-  return $ "xmobar -x1 " ++ home ++ "/.xmobar/xmobarrc"
+  currentEnv <- getCurrentEnv
+  return $ "xmobar -x1 " ++ home ++ "/.xmobar/" ++ (xmobarConfig currentEnv)
 
 myPP :: PP
 myPP = xmobarPP {
