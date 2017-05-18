@@ -10,6 +10,7 @@
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     graphviz
      auto-completion
      better-defaults
      git
@@ -215,18 +216,9 @@
 (defun dotspacemacs/user-init ()
   (setq create-lockfiles nil)
   (setq use-dialog-box nil)
-  (setq c-basic-offset 2)
-  (setq erlang-indent-level 2)
-  (setq css-indent-offset 2)
-  (setq ruby-insert-encoding-magic-comment nil)
 
-  (setq-default
-   js2-basic-offset 2
-   css-indent-offset 2
-   web-mode-markup-indent-offset 2
-   web-mode-css-indent-offset 2
-   web-mode-code-indent-offset 2
-   web-mode-attr-indent-offset 2)
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file)
 
   (add-hook 'comint-mode-hook
             (function (lambda ()
@@ -234,9 +226,14 @@
                         (evil-define-key 'insert comint-mode-map (kbd "C-n") 'comint-next-input)))))
 
 (defun dotspacemacs/user-config ()
-  )
-
-(custom-set-variables
- '(evil-want-Y-yank-to-eol t))
-(custom-set-faces
- '(font-latex-sectioning-5-face ((t (:inherit variable-pitch :foreground "DodgerBlue3" :weight bold)))))
+  (setq-default
+   erlang-indent-level 2
+   c-basic-offset 2
+   js2-basic-offset 2
+   js-indent-level 2
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2
+   ruby-insert-encoding-magic-comment nil))
