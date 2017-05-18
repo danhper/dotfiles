@@ -19,7 +19,9 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 export ANDROID_SDK_ROOT=/opt/android-sdk
 export ANDROID_HOME=/opt/android-sdk
+
 export PASSWORD_STORE_DIR="$HOME/Dropbox/passwords"
+export ENCFS6_CONFIG=$HOME/.secrets/dropbox-encfs.xml
 
 export GOROOT="$HOME/.asdf/installs/golang/1.8/go"
 export GOPATH="$HOME/workspaces/go"
@@ -66,5 +68,5 @@ for dir in $pathdirs; do
   fi
 done
 
-[[ -f ~/.secret_exports ]] && . ~/.secret_exports
+[[ -f ~/.secrets/exports ]] && . ~/.secrets/exports
 
