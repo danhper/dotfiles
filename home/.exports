@@ -45,7 +45,7 @@ pathdirs=(
   $HOME/.mipsel/usr/bin
   $HOME/.heroku-client/bin
   $HOME/.phpbrew/bin
-  $HOME/.stack/programs/x86_64-linux/ghc-7.10.3/bin
+  $HOME/.stack/programs/x86_64-linux/ghc-8.0.2/bin
   $HOME/.opam/4.02.3/bin
   $HOME/.mix/escripts
   $HOME/.asdf/shims
