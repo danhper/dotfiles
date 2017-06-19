@@ -38,6 +38,7 @@ makeKeyBindings = do
     , ("C-M1-t"   , spawn "urxvt")
     , ("C-M1-9"   , spawn $ "xkb-switch -s " ++ getKeyboardLanguage currentEnv)
     , ("C-M1-0"   , spawn $ "xkb-switch -s fr")
+    , ("M1-o"     , spawn $ "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
     , ("M1-<F4>"  , kill)
     , ("M4-h"     , sendMessage Shrink)
     , ("M4-l"     , sendMessage Expand)
@@ -60,6 +61,8 @@ keyUnbindings =
   [
     "M-h"
   , "M-l"
+  , "M-p"
+  , "M-n"
   ] ++ concat [("M-" ++ [n]):["M-S-" ++ [n]] | n <- ['1'..'9']]
     ++ concat [("M-" ++ [c]):["M-S-" ++ [c]] | c <- "wer"]
 
