@@ -1,1 +1,2 @@
-/home/daniel/.homesick/repos/dot-files/home/.config/fish/plugins/rails.fish
+function rc; rails console $argv; end
+function rs; rails server $argv; end
