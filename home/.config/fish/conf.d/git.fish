@@ -1,0 +1,1 @@
+/home/daniel/.homesick/repos/dot-files/home/.config/fish/plugins/git.fish

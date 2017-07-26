@@ -1,4 +1,4 @@
-set plugins_directory $HOME/.config/fish/plugins
+set confd_dir "$HOME/.config/fish/conf.d"
 
 set fish_greeting
 
@@ -6,8 +6,8 @@ source $HOME/.config/fish/settings/aliases.fish
 
 source $HOME/.config/fish/plugins.fish
 
-for file in (ls $plugins_directory)
-    source "$plugins_directory/$file"
+for file in (ls "$confd_dir")
+    source "$confd_dir/$file"
 end
 
 set -l sourced \
