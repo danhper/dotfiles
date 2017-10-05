@@ -11,7 +11,7 @@ import qualified Data.Map as M
 import XMonad.Layout.NoBorders (smartBorders)
 import System.Environment (getEnv)
 import qualified XMonad.StackSet as W
-import Data.Monoid (Endo)
+import Data.Monoid (Endo, All(..))
 
 titleColor :: String
 titleColor = "#7488a4"
@@ -24,6 +24,7 @@ getCurrentEnv = getEnv "CURRENT_ENV"
 
 getScreenOrder :: String -> [ScreenId]
 getScreenOrder "lab"          = [1, 0, 2]
+getScreenOrder "lab-desktop"  = [1, 0, 2]
 getScreenOrder "home-desktop" = [1, 0, 2]
 getScreenOrder _env           = [2, 0, 1]
 
@@ -90,15 +91,7 @@ workspaceNames = [show n | n <- ([1..9] :: [Integer])]
 resizableLayout = ResizableTall 1 (3/100) (1/2) []
 myLayoutHook = resizableLayout ||| Mirror resizableLayout ||| Full
 
--- configWithDzen :: XConfig (Choose Tall (Choose (Mirror Tall) Full))
-configWithDzen = withUrgencyHook dzenUrgencyHook
-  {
-    args = ["-bg", "darkgreen", "-xs", "2"]
-  , duration = 100
-  } $ defaultConfig
-
--- mainConfig :: ScreenId -> XConfig (Choose Tall (Choose (Mirror Tall) Full))
-mainConfig n = configWithDzen
+mainConfig n = def
   { terminal           = "urxvt"
   , normalBorderColor  = "#cccccc"
   , focusedBorderColor = "#7ec7ea"
@@ -108,10 +101,18 @@ mainConfig n = configWithDzen
   , startupHook        = setWMName "LG3D"
   , manageHook         = manageHooks
   , layoutHook         = smartBorders $ myLayoutHook
+  , handleEventHook    = removeBordersEventHook
   , workspaces         = withScreens n workspaceNames
 }
 
--- makeConfigWithKeys :: ScreenId -> IO (XConfig (Choose Tall (Choose (Mirror Tall) Full)))
+
+removeBordersEventHook ev = do
+    whenX (className =? "albert" `runQuery` w) $ withDisplay $ \d ->
+        io $ setWindowBorderWidth d w 0
+    return (All True)
+    where
+        w = ev_window ev
+
 makeConfigWithKeys n = do
   keyBindings <- makeKeyBindings
   return $ mainConfig n `removeKeysP` keyUnbindings `additionalKeysP` keyBindings
@@ -134,7 +135,6 @@ myPP = xmobarPP {
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig {XMonad.modMask = mask} = (mask, xK_z)
 
--- configWithBar :: ScreenId -> IO (XConfig (ModifiedLayout AvoidStruts (Choose Tall (Choose (Mirror Tall) Full))))
 configWithBar n = do
   barCommand <- getBarCommand
   configWithKeys <- makeConfigWithKeys n
