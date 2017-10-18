@@ -1,4 +1,10 @@
 [Default Applications]
+image/png=eog.desktop
+image/jpg=eog.desktop
+image/svg+xml=eog.desktop
+
+application/pdf=evince.desktop
+
 text/html=google-chrome.desktop
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
