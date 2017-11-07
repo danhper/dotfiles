@@ -1,5 +1,5 @@
 echo "settings layout to us and swapping semicolon" >> $HOME/.logs/boot_setup.log
-setxkbmap -layout us,fr -option grp_led:scroll,terminate:ctrl_alt_bksp
+setxkbmap -layout us,fr,es -option grp_led:scroll,terminate:ctrl_alt_bksp
 xmodmap ~/.xmodmaps/swap_colon_semicolon
 xmodmap ~/.xmodmaps/map_alt_to_zenkaku
 

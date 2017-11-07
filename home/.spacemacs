@@ -220,6 +220,8 @@
   (setq custom-file "~/.emacs.d/custom.el")
   (load custom-file)
 
+  (require 'iso-transl)
+
   (add-hook 'comint-mode-hook
             (function (lambda ()
                         (evil-define-key 'insert comint-mode-map (kbd "C-p") 'comint-previous-input)
