@@ -1,4 +1,4 @@
-alias du='command du -sh'
+alias du='command du -h'
 alias df='command df -h'
 alias bi='bundle install'
 alias be='bundle exec'
