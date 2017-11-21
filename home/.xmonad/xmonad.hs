@@ -35,7 +35,7 @@ makeKeyBindings :: IO [(String, X())]
 makeKeyBindings = do
   currentEnv <- getCurrentEnv
   return ([
-      ("C-M1-f"   , spawn "google-chrome-stable")
+      ("C-M1-f"   , spawn "firefox-developer")
     , ("C-M1-t"   , spawn "urxvt")
     , ("C-M1-9"   , spawn $ "xkb-switch -s " ++ getKeyboardLanguage currentEnv)
     , ("C-M1-0"   , spawn $ "xkb-switch -s fr")
