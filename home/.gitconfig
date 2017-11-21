@@ -7,7 +7,7 @@
     default=simple
 
 [core]
-    excludesfile=/home/daniel/.gitignore_global
+    excludesfile=~/.gitignore_global
 	pager = lv
 	askPass =
 [branch "master"]
