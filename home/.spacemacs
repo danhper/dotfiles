@@ -220,6 +220,18 @@
   (setq custom-file "~/.emacs.d/custom.el")
   (load custom-file)
 
+  (setq-default dotspacemacs-default-font '("Ricty"
+                                          :size 20
+                                          :weight normal
+                                          :width normal
+                                          :powerline-scale 1.1))
+  (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty"))
+
+  ;; workaround for --daemon mode
+  (spacemacs|do-after-display-system-init
+   (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty")))
+
+
   (require 'iso-transl)
 
   (add-hook 'comint-mode-hook
