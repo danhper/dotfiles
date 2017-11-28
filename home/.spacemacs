@@ -220,6 +220,8 @@
   (setq custom-file "~/.emacs.d/custom.el")
   (load custom-file)
 
+  (setq vc-follow-symlinks t)
+
   (setq-default dotspacemacs-default-font '("Ricty"
                                           :size 20
                                           :weight normal
