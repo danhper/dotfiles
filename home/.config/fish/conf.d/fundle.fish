@@ -7,3 +7,5 @@ fundle plugin 'joehillen/to-fish'
 fundle plugin 'oh-my-fish/plugin-peco'
 fundle plugin 'tuvistavie/fish-asdf'
 fundle plugin 'tuvistavie/fish-kubectl'
+
+fundle init
