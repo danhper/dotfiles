@@ -1,0 +1,7 @@
+# name: lstlisting
+# key: list
+# binding: direct-keybinding
+# --
+\begin{lstlisting}
+$0
+\end{lstlisting}

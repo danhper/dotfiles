@@ -1,0 +1,5 @@
+# name: lstinline
+# key: li
+# binding: direct-keybinding
+# --
+\listinline{$1}$0
