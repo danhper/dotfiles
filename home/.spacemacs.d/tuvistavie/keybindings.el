@@ -19,7 +19,6 @@
           (lambda ()
             (define-key input-decode-map "\C-m" [?\C-1])))
 
-
 (global-set-key (kbd "C-j") 'helm-projectile)
 (global-set-key (kbd "s-SPC") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-s-SPC") 'mc/mark-all-like-this)
@@ -28,3 +27,18 @@
 
 (global-set-key (kbd "<zenkaku-hankaku>") 'toggle-input-method)
 (global-set-key (kbd "C-M-a") 'align-regexp)
+
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (define-key python-mode-map (kbd "C-j") 'helm-projectile)
+            (define-key evil-normal-state-map (kbd "C-j") 'helm-projectile)
+            (define-key evil-insert-state-modes (kbd "C-j") 'helm-projectile)
+            ))
+
+(add-hook 'LaTeX-mode-hook
+          (lambda ()
+            (define-key LaTeX-mode-map (kbd "C-j") 'helm-projectile)
+            (define-key evil-normal-state-map (kbd "C-j") 'helm-projectile)
+            (define-key evil-insert-state-modes (kbd "C-j") 'helm-projectile)
+            ))

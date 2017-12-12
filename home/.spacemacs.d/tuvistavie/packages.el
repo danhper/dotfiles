@@ -12,7 +12,6 @@
     projectile
     helm
     neotree
-    mmm-mode
     (vue-mode :location (recipe
                          :fetcher github
                          :repo "codefalling/vue-mode"))))
@@ -59,9 +58,6 @@
     (define-key company-active-map (kbd "C-n") 'company-select-next)
     (define-key company-active-map (kbd "C-p") 'company-select-previous)))
 
-
-(defun tuvistavie/mmm-mode ()
-  (use-package mmm-mode))
 
 (defun tuvistavie/init-vue-mode ()
   (use-package vue-mode))

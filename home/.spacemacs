@@ -33,7 +33,10 @@
      shell-scripts
      ;; dockerfile
      clojure
-     (latex :variables latex-build-command "LatexMk")
+     (latex :variables
+            latex-build-command "LatexMk"
+            TeX-auto-local ".auto")
+     bibtex
 
      ruby-on-rails
      react

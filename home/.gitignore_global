@@ -41,3 +41,6 @@ erl_crash.dump
 TAGS
 
 .venv/
+
+# Ruby
+.bundle/
