@@ -245,14 +245,14 @@
                         (evil-define-key 'insert comint-mode-map (kbd "C-n") 'comint-next-input)))))
 
 (defun dotspacemacs/user-config ()
-  (setq-default
-   erlang-indent-level 2
-   c-basic-offset 2
-   js2-basic-offset 2
-   js-indent-level 2
-   css-indent-offset 2
-   web-mode-markup-indent-offset 2
-   web-mode-css-indent-offset 2
-   web-mode-code-indent-offset 2
-   web-mode-attr-indent-offset 2
-   ruby-insert-encoding-magic-comment nil))
+  (setq-default erlang-indent-level 2
+                c-basic-offset 2
+                js2-basic-offset 2
+                js-indent-level 2
+                css-indent-offset 2
+                web-mode-markup-indent-offset 2
+                web-mode-css-indent-offset 2
+                web-mode-code-indent-offset 2
+                web-mode-attr-indent-offset 2
+                ruby-insert-encoding-magic-comment nil
+                vc-follow-symlinks t))
