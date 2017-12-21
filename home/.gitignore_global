@@ -24,7 +24,6 @@ target/
 
 # TeX
 *.aux
-*.pdf
 
 # Python
 *.pyc
