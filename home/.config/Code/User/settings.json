@@ -1,0 +1,12 @@
+{
+    "editor.fontSize": 20,
+    "editor.fontFamily": "'Ricty', 'monospace', monospace, 'Droid Sans Fallback'",
+
+    "editor.tabSize": 2,
+
+    "workbench.colorTheme": "Tomorrow Night",
+    "window.menuBarVisibility": "toggle",
+
+    "vim.useCtrlKeys": false,
+    "window.zoomLevel": 0
+}
