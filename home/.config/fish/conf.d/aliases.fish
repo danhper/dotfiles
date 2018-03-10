@@ -1,5 +1,5 @@
-alias du='command du -h'
-alias df='command df -h'
+alias du='du -h'
+alias df='df -h'
 alias bi='bundle install'
 alias be='bundle exec'
 alias package_sizes='expac "%m\t%n" | sort -h | awk '\''{ printf("%-35s %dM\n", $2, $1 / 1024 / 1024) }'\'
