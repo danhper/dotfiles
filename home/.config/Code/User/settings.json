@@ -5,8 +5,12 @@
     "editor.tabSize": 2,
 
     "workbench.colorTheme": "Tomorrow Night",
-    "window.menuBarVisibility": "toggle",
+    "window.menuBarVisibility": "hidden",
 
     "vim.useCtrlKeys": false,
-    "window.zoomLevel": 0
+    "window.zoomLevel": 1,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "[c]": {
+        "editor.tabSize": 4
+    }
 }
