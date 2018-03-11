@@ -5,6 +5,9 @@
     "editor.tabSize": 2,
 
     "workbench.colorTheme": "Tomorrow Night",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#202227"
+    },
     "window.menuBarVisibility": "hidden",
 
     "window.zoomLevel": 1,
@@ -15,6 +18,8 @@
     "[makefile]": {
         "editor.tabSize": 4
     },
+
+    "reason.codelens.enabled": false,
 
     "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
