@@ -15,6 +15,6 @@
                 "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
 { "key": "ctrl+m", "command": "editor.action.jumpToBracket", "when": "editorTextFocus" },
 { "key": "ctrl+x ctrl+c", "command": "workbench.action.closeWindow" },
-{ "key": "ctrl+alt+o", "command": "extension.advancedNewFile" },
+{ "key": "ctrl+alt+o", "command": "extension.codeFileNav" },
 { "key": "alt+`", "command": "workbench.action.terminal.focus" }
 ]

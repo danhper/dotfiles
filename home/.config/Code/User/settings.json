@@ -7,10 +7,99 @@
     "workbench.colorTheme": "Tomorrow Night",
     "window.menuBarVisibility": "hidden",
 
-    "vim.useCtrlKeys": false,
     "window.zoomLevel": 1,
-    "vim.disableAnnoyingNeovimMessage": true,
+
     "[c]": {
         "editor.tabSize": 4
-    }
+    },
+    "[makefile]": {
+        "editor.tabSize": 4
+    },
+
+    "vim.useCtrlKeys": false,
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "<space>"],
+            "commands": [{"command": "workbench.action.showCommands"}]
+        },
+        {
+            "before": ["<leader>", "'"],
+            "commands": [{"command": "workbench.action.terminal.toggleTerminal"}]
+        },
+        {
+            "before": ["<leader>", "/"],
+            "commands": [{"command": "workbench.action.findInFiles"}]
+        },
+        {
+            "before": ["<leader>", "1"],
+            "commands": [{"command": "workbench.action.focusFirstEditorGroup"}]
+        },
+        {
+            "before": ["<leader>", "2"],
+            "commands": [{"command": "workbench.action.focusSecondEditorGroup"}]
+        },
+        {
+            "before": ["<leader>", "3"],
+            "commands": [{"command": "workbench.action.focusThirdEditorGroup"}]
+        },
+        {
+            "before": ["<leader>", "b", "b"],
+            "commands": [{"command": "workbench.action.showAllEditors"}]
+        },
+        {
+            "before": ["<leader>", "e", "l"],
+            "commands": [{"command": "workbench.actions.view.problems"}]
+        },
+        {
+            "before": ["<leader>", "f", "e"],
+            "commands": [{"command": "workbench.action.openGlobalSettings"}]
+        },
+        {
+            "before": ["<leader>", "f", "t"],
+            "commands": [{"command": "workbench.view.explorer"},
+                         {"command": "workbench.action.focusFirstEditorGroup"}]
+        },
+        {
+            "before": ["<leader>", "g", "s"],
+            "commands": [{"command": "workbench.view.scm"}]
+        },
+        {
+            "before": ["<leader>", "p", "p"],
+            "commands": [{"command": "workbench.action.openRecent"}]
+        },
+        {
+            "before": ["<leader>", "q", "r"],
+            "commands": [{"command": "workbench.action.reloadWindow"}]
+        },
+        {
+            "before": ["<leader>", "t", "w"],
+            "commands": [{"command": "editor.action.toggleRenderWhitespace"}]
+        },
+        {
+            "before": ["<leader>", "t", "f"],
+            "commands": [{"command": "workbench.action.toggleSidebarVisibility"},
+                         {"command": "workbench.action.focusFirstEditorGroup"}]
+        },
+        {
+            "before": ["<leader>", "T", "s"],
+            "commands": [{"command": "workbench.action.selectTheme"}]
+        },
+        {
+            "before": ["<leader>", "T", "t"],
+            "commands": [{"command": "workbench.action.toggleActivityBarVisibility"}]
+        },
+        {
+            "before": ["<leader>", "v"],
+            "commands": [{"command": "editor.action.smartSelect.grow"}],
+        },
+        {
+            "before": ["<leader>", "V"],
+            "commands": [{"command": "editor.action.smartSelect.shrink"}]
+        }
+    ],
+    "vim.easymotion": true,
+    "editor.renderWhitespace": "none",
+    "workbench.activityBar.visible": false
 }
