@@ -26,6 +26,7 @@ getScreenOrder :: String -> [ScreenId]
 getScreenOrder "lab"          = [1, 0, 2]
 getScreenOrder "lab-desktop"  = [1, 0, 2]
 getScreenOrder "home-desktop" = [1, 0, 2]
+getScreenOrder "home"         = [1, 0, 2]
 getScreenOrder _env           = [2, 0, 1]
 
 getKeyboardLanguage :: String -> String
