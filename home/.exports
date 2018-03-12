@@ -1,6 +1,6 @@
 export DEFAULT_USER=daniel
 export EDITOR=vim
-export BROWSER=google-chrome-stable
+export BROWSER=firefox-developer-edition
 export CLASSPATH="."
 export CHROME_BIN=google-chrome-stable
 export VMAIL_BROWSER=firefox
@@ -47,7 +47,6 @@ pathdirs=(
   $HOME/.heroku-client/bin
   $HOME/.phpbrew/bin
   $HOME/.stack/programs/x86_64-linux/ghc-8.0.2/bin
-  $HOME/.opam/4.02.3/bin
   $HOME/.mix/escripts
   $HOME/.asdf/shims
   $HOME/.config/composer/vendor/bin
