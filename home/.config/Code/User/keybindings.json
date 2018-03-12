@@ -16,5 +16,12 @@
 { "key": "ctrl+m", "command": "editor.action.jumpToBracket", "when": "editorTextFocus" },
 { "key": "ctrl+x ctrl+c", "command": "workbench.action.closeWindow" },
 { "key": "ctrl+alt+o", "command": "extension.codeFileNav" },
-{ "key": "alt+`", "command": "workbench.action.terminal.focus" }
+{ "key": "alt+`", "command": "workbench.action.terminal.focus" },
+
+{ "key": "ctrl+n", "command": "workbench.action.quickOpenNavigateNext", "when": "!editorTextFocus"},
+{ "key": "ctrl+p", "command": "workbench.action.quickOpenNavigatePrevious", "when": "!editorTextFocus"},
+{ "key": "ctrl+n", "command": "list.focusDown", "when": "listFocus && !inputFocus" },
+{ "key": "ctrl+p", "command": "list.focusUp", "when": "listFocus && !inputFocus" },
+{ "key": "b", "command": "workbench.files.action.focusOpenEditorsView", "when": "listFocus && !inputFocus" },
+{ "key": "d", "command": "workbench.files.action.focusFilesExplorer", "when": "listFocus && !inputFocus" }
 ]
