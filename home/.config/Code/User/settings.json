@@ -1,18 +1,21 @@
 {
     "editor.fontSize": 20,
     "editor.fontFamily": "'Ricty', 'monospace', monospace, 'Droid Sans Fallback'",
-
     "editor.tabSize": 2,
+    "editor.rulers": [80],
+    "editor.renderWhitespace": "none",
 
     "workbench.colorTheme": "Tomorrow Night",
     "workbench.colorCustomizations": {
         "statusBar.background": "#202227"
     },
+
+    "workbench.activityBar.visible": false,
+    "workbench.editor.showTabs": true,
+    "workbench.startupEditor": "newUntitledFile",
+
     "window.menuBarVisibility": "hidden",
-
     "window.zoomLevel": 1,
-
-    "editor.rulers": [80],
 
     "[c]": {
         "editor.tabSize": 4
@@ -23,6 +26,7 @@
 
     "reason.codelens.enabled": false,
 
+    "vim.easymotion": true,
     "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
@@ -105,9 +109,5 @@
             "before": ["<leader>", "V"],
             "commands": [{"command": "editor.action.smartSelect.shrink"}]
         }
-    ],
-    "vim.easymotion": true,
-    "editor.renderWhitespace": "none",
-    "workbench.activityBar.visible": false,
-    "workbench.editor.showTabs": true
+    ]
 }
