@@ -17,6 +17,10 @@
 { "key": "alt+h",  "command": "deleteWordLeft", "when": "editorTextFocus && !editorReadonly" },
 { "key": ", h", "command": "editor.action.showHover", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
 { "key": "ctrl+m", "command": "editor.action.jumpToBracket", "when": "editorTextFocus" },
+{ "key": "meta+space", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" },
+{ "key": "meta+enter", "command": "editor.action.moveSelectionToNextFindMatch", "when": "editorFocus" },
+{ "key": "ctrl+meta+space", "command": "editor.action.selectHighlights", "when": "editorFocus" },
+{ "key": "ctrl+shift+l", "command": "editor.action.insertCursorAtEndOfEachLineSelected", "when": "editorFocus" },
 
 { "key": "ctrl+n", "command": "workbench.action.quickOpenNavigateNext", "when": "!editorTextFocus"},
 { "key": "ctrl+p", "command": "workbench.action.quickOpenNavigatePrevious", "when": "!editorTextFocus"},
