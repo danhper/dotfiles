@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 20,
+    "editor.fontSize": 19,
     "editor.fontFamily": "'Ricty', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.tabSize": 2,
     "editor.rulers": [80],
@@ -18,6 +18,9 @@
     "window.zoomLevel": 1,
 
     "[c]": {
+        "editor.tabSize": 4
+    },
+    "[go]": {
         "editor.tabSize": 4
     },
     "[makefile]": {
