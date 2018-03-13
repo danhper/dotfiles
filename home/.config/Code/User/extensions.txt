@@ -1,0 +1,9 @@
+James-Yu.latex-workshop
+file-icons.file-icons
+freebroccolo.reasonml
+jakelucas.code-file-nav
+lfs.vscode-emacs-friendly
+ms-vscode.cpptools
+ms-vscode.Theme-TomorrowKit
+patrys.vscode-code-outline
+vscodevim.vim
