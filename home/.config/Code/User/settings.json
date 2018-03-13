@@ -12,6 +12,8 @@
 
     "window.zoomLevel": 1,
 
+    "editor.rulers": [80],
+
     "[c]": {
         "editor.tabSize": 4
     },
@@ -88,12 +90,12 @@
                          {"command": "workbench.action.focusFirstEditorGroup"}]
         },
         {
-            "before": ["<leader>", "T", "s"],
-            "commands": [{"command": "workbench.action.selectTheme"}]
+            "before": ["<leader>", "t", "t"],
+            "commands": [{"command": "workbench.action.toggleActivityBarVisibility"}]
         },
         {
-            "before": ["<leader>", "T", "t"],
-            "commands": [{"command": "workbench.action.toggleActivityBarVisibility"}]
+            "before": ["<leader>", "t", "z"],
+            "commands": [{"command": "workbench.action.toggleZenMode"}]
         },
         {
             "before": ["<leader>", "v"],
@@ -106,5 +108,6 @@
     ],
     "vim.easymotion": true,
     "editor.renderWhitespace": "none",
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "workbench.editor.showTabs": true
 }
