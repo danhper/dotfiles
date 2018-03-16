@@ -26,6 +26,9 @@
     "[makefile]": {
         "editor.tabSize": 4
     },
+    "[python]": {
+        "editor.tabSize": 4
+    },
 
     "reason.codelens.enabled": false,
 
