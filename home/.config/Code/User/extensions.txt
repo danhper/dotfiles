@@ -1,9 +1,16 @@
 James-Yu.latex-workshop
+castwide.solargraph
 file-icons.file-icons
 freebroccolo.reasonml
 jakelucas.code-file-nav
 lfs.vscode-emacs-friendly
+lukehoban.Go
+maelvalais.dune
+ms-python.python
 ms-vscode.cpptools
 ms-vscode.Theme-TomorrowKit
 patrys.vscode-code-outline
+rebornix.Ruby
+streetsidesoftware.code-spell-checker
 vscodevim.vim
+yzhang.markdown-all-in-one
