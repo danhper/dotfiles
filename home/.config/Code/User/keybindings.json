@@ -8,6 +8,7 @@
 { "key": "ctrl+x ctrl+c", "command": "workbench.action.closeWindow" },
 { "key": "ctrl+alt+o", "command": "extension.codeFileNav" },
 { "key": "alt+`", "command": "workbench.action.terminal.focus" },
+{ "key": "ctrl+meta+w", "command": "workbench.action.closeAllEditors" },
 
 { "key": "meta+u", "command": "undo", "when": "editorTextFocus" },
 { "key": "meta+r", "command": "redo", "when": "editorTextFocus" },
