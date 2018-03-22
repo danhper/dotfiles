@@ -4,6 +4,7 @@
     "editor.tabSize": 2,
     "editor.rulers": [80],
     "editor.renderWhitespace": "none",
+    "rewrap.wrappingColumn": 80,
 
     "workbench.colorTheme": "Tomorrow Night",
     "workbench.colorCustomizations": {
