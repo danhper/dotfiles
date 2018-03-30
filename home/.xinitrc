@@ -3,6 +3,7 @@ rm $HOME/.logs/boot_setup.log
 [[ -f ~/.boot/xorg.sh ]] && . ~/.boot/xorg.sh
 [[ -f ~/.boot/keyboard.sh ]] && . ~/.boot/keyboard.sh
 [[ -f ~/.boot/ime.sh ]] && . ~/.boot/ime.sh
+[[ -f ~/.boot/keyring.sh ]] && . ~/.boot/keyring.sh
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 xset -dpms
