@@ -22,6 +22,8 @@
 { "key": "meta+enter", "command": "editor.action.moveSelectionToNextFindMatch", "when": "editorFocus" },
 { "key": "ctrl+meta+space", "command": "editor.action.selectHighlights", "when": "editorFocus" },
 { "key": "ctrl+shift+l", "command": "editor.action.insertCursorAtEndOfEachLineSelected", "when": "editorFocus" },
+{ "key": "ctrl+/", "command": "editor.action.commentLine", "when": "editorFocus" },
+{ "key": "alt+;", "command": "editor.action.commentLine", "when": "editorFocus" },
 
 { "key": "ctrl+n", "command": "workbench.action.quickOpenNavigateNext", "when": "!editorTextFocus"},
 { "key": "ctrl+p", "command": "workbench.action.quickOpenNavigatePrevious", "when": "!editorTextFocus"},
