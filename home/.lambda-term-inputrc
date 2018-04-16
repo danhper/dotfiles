@@ -1,0 +1,3 @@
+[read-line]
+M-h: complete-bar-prev
+M-l: complete-bar-next
