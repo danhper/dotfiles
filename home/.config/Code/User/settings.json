@@ -67,12 +67,20 @@
             "commands": [{"command": "workbench.action.showAllEditors"}]
         },
         {
+            "before": ["<leader>", "f", "D"],
+            "commands": [{"command": "fileutils.removeFile"}]
+        },
+        {
             "before": ["<leader>", "e", "l"],
             "commands": [{"command": "workbench.actions.view.problems"}]
         },
         {
             "before": ["<leader>", "f", "e"],
             "commands": [{"command": "workbench.action.openGlobalSettings"}]
+        },
+        {
+            "before": ["<leader>", "f", "R"],
+            "commands": [{"command": "fileutils.renameFile"}]
         },
         {
             "before": ["<leader>", "f", "t"],
