@@ -13,3 +13,10 @@ alias e='emacsclient -c -a emacs'
 alias so='sudo'
 alias gcal='gcalcli'
 alias clojure='rlwrap java -cp ~/.m2/repository/org/clojure/clojure/1.8.0/clojure-1.8.0.jar clojure.main'
+
+if test -f ~/.local/share/avro/avro-tools-1.7.7.jar
+  alias avro="java -jar ~/.local/share/avro/avro-tools-1.7.7.jar"
+end
+if test -f ~/.local/share/avro/avrocount-0.4.0.jar
+  alias avro-count="java -jar ~/.local/share/avro/avrocount-0.4.0.jar"
+end

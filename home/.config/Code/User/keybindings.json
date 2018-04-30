@@ -24,6 +24,8 @@
 { "key": "ctrl+shift+l", "command": "editor.action.insertCursorAtEndOfEachLineSelected", "when": "editorFocus" },
 { "key": "ctrl+/", "command": "editor.action.commentLine", "when": "editorFocus" },
 { "key": "alt+;", "command": "editor.action.commentLine", "when": "editorFocus" },
+{ "key": "ctrl+enter", "command": "jupyter.execCurrentCell", "when": "editorTextFocus" },
+{ "key": "ctrl+alt+l", "command": "jupyter.clearResults", "when": "editorTextFocus" },
 
 { "key": "ctrl+n", "command": "workbench.action.quickOpenNavigateNext", "when": "!editorTextFocus"},
 { "key": "ctrl+p", "command": "workbench.action.quickOpenNavigatePrevious", "when": "!editorTextFocus"},

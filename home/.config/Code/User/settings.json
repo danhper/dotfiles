@@ -154,5 +154,7 @@
     "rust.mode": "rls",
     "rust.rls": {
         "useRustfmt": true
-    }
+    },
+    "latex-workshop.message.update.show": false,
+    "jupyter.appendResults": true
 }
