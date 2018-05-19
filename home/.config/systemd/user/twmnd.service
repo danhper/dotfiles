@@ -1,0 +1,10 @@
+[Unit]
+Description=twmn daemon
+Wants=default.target
+After=default.target
+
+[Service]
+ExecStart=/usr/bin/twmnd
+
+[Install]
+WantedBy=user-applications.target

@@ -8,10 +8,17 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.IndependentScreens
 import XMonad.Hooks.UrgencyHook
 import qualified Data.Map as M
+import qualified Data.Text as T
 import XMonad.Layout.NoBorders (smartBorders)
-import System.Environment (getEnv)
+import System.FilePath (joinPath)
+import System.Directory (doesFileExist)
+import System.Environment (getEnv, lookupEnv)
 import qualified XMonad.StackSet as W
 import Data.Monoid (Endo, All(..))
+
+
+strip :: String -> String
+strip  = T.unpack . T.strip . T.pack
 
 titleColor :: String
 titleColor = "#7488a4"
@@ -19,8 +26,27 @@ titleColor = "#7488a4"
 currentWSColor :: String
 currentWSColor = "#e0b167"
 
+defaultEnv :: String
+defaultEnv = "laptop"
+
+envFilePath :: IO FilePath
+envFilePath = do
+  home <- getEnv "HOME"
+  return $ joinPath [home, "current_env"]
+
+getCurrentEnvFromFile :: IO String
+getCurrentEnvFromFile = do
+  envFile <- envFilePath
+  fileExists <- doesFileExist envFile
+  if fileExists
+    then readFile envFile
+    else return defaultEnv
+
 getCurrentEnv :: IO String
-getCurrentEnv = getEnv "CURRENT_ENV"
+getCurrentEnv = do
+  maybeEnv <- lookupEnv "CURRENT_ENV"
+  fallbackEnv <- getCurrentEnvFromFile
+  return $ maybe fallbackEnv id maybeEnv
 
 getScreenOrder :: String -> [ScreenId]
 getScreenOrder "lab"          = [1, 0, 2]

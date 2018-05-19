@@ -1,0 +1,10 @@
+[Unit]
+Description=Telegram Desktop
+Wants=default.target
+After=default.target
+
+[Service]
+ExecStart=/usr/bin/telegram-desktop -startintray
+
+[Install]
+WantedBy=user-applications.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=network monitor and control GUI applet
+Wants=default.target
+After=default.target
+
+[Service]
+ExecStart=/usr/bin/nm-applet
+
+[Install]
+WantedBy=user-applications.target

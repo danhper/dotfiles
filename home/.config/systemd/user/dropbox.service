@@ -1,0 +1,10 @@
+[Unit]
+Description=Dropbox
+Wants=default.target
+After=default.target
+
+[Service]
+ExecStart=/usr/bin/dropbox
+
+[Install]
+WantedBy=user-applications.target

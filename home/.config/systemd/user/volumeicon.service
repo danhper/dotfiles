@@ -1,0 +1,10 @@
+[Unit]
+Description=VolumeIcon
+Wants=default.target
+After=default.target
+
+[Service]
+ExecStart=/usr/bin/volumeicon
+
+[Install]
+WantedBy=user-applications.target
