@@ -1,7 +1,5 @@
 [Unit]
 Description=Emacs: the extensible, self-documenting text editor
-Wants=default.target
-After=default.target
 
 [Service]
 Type=forking
