@@ -1,0 +1,5 @@
+[User]
+Language=
+XSession=xmonad
+Icon=/var/lib/AccountsService/icons/daniel.png
+SystemAccount=false
