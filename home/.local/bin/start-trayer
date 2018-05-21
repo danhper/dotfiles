@@ -3,7 +3,7 @@
 if [ "$CURRENT_ENV" = "lab" -o "$CURRENT_ENV" = "home-desktop" ]; then
     exec trayer --edge top --align left --margin 1728 --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 23 --alpha 0
 elif [ "$CURRENT_ENV" = "lab-desktop" ]; then
-    exec trayer --edge top --align left --margin 2304 --SetDockType true --SetPartialStrut true --expand true --width 256 --widthtype pixel --transparent true --tint 0x000000 --height 23 --alpha 0
+    exec trayer --edge top --align right --monitor 0 --SetDockType true --SetPartialStrut true --expand true --width 256 --widthtype pixel --transparent true --tint 0x000000 --height 23 --alpha 0
 else
     exec trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 23 --alpha 0
 fi
