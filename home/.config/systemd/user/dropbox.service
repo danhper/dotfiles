@@ -1,8 +1,13 @@
 [Unit]
 Description=Dropbox
+Wants=network-online.target
+After=network-online.target
 
 [Service]
-ExecStart=/usr/bin/dropbox
+Type=forking
+ExecStart=/usr/bin/dropbox-cli start
+ExecStop=/usr/bin/dropbox-cli stop
+Restart=on-failure
 
 [Install]
 WantedBy=user-applications.target
