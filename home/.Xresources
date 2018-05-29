@@ -21,8 +21,8 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:         false
-URxvt*font:               xft:Ricty:style=Regular:pixelsize=20:antialias=true:hinting=slight
-URxvt*boldFont:           xft:Ricty:style=Bold:pixelsize=20:antialias=true:hinting=slight
+URxvt*font:               xft:Ricty:style=Regular:pixelsize=20:antialias=true:hinting=slight,xft:Inconsolata for Powerline:pixelsize=20
+URxvt*boldFont:           xft:Ricty:style=Bold:pixelsize=20:antialias=true:hinting=slight,xft:Inconsolata for Powerline:pixelsize=20
 
 ! Fix font space
 URxvt*letterSpace: -1
