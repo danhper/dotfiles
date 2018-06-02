@@ -21,6 +21,9 @@
     "[c]": {
         "editor.tabSize": 4
     },
+    "[cpp]": {
+        "editor.tabSize": 4
+    },
     "[go]": {
         "editor.tabSize": 4
     },
