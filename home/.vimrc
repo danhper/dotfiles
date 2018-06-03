@@ -7,7 +7,6 @@ set hidden
 
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim
-set shell=/bin/bash
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -33,9 +32,13 @@ endif
 Plugin 'zchee/deoplete-jedi'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'rbgrouleff/bclose.vim'
+Plugin 'dag/vim-fish'
+
 
 call vundle#end()
 filetype plugin indent on
+
+set tabstop=4 shiftwidth=4 expandtab
 
 let base16colorspace=256
 colorscheme base16-default-dark
@@ -61,7 +64,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " automake
 call neomake#configure#automake('nw', 1000)
+let g:neomake_python_enabled_makers = ['pylint']
 
+" window resize
+if bufwinnr(1)
+  map + <C-W>+
+  map - <C-W>-
+  map > <C-W>>
+  map < <C-W><
+endif
 
 "keybindings
 noremap <leader>tf :NERDTreeToggle<CR>
@@ -71,3 +82,4 @@ inoremap kj <Esc>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <C-f> <right>
 inoremap <C-b> <left>
+tnoremap <Esc> <C-\><C-n>
