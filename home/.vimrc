@@ -39,6 +39,7 @@ call vundle#end()
 filetype plugin indent on
 
 set tabstop=4 shiftwidth=4 expandtab
+set ignorecase smartcase
 
 let base16colorspace=256
 colorscheme base16-default-dark
@@ -57,7 +58,7 @@ let g:jedi#completions_enabled = 0
 let g:jedi#auto_close_doc = 1
 
 " ctrlp
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_user_command = ['.git', 'cd %s; and git ls-files']
 
 " nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
