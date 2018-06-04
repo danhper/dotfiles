@@ -69,10 +69,10 @@ let g:neomake_python_enabled_makers = ['pylint']
 
 " window resize
 if bufwinnr(1)
-  map + <C-W>+
-  map - <C-W>-
-  map > <C-W>>
-  map < <C-W><
+  map <M-=> <C-W>+
+  map <M--> <C-W>-
+  map <M-.> <C-W>>
+  map <M-,> <C-W><
 endif
 
 "keybindings

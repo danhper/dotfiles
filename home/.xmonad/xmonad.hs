@@ -91,6 +91,8 @@ keyUnbindings =
   , "M-l"
   , "M-p"
   , "M-n"
+  , "M-."
+  , "M-,"
   , "M-<Tab>"
   ] ++ concat [("M-" ++ [n]):["M-S-" ++ [n]] | n <- ['1'..'9']]
     ++ concat [("M-" ++ [c]):["M-S-" ++ [c]] | c <- "wer"]
