@@ -1,10 +1,6 @@
 set nocompatible
 filetype off
 
-let mapleader = ','
-set hidden
-
-
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -30,14 +26,18 @@ else
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
 Plugin 'zchee/deoplete-jedi'
+Plugin 'zchee/deoplete-clang'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'rbgrouleff/bclose.vim'
 Plugin 'dag/vim-fish'
 
-
 call vundle#end()
 filetype plugin indent on
 
+" config
+
+let mapleader = ','
+set hidden
 set tabstop=4 shiftwidth=4 expandtab
 set ignorecase smartcase
 
@@ -57,6 +57,10 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_close_doc = 1
 
+" clang
+let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
+let g:deoplete#sources#clang#libclang_header = "/usr/lib/clang"
+
 " ctrlp
 let g:ctrlp_user_command = ['.git', 'cd %s; and git ls-files']
 
@@ -66,6 +70,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " automake
 call neomake#configure#automake('nw', 1000)
 let g:neomake_python_enabled_makers = ['pylint']
+let g:neomake_c_enabled_makers = ['clang']
 
 " window resize
 if bufwinnr(1)

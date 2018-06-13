@@ -45,3 +45,5 @@ TAGS
 .bundle/
 
 *.code-workspace
+
+.*@neomake*
