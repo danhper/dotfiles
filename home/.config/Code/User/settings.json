@@ -40,7 +40,17 @@
     "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["k", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["<leader>", "<space>"],
             "commands": [{"command": "workbench.action.showCommands"}]
