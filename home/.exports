@@ -6,14 +6,10 @@ export CHROME_BIN=google-chrome-stable
 export VMAIL_BROWSER=firefox
 export NODE_REPL_HISTORY_FILE=~/.node_history
 export MIX_HOME=$HOME/.mix
-export VAULT_ADDR=https://vault.claudetech.com
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KEYBASE_SYSTEMD=0
 
-export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:$HOME/.perl5";
 export TEXMFCNF=$HOME/.texlive/texmf-config/web2c:
-export NODE_REPL_HISTORY_FILE=$HOME/.noderepl.history
-export CAML_LD_LIBRARY_PATH=$HOME/.opam/4.02.3/lib/stublibs
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 export ANDROID_SDK_ROOT=/opt/android-sdk
@@ -22,9 +18,7 @@ export ANDROID_HOME=/opt/android-sdk
 export PASSWORD_STORE_DIR="$HOME/Dropbox/passwords"
 export ENCFS6_CONFIG=$HOME/.secrets/dropbox-encfs.xml
 
-export GOROOT="$HOME/.asdf/installs/golang/1.9/go"
 export GOPATH="$HOME/workspaces/go"
-export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export EC2_URL=https://ec2.ap-northeast-1.amazonaws.com
 export NLTK_DATA="$HOME/.nltk_data"
 
@@ -39,20 +33,13 @@ unset PATH
 pathdirs=(
   $HOME/.local/bin
   $HOME/.bin
-  $HOME/.php53/bin
   $HOME/.cabal/bin
-  $HOME/.mipsel/usr/bin
-  $HOME/.heroku-client/bin
-  $HOME/.phpbrew/bin
   $HOME/.stack/programs/x86_64-linux/ghc-8.0.2/bin
   $HOME/.mix/escripts
   $HOME/.asdf/shims
   $HOME/.config/composer/vendor/bin
   $HOME/.cargo/bin
   $GOPATH/bin
-  /opt/java/bin
-  /usr/local/heroku/bin
-  /usr/local/ec2/ec2-api-tools-1.6.13.0/bin
   /opt/android-sdk/platform-tools
   /opt/android-sdk/tools
   /usr/local/bin
