@@ -1,8 +1,0 @@
-[Unit]
-Description=Light Locker
-
-[Service]
-ExecStart=/usr/bin/light-locker
-
-[Install]
-WantedBy=user-applications.target

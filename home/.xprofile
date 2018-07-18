@@ -59,7 +59,8 @@ merge_xresources() {
 }
 
 start_applications() {
-    systemctl --user import-environment XDG_SESSION_PATH CURRENT_ENV XIM GTK_IM_MODULE QT_IM_MODULE XMODIFIERS
+    nohup light-locker | logger -t light-locker &
+    systemctl --user import-environment XDG_SESSION_PATH DBUS_SESSION_BUS_ADDRESS CURRENT_ENV XIM GTK_IM_MODULE QT_IM_MODULE XMODIFIERS
     systemctl --user start user-applications.target
 }
 
