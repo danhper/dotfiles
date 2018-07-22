@@ -1,0 +1,8 @@
+[Unit]
+Description=Auto lock computer
+
+[Service]
+ExecStart=xautolock -locker '/usr/bin/light-locker-command -l'
+
+[Install]
+WantedBy=user-applications.target
