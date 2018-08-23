@@ -68,6 +68,10 @@ start_applications() {
     systemctl --user start user-applications.target
 }
 
+run_local_profile() {
+    [[ -x ~/.xprofile.local ]] && ~/.xprofile.local
+}
+
 setup_all() {
     set_current_env
     setup_background_image
@@ -78,6 +82,7 @@ setup_all() {
     setup_display
     merge_xresources
     start_applications
+    run_local_profile
 }
 
 xmonad() {
