@@ -1,7 +1,11 @@
 set_current_env() {
     CURRENT_ENV="laptop"
     if [ -f "$HOME/.current_env" ]; then
-        CURRENT_ENV="$(cat $HOME/.current_env)"
+        if [ -x "$HOME/.current_env" ]; then
+            CURRENT_ENV="$($HOME/.current_env)"
+        else
+            CURRENT_ENV="$(cat $HOME/.current_env)"
+        fi
     fi
     export CURRENT_ENV
 }

@@ -147,7 +147,7 @@ makeConfigWithKeys n = do
   keyBindings <- makeKeyBindings
   return $ mainConfig n `removeKeysP` keyUnbindings `additionalKeysP` keyBindings
 
-xmobarConfig "laptop-vaio-2016" = "xmobarrc-laptop"
+xmobarConfig "laptop" = "xmobarrc-laptop"
 xmobarConfig _ = "xmobarrc"
 
 getBarCommand :: IO String
