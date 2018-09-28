@@ -1,3 +1,8 @@
 #!/bin/bash
 
-xrandr --output HDMI1 --mode 1920x1080 --primary  --output eDP1 --mode 1920x1080 --right-of HDMI1
+external_display=$(xrandr | grep -E ' connected' | grep -v eDP1 | cut -f1 -d' ')
+if [ -z "$external_display" ]; then
+    xrandr --auto
+else
+    xrandr --output $external_display --mode 1920x1080 --primary  --output eDP1 --mode 1920x1080 --right-of $external_display
+fi

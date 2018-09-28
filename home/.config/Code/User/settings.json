@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 20,
+    "editor.fontSize": 17,
     "editor.fontFamily": "'Inconsolata', 'Ricty', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.tabSize": 2,
     "editor.rulers": [80],
@@ -16,7 +16,7 @@
     "workbench.startupEditor": "newUntitledFile",
 
     "window.menuBarVisibility": "hidden",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": -1,
 
     "[c]": {
         "editor.tabSize": 4
