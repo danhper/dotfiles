@@ -1,13 +1,7 @@
 #!/bin/sh
 
-if [ "$CURRENT_ENV" = "lab" -o "$CURRENT_ENV" = "home-desktop" ]; then
-    exec trayer --edge top --align left --margin 1728 --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 23 --alpha 0
-elif [ "$CURRENT_ENV" = "lab-desktop" ]; then
-    exec trayer --edge top --align right --monitor 0 --SetDockType true --SetPartialStrut true --expand true --width 256 --widthtype pixel --transparent true --tint 0x000000 --height 23 --alpha 0
-else
-    monitor=0
-    if xrandr | grep -q -E '(HDMI1|^eDP1) connected'; then
-        monitor=1
-    fi
-    exec trayer --monitor $monitor --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 23 --alpha 0
+monitor=0
+if xrandr | grep -q -E '(HDMI1|^eDP1) connected'; then
+    monitor=1
 fi
+exec trayer --monitor $monitor --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 23 --alpha 0
