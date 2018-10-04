@@ -1,7 +1,7 @@
 [user]
 	name = Daniel Perez
-	email = tuvistavie@gmail.com
-	signingkey = tuvistavie@gmail.com
+	email = daniel@perez.sh
+	signingkey = daniel@perez.sh
 
 [push]
 	default=simple
