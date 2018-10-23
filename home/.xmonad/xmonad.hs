@@ -49,10 +49,10 @@ getCurrentEnv = do
   return $ maybe fallbackEnv id maybeEnv
 
 getScreenOrder :: String -> [ScreenId]
-getScreenOrder "lab"          = [1, 0, 2]
 getScreenOrder "lab-desktop"  = [1, 0, 2]
 getScreenOrder "home-desktop" = [1, 0, 2]
-getScreenOrder "home"         = [2, 0, 1]
+-- getScreenOrder "home"         = [2, 0, 1]
+-- getScreenOrder "lab"          = [2, 0, 1]
 getScreenOrder _env           = [2, 0, 1]
 
 getKeyboardLanguage :: String -> String
@@ -64,9 +64,10 @@ makeKeyBindings = do
   return ([
       ("C-M1-f"   , spawn "brave-browser-dev")
     , ("C-M1-t"   , spawn "urxvt")
-    , ("C-M1-9"   , spawn $ "xkb-switch -s " ++ getKeyboardLanguage currentEnv)
-    , ("C-M1-0"   , spawn $ "xkb-switch -s fr")
-    , ("M1-o"     , spawn $ "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
+    , ("C-M1-ç"   , spawn "sh ~/.xprofile setup_keyboard")
+    , ("C-M1-9"   , spawn "sh ~/.xprofile setup_keyboard")
+    , ("C-M1-0"   , spawn "setxkbmap -layout fr")
+    , ("M1-o"     , spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
     , ("M1-<F4>"  , kill)
     , ("M4-h"     , sendMessage Shrink)
     , ("M4-l"     , sendMessage Expand)
@@ -148,6 +149,7 @@ makeConfigWithKeys n = do
   return $ mainConfig n `removeKeysP` keyUnbindings `additionalKeysP` keyBindings
 
 xmobarConfig "laptop" = "xmobarrc-laptop"
+xmobarConfig "lab" = "xmobarrc-laptop"
 xmobarConfig _ = "xmobarrc"
 
 getBarCommand :: IO String
