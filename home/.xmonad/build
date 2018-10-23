@@ -1,0 +1,7 @@
+#!/bin/sh
+
+XMONAD_CONFIG=~/.xmonad/xmonad.hs
+
+if [ ! -f $1 -o $XMONAD_CONFIG -nt $1 ]; then
+  PATH=/usr/bin /usr/bin/ghc -dynamic $XMONAD_CONFIG -o $1
+fi
