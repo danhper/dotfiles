@@ -8,6 +8,7 @@ export NODE_REPL_HISTORY_FILE=~/.node_history
 export MIX_HOME=$HOME/.mix
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KEYBASE_SYSTEMD=0
+export WATSON_DIR=$HOME/Dropbox/misc/watson
 
 export TEXMFCNF=$HOME/.texlive/texmf-config/web2c:
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
@@ -18,7 +19,7 @@ export ANDROID_HOME=/opt/android-sdk
 export PASSWORD_STORE_DIR="$HOME/Dropbox/passwords"
 export ENCFS6_CONFIG=$HOME/.secrets/dropbox-encfs.xml
 
-export GOPATH="$HOME/workspaces/go"
+export GOPATH="$HOME/workspace/go"
 export EC2_URL=https://ec2.ap-northeast-1.amazonaws.com
 export NLTK_DATA="$HOME/.nltk_data"
 
@@ -34,7 +35,7 @@ pathdirs=(
   $HOME/.local/bin
   $HOME/.bin
   $HOME/.cabal/bin
-  $HOME/.stack/programs/x86_64-linux/ghc-8.0.2/bin
+  $HOME/.stack/bin
   $HOME/.mix/escripts
   $HOME/.asdf/shims
   $HOME/.config/composer/vendor/bin
