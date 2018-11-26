@@ -3,19 +3,22 @@ image/png=eog.desktop
 image/jpg=eog.desktop
 image/svg+xml=eog.desktop
 application/pdf=org.gnome.Evince.desktop
-text/html=brave-dev.desktop
+text/html=brave-dev-bin.desktop
 text/x-bibtex=mendeleydesktop.desktop
 
-x-scheme-handler/http=brave-dev.desktop
-x-scheme-handler/https=brave-dev.desktop
-x-scheme-handler/about=brave-dev.desktop
-x-scheme-handler/unknown=brave-dev.desktop
-x-scheme-handler/ftp=brave-dev.desktop
-x-scheme-handler/chrome=brave-dev.desktop
-application/x-extension-htm=brave-dev.desktop
-application/x-extension-html=brave-dev.desktop
-application/x-extension-shtml=brave-dev.desktop
-application/xhtml+xml=brave-dev.desktop
-application/x-extension-xhtml=brave-dev.desktop
-application/x-extension-xht=brave-dev.desktop
+x-scheme-handler/http=brave-dev-bin.desktop
+x-scheme-handler/https=brave-dev-bin.desktop
+x-scheme-handler/about=brave-dev-bin.desktop
+x-scheme-handler/unknown=brave-dev-bin.desktop
+x-scheme-handler/ftp=brave-dev-bin.desktop
+x-scheme-handler/chrome=brave-dev-bin.desktop
+application/x-extension-htm=brave-dev-bin.desktop
+application/x-extension-html=brave-dev-bin.desktop
+application/x-extension-shtml=brave-dev-bin.desktop
+application/xhtml+xml=brave-dev-bin.desktop
+application/x-extension-xhtml=brave-dev-bin.desktop
+application/x-extension-xht=brave-dev-bin.desktop
 x-scheme-handler/mailspring=mailspring.desktop
+
+[Removed Associations]
+x-scheme-handler/https=google-chrome.desktop
