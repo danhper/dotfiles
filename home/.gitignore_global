@@ -17,6 +17,7 @@
 
 # Misc
 *.log
+.gdb_history
 
 # Java/Scala
 target/
