@@ -21,14 +21,16 @@ c = get_config()
 #   - :meth:`init_code`
 
 # dotted module name of an IPython extension to load.
-# c.InteractiveShellApp.extra_extension = ''
+c.InteractiveShellApp.extra_extension = 'autoreload'
 
 # Run the file referenced by the PYTHONSTARTUP environment variable at IPython
 # startup.
 # c.InteractiveShellApp.exec_PYTHONSTARTUP = True
 
 # lines of code to run at IPython startup.
-# c.InteractiveShellApp.exec_lines = []
+c.InteractiveShellApp.exec_lines = [
+    "%autoreload 2"
+]
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
