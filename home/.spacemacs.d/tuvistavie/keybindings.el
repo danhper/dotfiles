@@ -32,13 +32,18 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (define-key python-mode-map (kbd "C-j") 'helm-projectile)
-            (define-key evil-normal-state-map (kbd "C-j") 'helm-projectile)
-            (define-key evil-insert-state-modes (kbd "C-j") 'helm-projectile)
+            ;; (define-key evil-normal-state-map (kbd "C-j") 'helm-projectile)
+            ;; (define-key evil-insert-state-modes (kbd "C-j") 'helm-projectile)
             ))
 
 (add-hook 'LaTeX-mode-hook
           (lambda ()
             (define-key LaTeX-mode-map (kbd "C-j") 'helm-projectile)
-            (define-key evil-normal-state-map (kbd "C-j") 'helm-projectile)
-            (define-key evil-insert-state-modes (kbd "C-j") 'helm-projectile)
+            ;; (define-key evil-normal-state-map (kbd "C-j") 'helm-projectile)
+            ;; (define-key evil-insert-state-modes (kbd "C-j") 'helm-projectile)
             ))
+
+(spacemacs|add-toggle writeroom-mode
+  :mode writeroom-mode
+  :documentation "Toggles writeroom mode"
+  :evil-leader "tz")

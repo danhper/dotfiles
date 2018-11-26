@@ -12,6 +12,7 @@
     projectile
     helm
     neotree
+    writeroom-mode
     (vue-mode :location (recipe
                          :fetcher github
                          :repo "codefalling/vue-mode"))))
@@ -61,5 +62,8 @@
 
 (defun tuvistavie/init-vue-mode ()
   (use-package vue-mode))
+
+(defun tuvistavie/init-writeroom-mode ()
+  (use-package writeroom-mode))
 
 ;;; packages.el ends here
