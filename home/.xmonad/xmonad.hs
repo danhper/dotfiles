@@ -62,7 +62,7 @@ makeKeyBindings :: IO [(String, X())]
 makeKeyBindings = do
   currentEnv <- getCurrentEnv
   return ([
-      ("C-M1-f"   , spawn "brave-browser-dev")
+      ("C-M1-f"   , spawn "brave-dev")
     , ("C-M1-t"   , spawn "urxvt")
     , ("C-M1-ç"   , spawn "sh ~/.xprofile setup_keyboard")
     , ("C-M1-9"   , spawn "sh ~/.xprofile setup_keyboard")
