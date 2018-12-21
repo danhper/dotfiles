@@ -20,3 +20,5 @@
 	required = true
 [pager]
 	branch = false
+[hub]
+	protocol = https
