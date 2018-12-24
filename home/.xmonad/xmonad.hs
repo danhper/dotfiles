@@ -64,9 +64,9 @@ makeKeyBindings = do
   return ([
       ("C-M1-f"   , spawn "brave-dev")
     , ("C-M1-t"   , spawn "urxvt")
-    , ("C-M1-ç"   , spawn "sh ~/.xprofile setup_keyboard")
-    , ("C-M1-9"   , spawn "sh ~/.xprofile setup_keyboard")
-    , ("C-M1-0"   , spawn "setxkbmap -layout fr")
+    , ("C-M1-ç"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
+    , ("C-M1-9"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
+    , ("C-M1-0"   , spawn "ibus engine xkb:fr::fra; sleep 0.3 && sh ~/.xprofile setup_note_keyboard")
     , ("M1-o"     , spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
     , ("M1-<F4>"  , kill)
     , ("M4-h"     , sendMessage Shrink)

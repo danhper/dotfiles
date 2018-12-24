@@ -28,16 +28,19 @@ setup_keyring() {
     export SSH_AUTH_SOCK
 }
 
-setup_keyboard() {
-    setxkbmap -layout us,fr,es -option grp_led:scroll,terminate:ctrl_alt_bksp
-    xmodmap ~/.xmodmaps/swap_colon_semicolon
-    xmodmap ~/.xmodmaps/map_alt_to_zenkaku
-
+setup_note_keyboard() {
     # When using note keyboard
     grep -E "(PFU|HHKB)" /proc/bus/input/devices > /dev/null
     if [ $? -eq 1 ]; then
         xmodmap ~/.xmodmaps/remap_capslock_to_ctrl
     fi
+}
+
+setup_keyboard() {
+    setxkbmap -layout us,fr,es -option grp_led:scroll,terminate:ctrl_alt_bksp
+    xmodmap ~/.xmodmaps/swap_colon_semicolon
+    xmodmap ~/.xmodmaps/map_alt_to_zenkaku
+    setup_note_keyboard
 }
 
 setup_mouse() {
