@@ -50,7 +50,7 @@ getCurrentEnv = do
 
 getScreenOrder :: String -> [ScreenId]
 getScreenOrder "lab-desktop"  = [1, 0, 2]
-getScreenOrder "home-desktop" = [1, 0, 2]
+getScreenOrder "home-desktop" = [2, 0, 1]
 -- getScreenOrder "home"         = [2, 0, 1]
 -- getScreenOrder "lab"          = [2, 0, 1]
 getScreenOrder _env           = [2, 0, 1]

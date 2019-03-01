@@ -10,6 +10,10 @@ set_current_env() {
     export CURRENT_ENV
 }
 
+source_custom_env() {
+    [ -f "$HOME/.env/$CURRENT_ENV" ] && . $HOME/.env/$CURRENT_ENV
+}
+
 setup_background_image() {
     /usr/bin/feh --bg-scale ~/.background/amami.jpg
 }
@@ -63,7 +67,10 @@ merge_xresources() {
 
 start_applications() {
     nohup light-locker | logger -t light-locker &
-    systemctl --user import-environment XDG_SESSION_PATH DBUS_SESSION_BUS_ADDRESS CURRENT_ENV XIM GTK_IM_MODULE QT_IM_MODULE XMODIFIERS
+    systemctl --user import-environment XDG_SESSION_PATH DBUS_SESSION_BUS_ADDRESS XIM GTK_IM_MODULE QT_IM_MODULE XMODIFIERS
+    for env_var in $(env | grep CURRENT_ENV | cut -d= -f1); do
+        systemctl --user import-environment $env_var
+    done
     systemctl --user start user-applications.target
 }
 
@@ -73,6 +80,7 @@ run_local_profile() {
 
 setup_all() {
     set_current_env
+    source_custom_env
     set_ime_vars
     setup_keyring
     setup_keyboard
