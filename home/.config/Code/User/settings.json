@@ -14,6 +14,7 @@
     "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": true,
     "workbench.startupEditor": "newUntitledFile",
+    "window.titleBarStyle": "native",
 
     "window.menuBarVisibility": "hidden",
     "window.zoomLevel": -1,

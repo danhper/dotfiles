@@ -9,7 +9,7 @@ import XMonad.Layout.IndependentScreens
 import XMonad.Hooks.UrgencyHook
 import qualified Data.Map as M
 import qualified Data.Text as T
-import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Layout.NoBorders
 import System.FilePath (joinPath)
 import System.Directory (doesFileExist)
 import System.Environment (getEnv, lookupEnv)
@@ -129,7 +129,7 @@ mainConfig n = def
   , keys               = mCustomKeys
   , startupHook        = setWMName "LG3D"
   , manageHook         = manageHooks
-  , layoutHook         = smartBorders $ myLayoutHook
+  , layoutHook         = lessBorders (Combine Difference Screen OnlyScreenFloat) $ myLayoutHook
   , handleEventHook    = removeBordersEventHook
   , workspaces         = withScreens n workspaceNames
 }
