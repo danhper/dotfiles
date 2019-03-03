@@ -11,7 +11,7 @@ set_current_env() {
 }
 
 source_custom_env() {
-    [ -f "$HOME/.env/$CURRENT_ENV" ] && . $HOME/.env/$CURRENT_ENV
+    [ -f "$HOME/.custom-env/$CURRENT_ENV" ] && . $HOME/.custom-env/$CURRENT_ENV
 }
 
 setup_background_image() {
