@@ -3,7 +3,7 @@
     "editor.fontFamily": "'Inconsolata', 'Ricty', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.tabSize": 2,
     "editor.rulers": [80],
-    "editor.renderWhitespace": "none",
+    "editor.renderWhitespace": "all",
     "rewrap.wrappingColumn": 80,
 
     "workbench.colorTheme": "Tomorrow Night",
@@ -17,6 +17,7 @@
     "window.titleBarStyle": "native",
 
     "window.menuBarVisibility": "hidden",
+    "window.titleBarStyle": "native",
     "window.zoomLevel": -1,
 
     "[c]": {
@@ -170,5 +171,12 @@
         "useRustfmt": true
     },
     "latex-workshop.message.update.show": false,
-    "jupyter.appendResults": true
+    "jupyter.appendResults": true,
+    "breadcrumbs.enabled": true,
+    "go.lintFlags": [
+        "--disable-all",
+        "--enable=golint",
+        "--config=~/.gometalinter"
+    ],
+    "haskelly.codeCompletion": true
 }
