@@ -13,6 +13,9 @@
     helm
     neotree
     writeroom-mode
+    (z3-mode :location (recipe
+                        :fetcher github
+                        :repo "zv/z3-mode"))
     (vue-mode :location (recipe
                          :fetcher github
                          :repo "codefalling/vue-mode"))))
@@ -65,5 +68,8 @@
 
 (defun tuvistavie/init-writeroom-mode ()
   (use-package writeroom-mode))
+
+(defun tuvistavie/init-z3-mode ()
+  (use-package z3-mode))
 
 ;;; packages.el ends here

@@ -17,6 +17,8 @@
      git
      version-control
      syntax-checking
+     (spell-checking :variables
+                     enable-flyspell-auto-completion t)
      shell
 
      markdown
@@ -36,6 +38,7 @@
      clojure
      (latex :variables
             latex-build-command "LatexMk"
+            latex-enable-auto-fill nil
             TeX-auto-local ".auto")
      bibtex
 
