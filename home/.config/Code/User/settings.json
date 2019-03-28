@@ -173,6 +173,10 @@
     "latex-workshop.message.update.show": false,
     "jupyter.appendResults": true,
     "breadcrumbs.enabled": true,
+    "files.associations": {
+        "*.bats": "shellscript"
+    },
+    "go.lintTool": "gometalinter",
     "go.lintFlags": [
         "--disable-all",
         "--enable=golint",
