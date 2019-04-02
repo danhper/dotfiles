@@ -1,0 +1,13 @@
+#!/bin/bash
+
+usage() {
+    echo "usage: create-draft-url DRAFT_NAME"
+}
+
+if [ $# != 1 ] || [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    usage
+    exit 1
+fi
+
+
+aws cloudfront sign --url "https://static.perez.sh/drafts/$1" --key-pair-id APKAIUDZR6L4JO7MQC3A --private-key "file://$HOME/workspace/private/personal/keys/aws/daniel-perez-dev-cloudfront-pk-APKAIUDZR6L4JO7MQC3A.pem" --date-less-than 2050-01-01
