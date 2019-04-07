@@ -138,6 +138,18 @@
         {
             "before": ["<leader>", "V"],
             "commands": [{"command": "editor.action.smartSelect.shrink"}]
+        },
+        {
+            "before": ["<leader>", "w", "v"],
+            "commands": [{"command": "workbench.action.splitEditorRight"}]
+        },
+        {
+            "before": ["<leader>", "w", "s"],
+            "commands": [{"command": "workbench.action.splitEditorOrthogonal"}]
+        },
+        {
+            "before": ["<leader>", "w", "m"],
+            "commands": [{"command": "workbench.action.closeEditorsInOtherGroups"}]
         }
     ],
     "cSpell.language": "en",
