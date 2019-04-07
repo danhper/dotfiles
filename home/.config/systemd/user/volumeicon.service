@@ -1,5 +1,6 @@
 [Unit]
 Description=VolumeIcon
+After=pulseaudio.service
 
 [Service]
 ExecStart=/usr/bin/volumeicon
