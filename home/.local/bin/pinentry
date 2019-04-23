@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$PINENTRY_USER_DATA" = "TTY=1" ]; then
+    /usr/bin/pinentry-tty "$@"
+else
+    /usr/bin/pinentry-gnome3 "$@"
+fi

@@ -16,6 +16,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export ANDROID_SDK_ROOT=/opt/android-sdk
 export ANDROID_HOME=/opt/android-sdk
 
+export PINENTRY_USER_DATA="TTY=1"
 export PASSWORD_STORE_DIR="$HOME/Dropbox/passwords"
 export ENCFS6_CONFIG=$HOME/.secrets/dropbox-encfs.xml
 
