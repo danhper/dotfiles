@@ -48,3 +48,5 @@ TAGS
 *.code-workspace
 
 .*@neomake*
+
+.elixir_ls/
