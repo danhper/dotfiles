@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-monitor=0
-if [ -n "$CURRENT_ENV_TRAYER_DISPLAY" ]; then
-    monitor=$CURRENT_ENV_TRAYER_DISPLAY
-fi
-exec trayer --monitor $monitor --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 192 --widthtype pixel --transparent true --tint 0x000000 --height 23 --alpha 0
+monitor=${CURRENT_ENV_TRAYER_DISPLAY:-0}
+height=${CURRENT_ENV_TRAYER_HEIGHT:-23}
+margin=${CURRENT_ENV_TRAYER_MARGIN:-380}
+
+exec trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype pixel --transparent true --tint 0x000000 --alpha 0 --widthtype request --monitor "$monitor" --height "$height" --margin "$margin"
