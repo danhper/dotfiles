@@ -1,0 +1,4 @@
+[Unit]
+Description=Xmobar
+Requires=user-applications.target
+After=user-applications.target

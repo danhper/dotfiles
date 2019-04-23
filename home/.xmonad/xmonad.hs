@@ -146,15 +146,10 @@ makeConfigWithKeys n = do
   keyBindings <- makeKeyBindings
   return $ mainConfig n `removeKeysP` keyUnbindings `additionalKeysP` keyBindings
 
-xmobarConfig "laptop" = "xmobarrc-laptop"
-xmobarConfig "lab" = "xmobarrc-laptop"
-xmobarConfig _ = "xmobarrc"
-
 getBarCommand :: IO String
 getBarCommand = do
   home <- getEnv "HOME"
-  currentEnv <- getCurrentEnv
-  return $ "xmobar -x1 " ++ home ++ "/.xmobar/" ++ (xmobarConfig currentEnv)
+  return $ home ++ "/.local/bin/start-xmobar"
 
 myPP :: PP
 myPP = xmobarPP {
