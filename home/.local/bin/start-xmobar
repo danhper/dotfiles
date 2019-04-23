@@ -1,0 +1,12 @@
+#!/bin/bash
+
+display="${CURRENT_ENV_XMONAD_DISPLAY:-1}"
+
+if ls /sys/class/power_supply/BAT* > /dev/null 2>&1; then
+  xmobar_config="xmobarrc-laptop"
+else
+  xmobar_config="xmobarrc"
+fi
+
+sh -c 'sleep 1 && systemctl --user start xmobar.target' &
+xmobar "-x$display" "$HOME/.xmobar/$xmobar_config"
