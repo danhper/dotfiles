@@ -1,8 +1,9 @@
 [Unit]
 Description=Trayer
+After=xmobar.target
 
 [Service]
 ExecStart=%h/.local/bin/start-trayer
 
 [Install]
-WantedBy=user-applications.target
+WantedBy=xmobar.target

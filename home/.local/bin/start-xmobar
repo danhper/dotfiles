@@ -8,5 +8,5 @@ else
   xmobar_config="xmobarrc"
 fi
 
-sh -c 'sleep 1 && systemctl --user start xmobar.target' &
+sh -c 'sleep 3 && systemctl --user start xmobar.target' &
 xmobar "-x$display" "$HOME/.xmobar/$xmobar_config"

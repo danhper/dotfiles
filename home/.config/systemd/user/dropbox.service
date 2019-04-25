@@ -10,4 +10,4 @@ ExecStop=/usr/bin/dropbox-cli stop
 Restart=on-failure
 
 [Install]
-WantedBy=xmobar.target
+WantedBy=user-applications.target
