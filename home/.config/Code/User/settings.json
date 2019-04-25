@@ -197,5 +197,6 @@
     "haskelly.codeCompletion": true,
     "python.pythonPath": "~/.asdf/shims/python",
     "center-editor-window.threeStateToggle": true,
-    "C_Cpp.updateChannel": "Insiders"
+    "C_Cpp.updateChannel": "Insiders",
+    "python.dataScience.decorateCells": false
 }
