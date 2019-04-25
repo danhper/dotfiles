@@ -52,7 +52,7 @@ getScreenOrder :: IO [ScreenId]
 getScreenOrder = do
   maybeScreenOrder <- lookupEnv "CURRENT_ENV_SCREEN_ORDER"
   let screenOrder = maybe "201" id maybeScreenOrder
-  return $ map (read . return) screenOrder
+  return $ map (S . read . return) screenOrder
 
 getKeyboardLanguage :: String -> String
 getKeyboardLanguage _env = "us"

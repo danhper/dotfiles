@@ -63,8 +63,8 @@ setup_display() {
 }
 
 merge_xresources() {
-    [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-    [[ -f ~/.Xresources.local ]] && xrdb -merge ~/.Xresources.local
+    [[ -f $HOME/.Xdefaults ]] && xrdb -merge $HOME/.Xdefaults
+    [[ -f $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources
 }
 
 start_applications() {
