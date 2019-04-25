@@ -64,11 +64,12 @@ setup_display() {
 
 merge_xresources() {
     [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+    [[ -f ~/.Xresources.local ]] && xrdb -merge ~/.Xresources.local
 }
 
 start_applications() {
     nohup light-locker | logger -t light-locker &
-    systemctl --user import-environment XDG_SESSION_PATH DBUS_SESSION_BUS_ADDRESS XIM GTK_IM_MODULE QT_IM_MODULE XMODIFIERS
+    systemctl --user import-environment XDG_SESSION_PATH DBUS_SESSION_BUS_ADDRESS XIM GTK_IM_MODULE QT_IM_MODULE XMODIFIERS GDK_SCALE GDK_DPI_SCALE QT_AUTO_SCREEN_SCALE_FACTOR
     for env_var in $(env | grep CURRENT_ENV | cut -d= -f1); do
         systemctl --user import-environment $env_var
     done

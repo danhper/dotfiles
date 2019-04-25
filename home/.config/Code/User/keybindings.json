@@ -29,6 +29,12 @@
 { "key": "ctrl+enter", "command": "python.datascience.runcurrentcell", "when": "editorTextFocus" },
 { "key": "ctrl+alt+l", "command": "python.datascience.removeallcells", "when": "editorTextFocus" },
 { "key": "ctrl+alt+.",  "command": "editor.action.triggerSuggest", "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"},
+{ "key": "alt+w",                "command": "editor.action.clipboardCopyAction",
+                                     "when": "textInputFocus" },
+{ "key": "ctrl+w",                "command": "editor.action.clipboardCutAction",
+                                     "when": "textInputFocus && !editorReadonly" },
+{ "key": "ctrl+y",                "command": "editor.action.clipboardPasteAction",
+                                     "when": "textInputFocus && !editorReadonly" },
 { "key": "ctrl+l", "command": "center-editor-window.center"},
 { "key": "ctrl+x ctrl+s", "command": "workbench.action.files.save" },
 

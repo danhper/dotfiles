@@ -48,12 +48,11 @@ getCurrentEnv = do
   fallbackEnv <- getCurrentEnvFromFile
   return $ maybe fallbackEnv id maybeEnv
 
-getScreenOrder :: String -> [ScreenId]
-getScreenOrder "lab-desktop"  = [1, 0, 2]
-getScreenOrder "home-desktop" = [2, 0, 1]
--- getScreenOrder "home"         = [2, 0, 1]
--- getScreenOrder "lab"          = [2, 0, 1]
-getScreenOrder _env           = [2, 0, 1]
+getScreenOrder :: IO [ScreenId]
+getScreenOrder = do
+  maybeScreenOrder <- lookupEnv "CURRENT_ENV_SCREEN_ORDER"
+  let screenOrder = maybe "201" id maybeScreenOrder
+  return $ map (read . return) screenOrder
 
 getKeyboardLanguage :: String -> String
 getKeyboardLanguage _env = "us"
@@ -61,6 +60,7 @@ getKeyboardLanguage _env = "us"
 makeKeyBindings :: IO [(String, X())]
 makeKeyBindings = do
   currentEnv <- getCurrentEnv
+  screenOrder <- getScreenOrder
   return ([
       ("C-M1-f"   , spawn "firefox-developer-edition")
     , ("C-M1-t"   , spawn "urxvt")
@@ -73,6 +73,7 @@ makeKeyBindings = do
     , ("M4-l"     , sendMessage Expand)
     , ("M4-j"     , sendMessage MirrorShrink)
     , ("M4-k"     , sendMessage MirrorExpand)
+    , ("C-M4-l"   , spawn "light-locker-command -l")
     , ("<Print>"  , spawn "xwd | convert xwd:- /tmp/screenshot-$(date +%s).png")
     , ("C-<Print>", spawn "xwd -root | convert xwd:- /tmp/screenshot-$(date +%s).png")
     , ("<XF86MonBrightnessDown>", spawn "xbacklight -5")
@@ -81,7 +82,7 @@ makeKeyBindings = do
     ++
     [
       (mask ++ "M4-" ++ [key], screenWorkspace scr >>= flip whenJust (windows . action))
-           | (key, scr)  <- zip "asd" $ getScreenOrder currentEnv
+           | (key, scr)  <- zip "asd" $ screenOrder
            , (action, mask) <- [ (W.view, "") , (W.shift, "S-")]
     ])
 

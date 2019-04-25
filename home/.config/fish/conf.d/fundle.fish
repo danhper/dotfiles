@@ -8,5 +8,6 @@ fundle plugin 'oh-my-fish/plugin-peco'
 fundle plugin 'tuvistavie/fish-asdf'
 fundle plugin 'tuvistavie/fish-kubectl'
 fundle plugin 'tuvistavie/fish-pubs'
+fundle plugin 'aliz-ai/google-cloud-sdk-fish-completion'
 
 fundle init

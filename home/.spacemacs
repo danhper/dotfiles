@@ -237,6 +237,10 @@
                                           :powerline-scale 1.1))
   (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty"))
 
+  (let ((personal-settings "~/.spacemacs.d/local/user-init.el"))
+    (when (file-exists-p personal-settings)
+      (load-file personal-settings)))
+
   ;; workaround for --daemon mode
   (spacemacs|do-after-display-system-init
    (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty")))
