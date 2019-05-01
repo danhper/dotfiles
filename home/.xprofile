@@ -12,6 +12,7 @@ set_current_env() {
 
 source_custom_env() {
     [ -f "$HOME/.env/global.env" ] && . $HOME/.env/global.env
+    [ -f "$HOME/.env/local.env" ] && . $HOME/.env/local.env
     [ -f "$HOME/.env/$CURRENT_ENV.env" ] && . $HOME/.env/$CURRENT_ENV.env
 }
 
