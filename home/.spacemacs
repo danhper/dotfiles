@@ -255,7 +255,8 @@
 
 (defun dotspacemacs/user-config ()
   (setq-default erlang-indent-level 2
-                c-basic-offset 2
+                c-basic-offset 4
+                c-default-style "linux"
                 js2-basic-offset 2
                 js-indent-level 2
                 css-indent-offset 2
