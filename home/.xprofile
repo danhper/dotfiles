@@ -34,8 +34,10 @@ setup_keyring() {
     export SSH_AUTH_SOCK
 }
 
+
 setup_note_keyboard() {
     # When using note keyboard
+    xmodmap ~/.xmodmaps/compose_key
     grep -E "(PFU|HHKB)" /proc/bus/input/devices > /dev/null
     if [ $? -eq 1 ]; then
         xmodmap ~/.xmodmaps/remap_capslock_to_ctrl
