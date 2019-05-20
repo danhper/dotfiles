@@ -9,6 +9,7 @@ export MIX_HOME=$HOME/.mix
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KEYBASE_SYSTEMD=0
 export WATSON_DIR=$HOME/Dropbox/misc/watson
+export FLASHCARDS_HOME=$HOME/Dropbox/misc/flashcards
 
 export TEXMFCNF=$HOME/.texlive/texmf-config/web2c:
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
