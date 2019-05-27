@@ -198,5 +198,6 @@
     "python.pythonPath": "~/.asdf/shims/python",
     "center-editor-window.threeStateToggle": true,
     "C_Cpp.updateChannel": "Insiders",
-    "python.dataScience.decorateCells": false
+    "python.dataScience.decorateCells": false,
+    "c-cpp-flylint.flexelint.enable": false
 }
