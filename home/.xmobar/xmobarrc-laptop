@@ -3,8 +3,7 @@ Config {
        , bgColor = "#000000"
        , fgColor = "grey"
        , position = TopW L 100
-       , commands = [ Run Weather "RJTT" ["-t"," <tempC>C","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
-                    , Run BatteryP ["BAT1"] ["-t","<left>%","-L","50","-H","75","-h","grey","-n","grey","-l","red"] 10
+       , commands = [ Run BatteryP ["BAT1"] ["-t","<left>%","-L","50","-H","75","-h","grey","-n","grey","-l","red"] 10
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Date "%a %b %_d %H:%M" "date" 10
@@ -14,4 +13,4 @@ Config {
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%StdinReader% }{ <fc=#ffff00>%LED%</fc> %cpu% | %memory% | Bat: %battery%  <fc=#ee9a00>%date%</fc>"
-       }
+}
