@@ -10,6 +10,7 @@
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     sql
      ocaml
      graphviz
      auto-completion
