@@ -2,7 +2,7 @@
 Description=Auto lock computer
 
 [Service]
-ExecStart=xautolock -locker '/usr/bin/light-locker-command -l'
+ExecStart=xautolock -locker 'dm-tool lock'
 
 [Install]
 WantedBy=user-applications.target
