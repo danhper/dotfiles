@@ -27,6 +27,7 @@ else
 endif
 Plugin 'zchee/deoplete-jedi'
 Plugin 'zchee/deoplete-clang'
+Plugin 'Shougo/neoinclude.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'rbgrouleff/bclose.vim'
 Plugin 'dag/vim-fish'
