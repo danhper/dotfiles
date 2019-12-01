@@ -7,6 +7,7 @@ import XMonad.Hooks.SetWMName
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.IndependentScreens
 import XMonad.Hooks.UrgencyHook
+import XMonad.Hooks.EwmhDesktops
 import qualified Data.Map as M
 import qualified Data.Text as T
 import XMonad.Layout.NoBorders
@@ -63,17 +64,18 @@ makeKeyBindings = do
   screenOrder <- getScreenOrder
   return ([
       ("C-M1-f"   , spawn "firefox-developer-edition")
-    , ("C-M1-t"   , spawn "urxvt")
+    , ("C-M1-t"   , spawn "kitty")
     , ("C-M1-ç"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-9"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-0"   , spawn "ibus engine xkb:fr::fra; sleep 0.3 && sh ~/.xprofile setup_note_keyboard")
     , ("M1-o"     , spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
+    , ("C-M1-o"   , spawn "rofi -show window")
     , ("M1-<F4>"  , kill)
     , ("M4-h"     , sendMessage Shrink)
     , ("M4-l"     , sendMessage Expand)
     , ("M4-j"     , sendMessage MirrorShrink)
     , ("M4-k"     , sendMessage MirrorExpand)
-    , ("C-M4-l"   , spawn "light-locker-command -l")
+    , ("C-M4-l"   , spawn "dm-tool lock")
     , ("<Print>"  , spawn "xwd | convert xwd:- /tmp/screenshot-$(date +%s).png")
     , ("C-<Print>", spawn "xwd -root | convert xwd:- /tmp/screenshot-$(date +%s).png")
     , ("<XF86MonBrightnessDown>", spawn "xbacklight -5")
@@ -128,10 +130,11 @@ mainConfig n = def
   , borderWidth        = 1
   , focusFollowsMouse  = False
   , keys               = mCustomKeys
-  , startupHook        = setWMName "LG3D"
+  , startupHook        = setWMName "LG3D" <+> ewmhDesktopsStartup
   , manageHook         = manageHooks
   , layoutHook         = lessBorders (Combine Difference Screen OnlyScreenFloat) $ myLayoutHook
-  , handleEventHook    = removeBordersEventHook
+  , logHook            = ewmhDesktopsLogHook
+  , handleEventHook    = removeBordersEventHook <+> ewmhDesktopsEventHook
   , workspaces         = withScreens n workspaceNames
 }
 
