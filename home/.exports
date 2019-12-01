@@ -43,6 +43,7 @@ pathdirs=(
   $HOME/.config/composer/vendor/bin
   $HOME/.cargo/bin
   $GOPATH/bin
+  /opt/android-sdk/build-tools/current
   /opt/android-sdk/platform-tools
   /opt/android-sdk/tools
   /usr/local/bin
