@@ -4,6 +4,7 @@
     "editor.tabSize": 2,
     "editor.rulers": [80],
     "editor.renderWhitespace": "all",
+    "search.useGlobalIgnoreFiles": true,
     "rewrap.wrappingColumn": 80,
 
     "workbench.colorTheme": "Tomorrow Night",
@@ -33,6 +34,9 @@
         "editor.tabSize": 4
     },
     "[python]": {
+        "editor.tabSize": 4
+    },
+    "[haskell]": {
         "editor.tabSize": 4
     },
 
