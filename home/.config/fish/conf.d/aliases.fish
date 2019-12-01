@@ -7,7 +7,7 @@ alias v='vim'
 alias py='python'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
-alias e='emacsclient -c -a emacs'
+alias emt="emacsclient -t -c -a ''"
 alias gcal='gcalcli'
 alias clojure='rlwrap java -cp ~/.m2/repository/org/clojure/clojure/1.8.0/clojure-1.8.0.jar clojure.main'
 
