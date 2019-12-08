@@ -69,7 +69,7 @@ makeKeyBindings = do
     , ("C-M1-9"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-0"   , spawn "ibus engine xkb:fr::fra; sleep 0.3 && sh ~/.xprofile setup_note_keyboard")
     , ("M1-o"     , spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
-    , ("C-M1-o"   , spawn "rofi -show window")
+    , ("S-M1-o"   , spawn "rofi -show window")
     , ("M1-<F4>"  , kill)
     , ("M4-h"     , sendMessage Shrink)
     , ("M4-l"     , sendMessage Expand)
