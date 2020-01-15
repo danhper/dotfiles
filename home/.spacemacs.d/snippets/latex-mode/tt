@@ -1,0 +1,5 @@
+# name: lstinline
+# key: tt
+# binding: direct-keybinding
+# --
+\texttt{$1}$0
