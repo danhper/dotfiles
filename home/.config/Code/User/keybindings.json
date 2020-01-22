@@ -14,6 +14,8 @@
 { "key": "meta+r", "command": "redo", "when": "editorTextFocus" },
 { "key": "meta+b", "command": "cursorPageUp", "when": "editorTextFocus" },
 { "key": "meta+f", "command": "cursorPageDown", "when": "editorTextFocus" },
+{ "key": "alt+.", "command": "editor.action.triggerSuggest", "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly" },
+{ "key": "ctrl+[", "command": "editor.action.outdentLines", "when": "editorTextFocus && !editorReadonly" },
 { "key": "ctrl+t", "command": "editor.action.transpose", "when": "editorTextFocus"},
 { "key": "ctrl+h",  "command": "deleteLeft", "when": "editorTextFocus && !editorReadonly" },
 { "key": "alt+h",  "command": "deleteWordLeft", "when": "editorTextFocus && !editorReadonly" },

@@ -3,7 +3,7 @@
     "editor.fontFamily": "'Inconsolata', 'Ricty', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.tabSize": 2,
     "editor.rulers": [80],
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "none",
     "search.useGlobalIgnoreFiles": true,
     "rewrap.wrappingColumn": 80,
 
@@ -203,5 +203,9 @@
     "center-editor-window.threeStateToggle": true,
     "C_Cpp.updateChannel": "Insiders",
     "python.dataScience.decorateCells": false,
-    "c-cpp-flylint.flexelint.enable": false
+    "c-cpp-flylint.flexelint.enable": false,
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "gitlens.codeLens.enabled": false,
+    "go.useLanguageServer": true,
+    "python.dataScience.askForKernelRestart": false
 }

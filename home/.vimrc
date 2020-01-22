@@ -49,7 +49,7 @@ colorscheme base16-default-dark
 let g:airline_powerline_fonts = 1
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 let g:python_host_prog = $HOME.'/.asdf/shims/python2'
 let g:python3_host_prog = $HOME.'/.asdf/shims/python3'
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
