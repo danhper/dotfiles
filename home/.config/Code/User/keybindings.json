@@ -37,7 +37,7 @@
                                      "when": "textInputFocus && !editorReadonly" },
 { "key": "ctrl+y",                "command": "editor.action.clipboardPasteAction",
                                      "when": "textInputFocus && !editorReadonly" },
-{ "key": "ctrl+l", "command": "center-editor-window.center"},
+{ "key": "ctrl+l", "command": "emacs.C-l"},
 { "key": "ctrl+x ctrl+s", "command": "workbench.action.files.save" },
 
 { "key": "ctrl+n", "command": "workbench.action.quickOpenNavigateNext", "when": "!editorTextFocus"},
