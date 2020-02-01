@@ -29,7 +29,9 @@ c.InteractiveShellApp.extra_extension = 'autoreload'
 
 # lines of code to run at IPython startup.
 c.InteractiveShellApp.exec_lines = [
-    "%autoreload 2"
+    "%autoreload 2",
+    "import logging",
+    "logging.basicConfig(level=logging.INFO)",
 ]
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
