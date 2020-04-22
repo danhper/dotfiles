@@ -8,17 +8,20 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.IndependentScreens
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.EwmhDesktops
-import qualified Data.Map as M
-import qualified Data.Text as T
+
 import XMonad.Layout.NoBorders
-import System.FilePath (joinPath)
-import System.Directory (doesFileExist)
-import System.Environment (getEnv, lookupEnv)
 import qualified XMonad.StackSet as W
 import XMonad.Prompt.Pass (passPrompt)
 import XMonad.Prompt (XPConfig(..), XPPosition(..), emacsLikeXPKeymap)
+
+import qualified Data.Char as C
+import qualified Data.Map as M
+import qualified Data.Text as T
 import Data.Monoid (Endo, All(..))
-import Data.List (isSubsequenceOf)
+import Data.List (isInfixOf)
+import System.FilePath (joinPath)
+import System.Directory (doesFileExist)
+import System.Environment (getEnv, lookupEnv)
 
 strip :: String -> String
 strip  = T.unpack . T.strip . T.pack
@@ -32,12 +35,16 @@ currentWSColor = "#e0b167"
 defaultEnv :: String
 defaultEnv = "laptop"
 
+fuzzySearch :: String -> String -> Bool
+fuzzySearch a b = isInfixOf (lower a) (lower b) where
+  lower = map C.toLower
+
 xpConfig :: XPConfig
 xpConfig = def { borderColor = "#cccccc"
                , font = "xft:Ricty-Regular:pixelsize=18:antialias=true"
                , height = 30
                , position = CenteredAt 0.2 0.7
-               , searchPredicate = isSubsequenceOf
+               , searchPredicate = fuzzySearch
                , promptKeymap = emacsLikeXPKeymap
                }
 
