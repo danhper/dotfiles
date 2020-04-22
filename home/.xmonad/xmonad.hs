@@ -15,8 +15,10 @@ import System.FilePath (joinPath)
 import System.Directory (doesFileExist)
 import System.Environment (getEnv, lookupEnv)
 import qualified XMonad.StackSet as W
+import XMonad.Prompt.Pass (passPrompt)
+import XMonad.Prompt (XPConfig(..), XPPosition(..))
 import Data.Monoid (Endo, All(..))
-
+import Data.List (isSubsequenceOf)
 
 strip :: String -> String
 strip  = T.unpack . T.strip . T.pack
@@ -29,6 +31,14 @@ currentWSColor = "#e0b167"
 
 defaultEnv :: String
 defaultEnv = "laptop"
+
+xpConfig :: XPConfig
+xpConfig = def { borderColor = "#cccccc"
+               , font = "xft:Ricty-Regular:pixelsize=18:antialias=true"
+               , height = 30
+               , position = CenteredAt 0.2 0.7
+               , searchPredicate = isSubsequenceOf
+               }
 
 envFilePath :: IO FilePath
 envFilePath = do
@@ -63,7 +73,7 @@ makeKeyBindings = do
   currentEnv <- getCurrentEnv
   screenOrder <- getScreenOrder
   return ([
-      ("C-M1-f"   , spawn "firefox-developer-edition")
+      ("C-M1-f"   , spawn "brave")
     , ("C-M1-t"   , spawn "kitty")
     , ("C-M1-ç"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-9"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
@@ -80,6 +90,7 @@ makeKeyBindings = do
     , ("C-<Print>", spawn "xwd -root | convert xwd:- /tmp/screenshot-$(date +%s).png")
     , ("<XF86MonBrightnessDown>", spawn "xbacklight -5")
     , ("<XF86MonBrightnessUp>",   spawn "xbacklight +5")
+    , ("S-M4-p"   , passPrompt xpConfig)
     ]
     ++
     [
