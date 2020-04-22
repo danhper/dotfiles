@@ -1,6 +1,6 @@
 #!/bin/bash
 
-display="${CURRENT_ENV_XMONAD_DISPLAY:-1}"
+display="${CURRENT_ENV_XMOBAR_DISPLAY:-1}"
 
 if ls /sys/class/power_supply/BAT* > /dev/null 2>&1; then
   xmobar_config="xmobarrc-laptop"
