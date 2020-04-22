@@ -16,7 +16,7 @@ import System.Directory (doesFileExist)
 import System.Environment (getEnv, lookupEnv)
 import qualified XMonad.StackSet as W
 import XMonad.Prompt.Pass (passPrompt)
-import XMonad.Prompt (XPConfig(..), XPPosition(..))
+import XMonad.Prompt (XPConfig(..), XPPosition(..), emacsLikeXPKeymap)
 import Data.Monoid (Endo, All(..))
 import Data.List (isSubsequenceOf)
 
@@ -38,6 +38,7 @@ xpConfig = def { borderColor = "#cccccc"
                , height = 30
                , position = CenteredAt 0.2 0.7
                , searchPredicate = isSubsequenceOf
+               , promptKeymap = emacsLikeXPKeymap
                }
 
 envFilePath :: IO FilePath
