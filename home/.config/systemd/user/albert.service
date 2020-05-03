@@ -1,8 +1,0 @@
-[Unit]
-Description=Albert
-
-[Service]
-ExecStart=/usr/bin/albert
-
-[Install]
-WantedBy=user-applications.target
