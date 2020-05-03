@@ -46,6 +46,7 @@ pathdirs=(
   /opt/android-sdk/build-tools/current
   /opt/android-sdk/platform-tools
   /opt/android-sdk/tools
+  /var/lib/snapd/snap/bin
   /usr/local/bin
   /bin
   /usr/bin
