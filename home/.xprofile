@@ -98,6 +98,21 @@ setup_all() {
     run_local_profile
 }
 
+help() {
+    echo 'xprofile available functions:'
+    echo set_current_env
+    echo source_custom_env
+    echo set_ime_vars
+    echo setup_keyring
+    echo setup_keyboard
+    echo setup_mouse
+    echo setup_display
+    echo setup_background_image
+    echo merge_xresources
+    echo start_applications
+    echo run_local_profile
+}
+
 xmonad() {
     setup_all
 }
