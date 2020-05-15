@@ -1,8 +1,8 @@
 [Unit]
-Description=xcompmgr
+Description=compositor
 
 [Service]
-ExecStart=/usr/bin/compton
+ExecStart=/usr/bin/picom
 
 [Install]
 WantedBy=user-applications.target
