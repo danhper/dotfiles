@@ -153,7 +153,7 @@ mainConfig n = def
   , manageHook         = manageHooks
   , layoutHook         = lessBorders (Combine Difference Screen OnlyScreenFloat) $ myLayoutHook
   , logHook            = ewmhDesktopsLogHook
-  , handleEventHook    = removeBordersEventHook <+> ewmhDesktopsEventHook
+  , handleEventHook    = removeBordersEventHook <+> ewmhDesktopsEventHook <+> fullscreenEventHook
   , workspaces         = withScreens n workspaceNames
 }
 
