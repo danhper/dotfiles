@@ -48,7 +48,7 @@
 
      tuvistavie
      ;; secret
-     nodemisc
+     ;; nodemisc
      wanderlust
      )
    ;; List of additional packages that will be installed without being
