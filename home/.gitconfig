@@ -6,6 +6,9 @@
 [push]
 	default=simple
 
+[pull]
+	rebase=true
+
 [core]
 	excludesfile=~/.gitignore_global
 	askPass =
@@ -22,3 +25,5 @@
 	branch = false
 [hub]
 	protocol = https
+[commit]
+	gpgsign = true
