@@ -1,211 +1,369 @@
 {
-    "editor.fontSize": 17,
-    "editor.fontFamily": "'Inconsolata', 'Ricty', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.tabSize": 2,
-    "editor.rulers": [80],
-    "editor.renderWhitespace": "none",
-    "search.useGlobalIgnoreFiles": true,
-    "rewrap.wrappingColumn": 80,
+  "breadcrumbs.enabled": true,
 
-    "workbench.colorTheme": "Tomorrow Night",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#202227"
-    },
+  "editor.fontSize": 14,
+  "editor.fontFamily": "'Inconsolata', 'Ricty', 'Consolas', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.rulers": [80],
+  "editor.renderWhitespace": "none",
+  "editor.minimap.enabled": true,
+  "editor.suggestSelection": "first",
 
-    "workbench.activityBar.visible": false,
-    "workbench.editor.showTabs": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "window.titleBarStyle": "native",
+  "extensions.ignoreRecommendations": false,
 
-    "window.menuBarVisibility": "hidden",
-    "window.titleBarStyle": "native",
-    "window.zoomLevel": -1,
+  "explorer.confirmDelete": false,
 
-    "[c]": {
-        "editor.tabSize": 4
-    },
-    "[cpp]": {
-        "editor.tabSize": 4
-    },
-    "[go]": {
-        "editor.tabSize": 4
-    },
-    "[makefile]": {
-        "editor.tabSize": 4
-    },
-    "[python]": {
-        "editor.tabSize": 4
-    },
-    "[haskell]": {
-        "editor.tabSize": 4
-    },
+  "files.associations": {
+    "*.bats": "shellscript",
+    "*.jsonl": "json"
+  },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "files.eol": "\n",
 
-    "reason.codelens.enabled": false,
+  "search.useGlobalIgnoreFiles": true,
 
-    "vim.easymotion": true,
-    "vim.useCtrlKeys": false,
-    "vim.useSystemClipboard": true,
-    "vim.leader": "<space>",
-    "vim.insertModeKeyBindings": [
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  "window.titleBarStyle": "native",
+  "window.menuBarVisibility": "hidden",
+  "window.zoomLevel": 2,
+
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#202227"
+  },
+  "workbench.colorTheme": "Tomorrow Night",
+  "workbench.activityBar.visible": true,
+  "workbench.editor.showTabs": true,
+  "workbench.startupEditor": "newUntitledFile",
+
+  "cSpell.language": "en",
+  "cSpell.enabledLanguageIds": [
+    "css",
+    "html",
+    "jade",
+    "json",
+    "latex",
+    "less",
+    "markdown",
+    "plaintext",
+    "pub",
+    "restructuredtext",
+    "scss",
+    "text",
+    "yml"
+  ],
+  "cSpell.userWords": ["compositionality", "dataset", "stateful"],
+
+  "git.autofetch": true,
+
+  "gitlens.codeLens.enabled": false,
+
+  "vim.easymotion": true,
+  "vim.useCtrlKeys": false,
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "<space>"],
+      "commands": [
         {
-            "before": ["j", "k"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["k", "j"],
-            "after": ["<Esc>"]
+          "command": "workbench.action.showCommands"
         }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
+      ]
+    },
+    {
+      "before": ["<leader>", "'"],
+      "commands": [
         {
-            "before": ["<leader>", "<space>"],
-            "commands": [{"command": "workbench.action.showCommands"}]
-        },
-        {
-            "before": ["<leader>", "'"],
-            "commands": [{"command": "workbench.action.terminal.toggleTerminal"}]
-        },
-        {
-            "before": ["<leader>", "/"],
-            "commands": [{"command": "workbench.action.findInFiles"}]
-        },
-        {
-            "before": ["<leader>", "1"],
-            "commands": [{"command": "workbench.action.focusFirstEditorGroup"}]
-        },
-        {
-            "before": ["<leader>", "2"],
-            "commands": [{"command": "workbench.action.focusSecondEditorGroup"}]
-        },
-        {
-            "before": ["<leader>", "3"],
-            "commands": [{"command": "workbench.action.focusThirdEditorGroup"}]
-        },
-        {
-            "before": ["<leader>", "b", "b"],
-            "commands": [{"command": "workbench.action.showAllEditors"}]
-        },
-        {
-            "before": ["<leader>", "f", "D"],
-            "commands": [{"command": "fileutils.removeFile"}]
-        },
-        {
-            "before": ["<leader>", "e", "l"],
-            "commands": [{"command": "workbench.actions.view.problems"}]
-        },
-        {
-            "before": ["<leader>", "f", "e"],
-            "commands": [{"command": "workbench.action.openGlobalSettings"}]
-        },
-        {
-            "before": ["<leader>", "f", "R"],
-            "commands": [{"command": "fileutils.renameFile"}]
-        },
-        {
-            "before": ["<leader>", "f", "t"],
-            "commands": [{"command": "workbench.view.explorer"},
-                         {"command": "workbench.action.focusFirstEditorGroup"}]
-        },
-        {
-            "before": ["<leader>", "g", "s"],
-            "commands": [{"command": "workbench.view.scm"}]
-        },
-        {
-            "before": ["<leader>", "p", "p"],
-            "commands": [{"command": "workbench.action.openRecent"}]
-        },
-        {
-            "before": ["<leader>", "q", "r"],
-            "commands": [{"command": "workbench.action.reloadWindow"}]
-        },
-        {
-            "before": ["<leader>", "t", "w"],
-            "commands": [{"command": "editor.action.toggleRenderWhitespace"}]
-        },
-        {
-            "before": ["<leader>", "t", "f"],
-            "commands": [{"command": "workbench.action.toggleSidebarVisibility"},
-                         {"command": "workbench.action.focusFirstEditorGroup"}]
-        },
-        {
-            "before": ["<leader>", "t", "t"],
-            "commands": [{"command": "workbench.action.toggleActivityBarVisibility"}]
-        },
-        {
-            "before": ["<leader>", "t", "z"],
-            "commands": [{"command": "workbench.action.toggleZenMode"}]
-        },
-        {
-            "before": ["<leader>", "v"],
-            "commands": [{"command": "editor.action.smartSelect.grow"}],
-        },
-        {
-            "before": ["<leader>", "V"],
-            "commands": [{"command": "editor.action.smartSelect.shrink"}]
-        },
-        {
-            "before": ["<leader>", "w", "v"],
-            "commands": [{"command": "workbench.action.splitEditorRight"}]
-        },
-        {
-            "before": ["<leader>", "w", "s"],
-            "commands": [{"command": "workbench.action.splitEditorOrthogonal"}]
-        },
-        {
-            "before": ["<leader>", "w", "m"],
-            "commands": [{"command": "workbench.action.closeEditorsInOtherGroups"}]
+          "command": "workbench.action.terminal.toggleTerminal"
         }
-    ],
-    "cSpell.language": "en",
-    "cSpell.enabledLanguageIds": [
-        "css",
-        "html",
-        "jade",
-        "json",
-        "latex",
-        "less",
-        "markdown",
-        "plaintext",
-        "pub",
-        "restructuredtext",
-        "scss",
-        "text",
-        "yml"
-    ],
-    "cSpell.userWords": [
-        "compositionality",
-        "dataset",
-        "stateful"
-    ],
-    "editor.minimap.enabled": true,
-    "rust.rustup": {
-        "toolchain": "nightly-x86_64-unknown-linux-gnu",
-        "nightlyToolchain": "nightly-x86_64-unknown-linux-gnu"
+      ]
     },
-    "rust.mode": "rls",
-    "rust.rls": {
-        "useRustfmt": true
+    {
+      "before": ["<leader>", "/"],
+      "commands": [
+        {
+          "command": "workbench.action.findInFiles"
+        }
+      ]
     },
-    "latex-workshop.message.update.show": false,
-    "jupyter.appendResults": true,
-    "breadcrumbs.enabled": true,
-    "files.associations": {
-        "*.bats": "shellscript"
+    {
+      "before": ["<leader>", "1"],
+      "commands": [
+        {
+          "command": "workbench.action.focusFirstEditorGroup"
+        }
+      ]
     },
-    "go.lintTool": "gometalinter",
-    "go.lintFlags": [
-        "--disable-all",
-        "--enable=golint",
-        "--config=~/.gometalinter"
-    ],
-    "haskelly.codeCompletion": true,
-    "python.pythonPath": "~/.asdf/shims/python",
-    "center-editor-window.threeStateToggle": true,
-    "C_Cpp.updateChannel": "Insiders",
-    "python.dataScience.decorateCells": false,
-    "c-cpp-flylint.flexelint.enable": false,
-    "python.dataScience.sendSelectionToInteractiveWindow": true,
-    "gitlens.codeLens.enabled": false,
-    "go.useLanguageServer": true,
-    "python.dataScience.askForKernelRestart": false
+    {
+      "before": ["<leader>", "2"],
+      "commands": [
+        {
+          "command": "workbench.action.focusSecondEditorGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "3"],
+      "commands": [
+        {
+          "command": "workbench.action.focusThirdEditorGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "b", "b"],
+      "commands": [
+        {
+          "command": "workbench.action.showAllEditors"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "f", "D"],
+      "commands": [
+        {
+          "command": "fileutils.removeFile"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "e", "l"],
+      "commands": [
+        {
+          "command": "workbench.actions.view.problems"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "f", "e"],
+      "commands": [
+        {
+          "command": "workbench.action.openGlobalSettings"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "f", "R"],
+      "commands": [
+        {
+          "command": "fileutils.renameFile"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "f", "t"],
+      "commands": [
+        {
+          "command": "workbench.view.explorer"
+        },
+        {
+          "command": "workbench.action.focusFirstEditorGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "g", "s"],
+      "commands": [
+        {
+          "command": "workbench.view.scm"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "p", "p"],
+      "commands": [
+        {
+          "command": "workbench.action.openRecent"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "q", "r"],
+      "commands": [
+        {
+          "command": "workbench.action.reloadWindow"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "t", "w"],
+      "commands": [
+        {
+          "command": "editor.action.toggleRenderWhitespace"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "t", "f"],
+      "commands": [
+        {
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        {
+          "command": "workbench.action.focusFirstEditorGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "t", "t"],
+      "commands": [
+        {
+          "command": "workbench.action.toggleActivityBarVisibility"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "t", "z"],
+      "commands": [
+        {
+          "command": "workbench.action.toggleZenMode"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "v"],
+      "commands": [
+        {
+          "command": "editor.action.smartSelect.grow"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "V"],
+      "commands": [
+        {
+          "command": "editor.action.smartSelect.shrink"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "w", "v"],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorRight"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "w", "s"],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorOrthogonal"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "w", "m"],
+      "commands": [
+        {
+          "command": "workbench.action.closeEditorsInOtherGroups"
+        }
+      ]
+    }
+  ],
+
+  "[c]": {
+    "editor.tabSize": 4
+  },
+  "[cpp]": {
+    "editor.tabSize": 4
+  },
+  "C_Cpp.updateChannel": "Insiders",
+  "cmake.configureOnOpen": false,
+
+  "[go]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSaveMode": "file"
+  },
+  "go.lintTool": "golint",
+  "go.lintFlags": [
+    "--disable-all",
+    "--enable=golint",
+    "--config=~/.gometalinter"
+  ],
+  "go.useLanguageServer": true,
+
+  "[makefile]": {
+    "editor.tabSize": 4
+  },
+
+  "[rust]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "rust-lang.rust"
+  },
+  "rust-client.engine": "rust-analyzer",
+
+  "[fsharp]": {
+    "editor.useTabStops": false,
+    "editor.tabSize": 4
+  },
+
+  "reason.codelens.enabled": false,
+
+  "[markdown]": {
+    "editor.quickSuggestions": true
+  },
+  "ruby.lint": {
+    "rubocop": true
+  },
+  "java.semanticHighlighting.enabled": true,
+
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "never",
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[latex]": {
+    "editor.formatOnSave": false
+  },
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.message.update.show": false,
+
+  "[haskell]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "haskell.haskell"
+  },
+  "haskell.formattingProvider": "fourmolu",
+
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "python.showStartPage": false,
+  "python.formatting.provider": "autopep8",
+  "python.languageServer": "Pylance",
+  "python.venvFolders": [
+    "workspace/venvs/danhper",
+    "workspace/venvs/uzabase",
+    "workspace/venvs/algoforte",
+    "workspace/venvs/backdfund"
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  "jupyter.interactiveWindowMode": "perFile",
+  "jupyter.askForKernelRestart": false,
+  "jupyter.sendSelectionToInteractiveWindow": true,
+"jupyter.decorateCells": false,
+"python.defaultInterpreterPath": "~/.asdf/shims/python",
+"java.project.importOnFirstTimeStartup": "automatic"
 }
