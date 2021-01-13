@@ -365,5 +365,8 @@
   "jupyter.sendSelectionToInteractiveWindow": true,
 "jupyter.decorateCells": false,
 "python.defaultInterpreterPath": "~/.asdf/shims/python",
-"java.project.importOnFirstTimeStartup": "automatic"
+"java.project.importOnFirstTimeStartup": "automatic",
+"[html]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
 }

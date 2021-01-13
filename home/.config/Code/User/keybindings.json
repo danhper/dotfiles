@@ -1,199 +1,199 @@
 [
-    {
-        "key": "ctrl+j",
-        "command": "workbench.action.quickOpen"
-    },
-    {
-        "key": "meta+w",
-        "command": "workbench.action.closeActiveEditor"
-    },
-    {
-        "key": "ctrl+alt+j",
-        "command": "workbench.action.nextEditorInGroup"
-    },
-    {
-        "key": "ctrl+alt+k",
-        "command": "workbench.action.previousEditorInGroup"
-    },
-    {
-        "key": "ctrl+alt+p",
-        "command": "workbench.action.showCommands"
-    },
-    {
-        "key": "alt+x",
-        "command": "workbench.action.showCommands"
-    },
-    {
-        "key": "ctrl+x ctrl+c",
-        "command": "workbench.action.closeWindow"
-    },
-    {
-        "key": "ctrl+alt+o",
-        "command": "file-browser.open"
-    },
-    {
-        "key": "alt+`",
-        "command": "workbench.action.terminal.focus"
-    },
-    {
-        "key": "ctrl+meta+w",
-        "command": "workbench.action.closeAllEditors"
-    },
-    {
-        "key": "alt+shift+i",
-        "command": "editor.action.organizeImports"
-    },
-    {
-        "key": "meta+u",
-        "command": "undo",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "meta+r",
-        "command": "redo",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "meta+b",
-        "command": "cursorPageUp",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "meta+f",
-        "command": "cursorPageDown",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+[",
-        "command": "editor.action.outdentLines",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "editor.action.transpose",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+h",
-        "command": "deleteLeft",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+h",
-        "command": "deleteWordLeft",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+d",
-        "command": "deleteWordRight",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": ", h",
-        "command": "editor.action.showHover",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "editor.action.jumpToBracket",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "meta+space",
-        "command": "editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
-    {
-        "key": "meta+enter",
-        "command": "editor.action.moveSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+meta+space",
-        "command": "editor.action.selectHighlights",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+shift+l",
-        "command": "editor.action.insertCursorAtEndOfEachLineSelected",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+/",
-        "command": "editor.action.commentLine",
-        "when": "editorFocus"
-    },
-    {
-        "key": "alt+;",
-        "command": "editor.action.commentLine",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+enter",
-        "command": "jupyter.runcurrentcell",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+l",
-        "command": "jupyter.removeallcells"
-    },
-    {
-        "key": "ctrl+alt+.",
-        "command": "editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+x ctrl+s",
-        "command": "workbench.action.files.save"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "workbench.action.quickOpenNavigateNext",
-        "when": "!editorTextFocus"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "workbench.action.quickOpenNavigatePrevious",
-        "when": "!editorTextFocus"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "list.focusDown",
-        "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "list.focusUp",
-        "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "b",
-        "command": "workbench.files.action.focusOpenEditorsView",
-        "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "d",
-        "command": "workbench.files.action.focusFilesExplorer",
-        "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "shift+enter",
-        "command": "fsi.SendSelection",
-        "when": "editorLangId == 'fsharp'"
-    },
-    {
-        "key": "escape",
-        "command": "extension.vim_escape",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": ", e",
-        "command": "calva.evalCurrentFormInREPLWindow",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId == 'clojure'"
-    },
-    {
-        "key": ", x",
-        "command": "calva.evalCurrentTopLevelFormInREPLWindow",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId == 'clojure'"
-    }
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "meta+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.nextEditorInGroup"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.previousEditorInGroup"
+  },
+  {
+    "key": "ctrl+alt+p",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "alt+x",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+x ctrl+c",
+    "command": "workbench.action.closeWindow"
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "file-browser.open"
+  },
+  {
+    "key": "alt+`",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+meta+w",
+    "command": "workbench.action.closeAllEditors"
+  },
+  {
+    "key": "alt+shift+i",
+    "command": "editor.action.organizeImports"
+  },
+  {
+    "key": "meta+u",
+    "command": "undo",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "meta+r",
+    "command": "redo",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "meta+b",
+    "command": "cursorPageUp",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "meta+f",
+    "command": "cursorPageDown",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "editor.action.transpose",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "deleteLeft",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+h",
+    "command": "deleteWordLeft",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+d",
+    "command": "deleteWordRight",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": ", h",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.action.jumpToBracket",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "meta+space",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "meta+enter",
+    "command": "editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+meta+space",
+    "command": "editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+;",
+    "command": "editor.action.commentLine",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "jupyter.runcurrentcell",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "jupyter.removeallcells"
+  },
+  {
+    "key": "ctrl+alt+.",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+x ctrl+s",
+    "command": "workbench.action.files.save"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "!editorTextFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "!editorTextFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "b",
+    "command": "workbench.files.action.focusOpenEditorsView",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "workbench.files.action.focusFilesExplorer",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "shift+enter",
+    "command": "fsi.SendSelection",
+    "when": "editorLangId == 'fsharp'"
+  },
+  {
+    "key": "escape",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": ", e",
+    "command": "calva.evalCurrentFormInREPLWindow",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId == 'clojure'"
+  },
+  {
+    "key": ", x",
+    "command": "calva.evalCurrentTopLevelFormInREPLWindow",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId == 'clojure'"
+  }
 ]
