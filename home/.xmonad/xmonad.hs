@@ -9,6 +9,7 @@ import XMonad.Layout.IndependentScreens
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.EwmhDesktops
 
+import XMonad.Layout.Reflect (reflectVert)
 import XMonad.Layout.NoBorders
 import qualified XMonad.StackSet as W
 import XMonad.Prompt.Pass (passPrompt)
@@ -137,10 +138,12 @@ manageHooks = composeAll
 
 
 workspaceNames :: [String]
-workspaceNames = [show n | n <- ([1..9] :: [Integer])]
+workspaceNames = map show [1..9]
 
-resizableLayout = ResizableTall 1 (3/100) (1/2) []
-myLayoutHook = resizableLayout ||| Mirror resizableLayout ||| Full
+myLayoutHook = resizableHalfSplitLayout ||| reflectVert resizableQuarterSplitLayout ||| Full
+  where
+    resizableHalfSplitLayout = ResizableTall 1 (3/100) (1/2) []
+    resizableQuarterSplitLayout = Mirror $ ResizableTall 1 (3/100) (4/5) []
 
 mainConfig n = def
   { terminal           = "urxvt"
@@ -153,21 +156,15 @@ mainConfig n = def
   , manageHook         = manageHooks
   , layoutHook         = lessBorders (Combine Difference Screen OnlyScreenFloat) $ myLayoutHook
   , logHook            = ewmhDesktopsLogHook
-  , handleEventHook    = removeBordersEventHook <+> ewmhDesktopsEventHook <+> fullscreenEventHook
+  , handleEventHook    = ewmhDesktopsEventHook <+> fullscreenEventHook
   , workspaces         = withScreens n workspaceNames
 }
 
 
-removeBordersEventHook ev = do
-    whenX (className =? "albert" `runQuery` w) $ withDisplay $ \d ->
-        io $ setWindowBorderWidth d w 0
-    return (All True)
-    where
-        w = ev_window ev
-
-makeConfigWithKeys n = do
+makeConfigWithKeys = do
   keyBindings <- makeKeyBindings
-  return $ mainConfig n `removeKeysP` keyUnbindings `additionalKeysP` keyBindings
+  screensNumber <- countScreens
+  return $ mainConfig screensNumber `removeKeysP` keyUnbindings `additionalKeysP` keyBindings
 
 getBarCommand :: IO String
 getBarCommand = do
@@ -183,13 +180,10 @@ myPP = xmobarPP {
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig {XMonad.modMask = mask} = (mask, xK_z)
 
-configWithBar n = do
+configWithBar = do
   barCommand <- getBarCommand
-  configWithKeys <- makeConfigWithKeys n
-  statusBar barCommand myPP toggleStrutsKey configWithKeys
+  statusBar barCommand myPP toggleStrutsKey =<< makeConfigWithKeys
 
 
 main :: IO ()
-main = do
-  screensNumber <- countScreens
-  xmonad =<< configWithBar screensNumber
+main = xmonad =<< configWithBar
