@@ -27,3 +27,5 @@
 	protocol = https
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = main
