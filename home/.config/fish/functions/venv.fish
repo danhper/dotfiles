@@ -68,8 +68,10 @@ function venv
 			else
 				echo "venv not found at $path" 1>&2
 			end
+        case path
+            venv-helper env-path
         case '-h' '--help'
-            echo 'usage: venv [activate | create | destroy] [options]'
+            echo 'usage: venv [path | activate | create | destroy] [options]'
 		case '*'
 			echo "Unknown command $cmd"
 	end
