@@ -82,8 +82,10 @@ makeKeyBindings = do
   currentEnv <- getCurrentEnv
   screenOrder <- getScreenOrder
   return ([
-      ("C-M1-f"   , spawn "firefox-developer-edition")
+      ("C-M1-f"   , spawn "sidekick-browser-stable")
     , ("C-M1-t"   , spawn "kitty")
+    , ("C-M1-c"   , spawn "morgen")
+    , ("C-M1-m"   , spawn "mailspring")
     , ("C-M1-ç"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-9"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-0"   , spawn "ibus engine xkb:fr::fra; sleep 0.3 && sh ~/.xprofile setup_note_keyboard")
