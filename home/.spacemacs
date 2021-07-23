@@ -9,7 +9,8 @@
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(csv
+   '(sml
+     csv
      sql
      ocaml
      lsp
@@ -77,7 +78,7 @@
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official'
    dotspacemacs-startup-banner nil
-   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-startup-lists '((recents . 5) (projects . 7))
    ;; Number of recent files to show in the startup buffer. Ignored if
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
    dotspacemacs-startup-recent-list-size 5
