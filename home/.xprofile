@@ -17,7 +17,7 @@ source_custom_env() {
 }
 
 setup_background_image() {
-    /usr/bin/feh --bg-scale ~/.background/amami.jpg
+    /usr/bin/feh --bg-scale ~/.background/amami-2021.jpg
 }
 
 set_ime_vars() {
