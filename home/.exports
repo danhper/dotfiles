@@ -42,6 +42,7 @@ pathdirs=(
   $HOME/.local/bin
   $HOME/.bin
   $HOME/.cabal/bin
+  $HOME/.yarn/bin
   $HOME/.stack/bin
   $HOME/.mix/escripts
   $HOME/.asdf/shims
@@ -52,6 +53,7 @@ pathdirs=(
   /opt/android-sdk/build-tools/current
   /opt/android-sdk/platform-tools
   /opt/android-sdk/tools
+  /nix/var/nix/profiles/per-user/$USER/profile/bin
   /var/lib/snapd/snap/bin
   /usr/local/bin
   /bin
