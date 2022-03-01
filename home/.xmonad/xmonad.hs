@@ -85,6 +85,8 @@ makeKeyBindings = do
       ("C-M1-f"   , spawn "sidekick-browser-stable")
     , ("C-M1-t"   , spawn "kitty")
     , ("C-M1-c"   , spawn "morgen")
+    , ("C-M1-s"   , spawn "flameshot gui")
+    , ("C-M1-y"   , spawn "rofi -modi \"clipboard:$HOME/.local/bin/greenclip print\" -show clipboard -run-command '{cmd}'")
     , ("C-M1-m"   , spawn "mailspring")
     , ("C-M1-ç"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-9"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")

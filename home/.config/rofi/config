@@ -1,2 +1,3 @@
-rofi.dpi: 1
-rofi.m: primary
+configuration {
+m: "primary";
+}
