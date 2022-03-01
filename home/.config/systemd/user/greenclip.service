@@ -1,0 +1,8 @@
+[Unit]
+Description=Greenclip
+
+[Service]
+ExecStart=%h/.local/bin/greenclip daemon
+
+[Install]
+WantedBy=user-applications.target
