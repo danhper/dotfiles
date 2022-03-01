@@ -21,7 +21,7 @@ c = get_config()
 #   - :meth:`init_code`
 
 # dotted module name of an IPython extension to load.
-c.InteractiveShellApp.extra_extension = 'autoreload'
+c.InteractiveShellApp.extra_extensions = 'autoreload'
 
 # Run the file referenced by the PYTHONSTARTUP environment variable at IPython
 # startup.
