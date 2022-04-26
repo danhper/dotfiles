@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -e
+
+THEME_FILE="$HOME/.cache/theme"
+
+if [ -f "$THEME_FILE" ]; then
+    theme=$(cat $THEME_FILE)
+else
+    theme="dark"
+fi
+
+if [ "$theme" = "dark" ]; then
+    # switch to light
+    ln -srf $HOME/.xresources.d/solarized-light $HOME/.xresources.d/colorscheme
+    sed -i -e 's/gtk-application-prefer-dark-theme = true/gtk-application-prefer-dark-theme = false/g' $HOME/.config/gtk-3.0/settings.ini
+    gsettings reset org.gnome.desktop.interface color-scheme
+    ln -srf $HOME/.config/kitty/solarized-light.conf $HOME/.config/kitty/colorscheme.conf
+    ln -srf $HOME/.tmux/solarized-light.conf $HOME/.tmux/colorscheme.conf
+    sed -i -e 's/ui-dark/ui-light/' $HOME/.config/Mailspring/config.json
+    sed -i -e 's/"Tomorrow Night"/"Solarized Light"/' $HOME/.config/Code/User/settings.json
+    echo light > $THEME_FILE
+else
+    # switch to dark
+    ln -srf $HOME/.xresources.d/tomorrow-night $HOME/.xresources.d/colorscheme
+    sed -i -e 's/gtk-application-prefer-dark-theme = false/gtk-application-prefer-dark-theme = true/g' $HOME/.config/gtk-3.0/settings.ini
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+    ln -srf $HOME/.config/kitty/empty.conf $HOME/.config/kitty/colorscheme.conf
+    ln -srf $HOME/.tmux/dark-scheme.conf $HOME/.tmux/colorscheme.conf
+    sed -i -e 's/ui-light/ui-dark/' $HOME/.config/Mailspring/config.json
+    sed -i -e 's/"Solarized Light"/"Tomorrow Night"/' $HOME/.config/Code/User/settings.json
+    echo dark > $THEME_FILE
+fi

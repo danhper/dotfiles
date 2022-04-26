@@ -14,6 +14,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'danielwe/base16-vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
@@ -43,7 +44,21 @@ set tabstop=4 shiftwidth=4 expandtab
 set ignorecase smartcase
 
 let base16colorspace=256
-colorscheme base16-default-dark
+
+let themepath = $HOME.'/.cache/theme'
+let theme = 'dark'
+if filereadable(themepath)
+    let content = readfile(themepath)
+    let theme = trim(content[0])
+endif
+
+if theme == "light"
+    set background=light
+    colorscheme solarized
+else
+    set background=dark
+    colorscheme base16-default-dark
+endif
 
 " powerline
 let g:airline_powerline_fonts = 1
