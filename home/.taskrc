@@ -35,4 +35,5 @@ taskd.key=~/workspace/private/personal/keys/taskwarrior-intheam/private.key.pem
 taskd.ca=~/workspace/private/personal/keys/taskwarrior-intheam/ca.cert.pem
 taskd.server=inthe.am:53589
 taskd.credentials=inthe_am/daniel61a864ff81ba4da3/1c15739f-4533-4b60-ab36-6d0ef94cdf25
-taskd.trust=ignore hostname
+taskd.trust=strict
+news.version=2.6.0
