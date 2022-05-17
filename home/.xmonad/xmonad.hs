@@ -82,7 +82,7 @@ makeKeyBindings = do
   currentEnv <- getCurrentEnv
   screenOrder <- getScreenOrder
   return ([
-      ("C-M1-f"   , spawn "sidekick-browser-stable")
+      ("C-M1-f"   , spawn "firefox-developer-edition")
     , ("C-M1-t"   , spawn "kitty")
     , ("C-M1-c"   , spawn "morgen")
     , ("C-M1-s"   , spawn "flameshot gui")

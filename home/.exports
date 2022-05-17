@@ -1,8 +1,8 @@
 export DEFAULT_USER=daniel
 export EDITOR=vim
-export BROWSER=sidekick-browser-stable
+export BROWSER=firefox-developer-edition
 export CHROME_BIN=google-chrome-stable
-export VMAIL_BROWSER=firefox
+export VMAIL_BROWSER=firefox-developer-edition
 export NODE_REPL_HISTORY_FILE=~/.node_history
 export MIX_HOME=$HOME/.mix
 export ERL_AFLAGS="-kernel shell_history enabled"
