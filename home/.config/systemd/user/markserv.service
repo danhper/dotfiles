@@ -1,0 +1,9 @@
+[Unit]
+Description=Markdown Server
+
+[Service]
+ExecStart=%h/.asdf/installs/nodejs/14.15.1/.npm/bin/markserv -p 8010 --no-browser
+WorkingDirectory=%h/Dropbox/notes
+
+[Install]
+WantedBy=user-applications.target
