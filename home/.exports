@@ -1,5 +1,5 @@
 export DEFAULT_USER=daniel
-export EDITOR=vim
+export EDITOR=nvim
 export BROWSER=firefox-developer-edition
 export CHROME_BIN=google-chrome-stable
 export VMAIL_BROWSER=firefox-developer-edition
