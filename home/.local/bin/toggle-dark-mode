@@ -25,7 +25,7 @@ else
     ln -srf $HOME/.xresources.d/tomorrow-night $HOME/.xresources.d/colorscheme
     sed -i -e 's/gtk-application-prefer-dark-theme = false/gtk-application-prefer-dark-theme = true/g' $HOME/.config/gtk-3.0/settings.ini
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-    ln -srf $HOME/.config/kitty/empty.conf $HOME/.config/kitty/colorscheme.conf
+    ln -srf $HOME/.config/kitty/tomorrow-night.conf $HOME/.config/kitty/colorscheme.conf
     ln -srf $HOME/.tmux/dark-scheme.conf $HOME/.tmux/colorscheme.conf
     sed -i -e 's/ui-light/ui-dark/' $HOME/.config/Mailspring/config.json
     sed -i -e 's/"Solarized Light"/"Tomorrow Night"/' $HOME/.config/Code/User/settings.json
