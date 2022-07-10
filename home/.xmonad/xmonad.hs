@@ -149,7 +149,7 @@ myLayoutHook = resizableHalfSplitLayout ||| reflectVert resizableQuarterSplitLay
     resizableHalfSplitLayout = ResizableTall 1 (3/100) (1/2) []
     resizableQuarterSplitLayout = Mirror $ ResizableTall 1 (3/100) (4/5) []
 
-mainConfig n = def
+mainConfig n = ewmhFullscreen . ewmh $ def
   { terminal           = "urxvt"
   , normalBorderColor  = "#cccccc"
   , focusedBorderColor = "#7ec7ea"
@@ -159,8 +159,6 @@ mainConfig n = def
   , startupHook        = setWMName "LG3D"
   , manageHook         = manageHooks
   , layoutHook         = lessBorders (Combine Difference Screen OnlyScreenFloat) $ myLayoutHook
-  , logHook            = ewmhDesktopsLogHook
-  , handleEventHook    = ewmhDesktopsEventHook <+> fullscreenEventHook
   , workspaces         = withScreens n workspaceNames
 }
 
