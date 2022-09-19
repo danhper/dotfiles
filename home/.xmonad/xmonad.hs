@@ -91,6 +91,7 @@ makeKeyBindings = do
     , ("C-M1-ç"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-9"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-0"   , spawn "ibus engine xkb:fr::fra; sleep 0.3 && sh ~/.xprofile setup_note_keyboard")
+    , ("C-M1-8"   , spawn "ibus engine hangul; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("M1-o"     , spawn "rofi -show run")
     , ("S-M1-o"   , spawn "rofi -show window")
     , ("M1-<F4>"  , kill)
