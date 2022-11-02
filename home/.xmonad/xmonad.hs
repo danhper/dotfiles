@@ -22,7 +22,7 @@ import Data.Monoid (Endo, All(..))
 import Data.List (isInfixOf)
 import System.FilePath (joinPath)
 import System.Directory (doesFileExist)
-import System.Environment (getEnv, lookupEnv)
+import System.Environment (getEnv, lookupEnv, setEnv)
 
 strip :: String -> String
 strip  = T.unpack . T.strip . T.pack
@@ -77,10 +77,17 @@ getScreenOrder = do
 getKeyboardLanguage :: String -> String
 getKeyboardLanguage _env = "us"
 
+extendEnv :: IO ()
+extendEnv = do
+  home <- getEnv "HOME"
+  currentPath <- getEnv "PATH"
+  setEnv "PATH" (currentPath ++ ":" ++ joinPath [home, ".local", "bin"])
+
 makeKeyBindings :: IO [(String, X())]
 makeKeyBindings = do
   currentEnv <- getCurrentEnv
   screenOrder <- getScreenOrder
+  extendEnv
   return ([
       ("C-M1-f"   , spawn "firefox-developer-edition")
     , ("C-M1-t"   , spawn "kitty")
