@@ -51,6 +51,7 @@ pathdirs=(
   $HOME/.dotnet/tools
   $GOPATH/bin
   $HOME/.nix-profile/bin
+  $HOME/.foundry/bin
   /nix/var/nix/profiles/default/bin
   /opt/android-sdk/build-tools/current
   /opt/android-sdk/platform-tools
