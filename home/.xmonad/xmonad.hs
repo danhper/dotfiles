@@ -9,6 +9,7 @@ import XMonad.Layout.IndependentScreens
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.EwmhDesktops
 
+import XMonad.Hooks.ManageDocks (avoidStruts, docks, manageDocks)
 import XMonad.Layout.Reflect (reflectVert)
 import XMonad.Layout.NoBorders
 import qualified XMonad.StackSet as W
@@ -152,12 +153,13 @@ manageHooks = composeAll
 workspaceNames :: [String]
 workspaceNames = map show [1..9]
 
-myLayoutHook = resizableHalfSplitLayout ||| reflectVert resizableQuarterSplitLayout ||| Full
+myLayoutHook = avoidStruts myDefaultLayout
   where
+    myDefaultLayout = resizableHalfSplitLayout ||| reflectVert resizableQuarterSplitLayout ||| Full
     resizableHalfSplitLayout = ResizableTall 1 (3/100) (1/2) []
     resizableQuarterSplitLayout = Mirror $ ResizableTall 1 (3/100) (4/5) []
 
-mainConfig n = ewmhFullscreen . ewmh $ def
+mainConfig n = ewmhFullscreen . docks . ewmh $ def
   { terminal           = "urxvt"
   , normalBorderColor  = "#cccccc"
   , focusedBorderColor = "#7ec7ea"
@@ -165,7 +167,7 @@ mainConfig n = ewmhFullscreen . ewmh $ def
   , focusFollowsMouse  = False
   , keys               = mCustomKeys
   , startupHook        = setWMName "LG3D"
-  , manageHook         = manageHooks
+  , manageHook         = manageHooks <+> manageDocks
   , layoutHook         = lessBorders (Combine Difference Screen OnlyScreenFloat) $ myLayoutHook
   , workspaces         = withScreens n workspaceNames
 }
@@ -196,4 +198,4 @@ configWithBar = do
 
 
 main :: IO ()
-main = xmonad =<< configWithBar
+main = xmonad =<< makeConfigWithKeys

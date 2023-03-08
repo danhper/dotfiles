@@ -1,0 +1,8 @@
+[Unit]
+Description=Polybar
+
+[Service]
+ExecStart=/bin/polybar
+
+[Install]
+WantedBy=user-applications.target

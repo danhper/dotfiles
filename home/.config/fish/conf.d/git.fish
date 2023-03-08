@@ -1,4 +1,4 @@
-function glg;   git log --stat --color $argv; end
+function glg;   git log --stat --color --show-signature $argv; end
 function glgga; git log --graph --decorate --all $argv; end
 
 abbr -a g 'git'
