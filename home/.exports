@@ -59,6 +59,7 @@ pathdirs=(
   /nix/var/nix/profiles/per-user/$USER/profile/bin
   /var/lib/snapd/snap/bin
   /usr/local/bin
+  /opt/homebrew/bin
   /bin
   /usr/bin
 )
