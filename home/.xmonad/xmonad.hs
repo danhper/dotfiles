@@ -90,12 +90,12 @@ makeKeyBindings = do
   screenOrder <- getScreenOrder
   extendEnv
   return ([
-      ("C-M1-f"   , spawn "firefox-developer-edition")
+      ("C-M1-f"   , spawn "google-chrome-stable")
     , ("C-M1-t"   , spawn "kitty")
     , ("C-M1-c"   , spawn "morgen")
     , ("C-M1-s"   , spawn "flameshot gui")
     , ("C-M1-y"   , spawn "rofi -modi \"clipboard:$HOME/.local/bin/greenclip print\" -show clipboard -run-command '{cmd}'")
-    , ("C-M1-m"   , spawn "mailspring")
+    , ("C-M1-m"   , spawn "mailspring --password-store=\"gnome-libsecret\"")
     , ("C-M1-ç"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-9"   , spawn "ibus engine mozc-jp; sleep 0.3 && sh ~/.xprofile setup_keyboard")
     , ("C-M1-0"   , spawn "ibus engine xkb:fr::fra; sleep 0.3 && sh ~/.xprofile setup_note_keyboard")
