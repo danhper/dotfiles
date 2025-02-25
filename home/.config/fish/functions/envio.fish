@@ -9,7 +9,7 @@ function envio
 		set profile (cat .envio)
 	end
 
-    if test (count $argv) -ge 1; and test $argv[1] = "list"; and not contains -- -p $argv; and not contains -- --profile-name $argv; and not contains -- -p $argv; and not contains -- --profiles $argv
+    if test (count $argv) -ge 1; and test $argv[1] = "list"; and not contains -- -n $argv; and not contains -- --profile-name $argv; and not contains -- -p $argv; and not contains -- --profiles $argv
         command envio list -n $profile $argv[2..-1]
         return
     end
