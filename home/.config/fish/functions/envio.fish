@@ -9,10 +9,11 @@ function envio
 		set profile (cat .envio)
 	end
 
-    if test (count $argv) -eq 1; and test $argv[1] = "list"
-        command envio list -n $profile
+    if test (count $argv) -ge 1; and test $argv[1] = "list"; and not contains -- -p $argv; and not contains -- --profile-name $argv; and not contains -- -p $argv; and not contains -- --profiles $argv
+        command envio list -n $profile $argv[2..-1]
         return
     end
+
     if test (count $argv) -eq 1; and test $argv[1] = "load"
         command envio list --profile-name $profile -v | sed -e 's/^/export /' | source
         return
