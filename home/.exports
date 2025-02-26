@@ -42,6 +42,7 @@ pathdirs=(
   $HOME/.local/bin
   $HOME/.bin
   $HOME/.cabal/bin
+  $HOME/.ghcup/bin
   $HOME/.yarn/bin
   $HOME/.stack/bin
   $HOME/.mix/escripts
