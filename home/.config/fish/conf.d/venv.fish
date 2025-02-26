@@ -1,4 +1,7 @@
 function __venv_export_eval --on-variable PWD;
+    if not type -q venv-helper
+        return
+    end
 	set -l current_path $VIRTUAL_ENV
 	set -l desired_path (venv-helper env-path --quiet)
 	if test $status -eq 1 
