@@ -50,3 +50,7 @@ TAGS
 .*@neomake*
 
 .elixir_ls/
+.DS_Store
+
+
+.envio
