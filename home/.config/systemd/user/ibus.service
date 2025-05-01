@@ -1,8 +1,0 @@
-[Unit]
-Description=Intelligent Input Bus
-
-[Service]
-ExecStart=/usr/bin/ibus-daemon --xim -r -v
-
-[Install]
-WantedBy=user-applications.target

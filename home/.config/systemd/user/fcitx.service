@@ -1,0 +1,8 @@
+[Unit]
+Description=Flexible Context-aware Input Tool
+
+[Service]
+ExecStart=/usr/bin/fcitx5
+
+[Install]
+WantedBy=user-applications.target
