@@ -96,6 +96,7 @@ makeKeyBindings = do
     , ("C-M1-s"   , spawn "flameshot gui")
     , ("C-M1-y"   , spawn "rofi -modi \"clipboard:$HOME/.local/bin/greenclip print\" -show clipboard -run-command '{cmd}'")
     , ("C-M1-m"   , spawn "mailspring --password-store=\"gnome-libsecret\"")
+    , ("C-M1-9"   , spawn "sh ~/.xprofile setup_keyboard")
     , ("M1-o"     , spawn "rofi -show run")
     , ("S-M1-o"   , spawn "rofi -show window")
     , ("M1-<F4>"  , kill)
