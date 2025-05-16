@@ -1,0 +1,8 @@
+[Unit]
+Description=xremap
+
+[Service]
+ExecStart=/usr/bin/xremap %h/.config/xremap/config.yml
+
+[Install]
+WantedBy=user-applications.target

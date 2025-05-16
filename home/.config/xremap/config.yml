@@ -1,0 +1,19 @@
+keymap:
+  - name: Emacs binding
+    application:
+      only: [google-chrome.Google-chrome]
+    remap:
+      C-b: left
+      C-f: right
+      C-p: up
+      C-n: down
+      C-a: home
+      C-e: end
+      C-d: delete
+      C-h: backspace
+      C-k: [Shift-end, C-x]
+      M-b: C-left
+      M-f: C-right
+      M-d: C-delete
+      M-h: C-backspace
+      C-s: C-f
