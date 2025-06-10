@@ -1,7 +1,7 @@
 keymap:
   - name: Emacs binding
     application:
-      only: [google-chrome.Google-chrome]
+      only: [google-chrome.Google-chrome, Telegram.TelegramDesktop, slack.Slack]
     remap:
       C-b: left
       C-f: right
