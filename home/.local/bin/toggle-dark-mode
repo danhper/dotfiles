@@ -20,6 +20,7 @@ if [ "$theme" = "dark" ]; then
     ln -srf $HOME/.tmux/solarized-light.conf $HOME/.tmux/colorscheme.conf
     sed -i -e 's/ui-dark/ui-light/' $HOME/.config/Mailspring/config.json
     sed -i -e 's/"Tomorrow Night"/"Solarized Light"/' $HOME/.config/Code/User/settings.json
+        sed -i -e 's/"Best Themes - Nord Cold"/"Solarized Light"/' $HOME/.config/Cursor/User/settings.json
     echo light > $THEME_FILE
 else
     # switch to dark
@@ -31,5 +32,6 @@ else
     ln -srf $HOME/.tmux/dark-scheme.conf $HOME/.tmux/colorscheme.conf
     sed -i -e 's/ui-light/ui-dark/' $HOME/.config/Mailspring/config.json
     sed -i -e 's/"Solarized Light"/"Tomorrow Night"/' $HOME/.config/Code/User/settings.json
+        sed -i -e 's/"Solarized Light"/"Best Themes - Nord Cold"/' $HOME/.config/Cursor/User/settings.json
     echo dark > $THEME_FILE
 fi

@@ -28,13 +28,11 @@ set_ime_vars() {
     export XMODIFIERS="@im=fcitx"
 }
 
-
 setup_keyring() {
     dbus-update-activation-environment --systemd DISPLAY
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
     export SSH_AUTH_SOCK
 }
-
 
 setup_note_keyboard() {
     # When using note keyboard
@@ -89,12 +87,12 @@ setup_all() {
     source_custom_env
     set_ime_vars
     setup_keyring
-    setup_keyboard
     setup_mouse
     setup_display
     setup_background_image
     merge_xresources
     start_applications
+        setup_keyboard
     run_local_profile
 }
 
@@ -116,6 +114,5 @@ help() {
 xmonad() {
     setup_all
 }
-
 
 ${1-setup_all}
