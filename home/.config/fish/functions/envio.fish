@@ -42,6 +42,16 @@ function envio
         return
     end
 
+    if test $argv[1] = show
+        if test (count $argv) -eq 2
+            command envio list --profile-name $profile -v | grep $argv[2] | cut -d '=' -f 2
+            return
+        else
+            echo "usage: envio show <key>"
+            return 1
+        end
+    end
+
     if test $argv[1] = remove; and not contains -- -e $argv; and not contains -- --envs-to-remove $argv
         command envio remove $profile --envs-to-remove $argv[2]
         return

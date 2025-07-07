@@ -1,6 +1,7 @@
 complete -c envio -n "__fish_use_subcommand" -s h -l help -d 'Print help'
 complete -c envio -n "__fish_use_subcommand" -f -a "create" -d 'Create a new profile'
 complete -c envio -n "__fish_use_subcommand" -f -a "add" -d 'Add envionment variables to a profile'
+complete -c envio -n "__fish_use_subcommand" -f -a "show" -d 'Show a specific environment variable from a profile'
 complete -c envio -n "__fish_use_subcommand" -f -a "load" -d 'Load all environment variables in a profile for use in your terminal sessions'
 complete -c envio -n "__fish_seen_subcommand_from add" -f -a "(envio list -p -v)"
 complete -c envio -n "__fish_seen_subcommand_from load" -f -a "(envio list -p -v)"
@@ -24,6 +25,7 @@ complete -c envio -n "__fish_seen_subcommand_from add" -s c -l add-comments
 complete -c envio -n "__fish_seen_subcommand_from add" -s x -l add-expiration-date
 complete -c envio -n "__fish_seen_subcommand_from add" -s h -l help -d 'Print help'
 complete -c envio -n "__fish_seen_subcommand_from load" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_seen_subcommand_from show" -f -a "(envio list -v | cut -d '=' -f 1)"
 complete -c envio -n "__fish_seen_subcommand_from unload" -s h -l help -d 'Print help'
 complete -c envio -n "__fish_seen_subcommand_from launch" -s c -l command -r
 complete -c envio -n "__fish_seen_subcommand_from launch" -s h -l help -d 'Print help'
