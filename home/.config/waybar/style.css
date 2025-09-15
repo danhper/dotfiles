@@ -54,7 +54,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 2px;
     background-color: transparent;
     color: #ffffff;
 }
@@ -78,6 +78,15 @@ button:hover {
   min-width: 0;
   border: 0;
   opacity: 0;          /* visually hide */
+}
+
+#workspaces.current button:not(.active) {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  border: 0;
+  opacity: 0;          /* visually hide */
+  font-size: 0px;
 }
 
 #mode {

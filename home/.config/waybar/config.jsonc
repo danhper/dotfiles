@@ -6,7 +6,7 @@
   "spacing": 4, // Gaps between modules (4px)
   "modules-left": [
     "hyprland/window"
-    ],
+  ],
   "modules-center": [
     "hyprland/workspaces"
   ],
@@ -20,7 +20,7 @@
     "all-outputs": true,              // show workspaces from every monitor
     "active-only": false,
     "show-special": false,
-    "sort-by": "number",
+    "sort-by": "name",
     "format": "{icon}",
     "format-icons": {
       "visible": "",
@@ -30,6 +30,11 @@
       "persistent": ""
     },
     "persistent-workspaces": { "*": 1 }
+  },
+  "hyprland/workspaces#current": {
+    "format": "{name}",
+    "active-only": true,
+    "all-outputs": true
   },
   "tray": {
     "spacing": 5
