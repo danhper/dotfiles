@@ -30,7 +30,7 @@ complete -c envio -n "__fish_seen_subcommand_from unload" -s h -l help -d 'Print
 complete -c envio -n "__fish_seen_subcommand_from launch" -s c -l command -r
 complete -c envio -n "__fish_seen_subcommand_from launch" -s h -l help -d 'Print help'
 complete -c envio -n "__fish_seen_subcommand_from remove" -s e -l envs-to-remove -r
-complete -c envio -n "__fish_seen_subcommand_from remove" -f -a "(envio list -p -v)"
+complete -c envio -n "__fish_seen_subcommand_from remove" -f -a "(envio list -v | cut -d '=' -f 1)"
 complete -c envio -n "__fish_seen_subcommand_from remove" -s h -l help -d 'Print help'
 complete -c envio -n "__fish_seen_subcommand_from list; and not __fish_prev_arg_in -n --profile-name" -s n -l profile-name -r
 complete -c envio -n "__fish_seen_subcommand_from list; and not __fish_prev_arg_in -n --profile-name" -s p -l profiles
