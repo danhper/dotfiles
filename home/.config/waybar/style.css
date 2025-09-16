@@ -48,11 +48,6 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
 #workspaces button {
     padding: 0 2px;
     background-color: transparent;
@@ -180,17 +175,6 @@ button:hover {
 
 label:focus {
     background-color: #000000;
-}
-
-
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
 }
 
 #wireplumber {
