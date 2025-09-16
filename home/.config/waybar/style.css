@@ -72,12 +72,12 @@ button:hover {
     background-color: #eb4d4b;
 }
 
-#workspaces button.empty:not(.persistent) {
+#workspaces button.empty:not(.persistent):not(.active) {
   margin: 0;
   padding: 0;
   min-width: 0;
   border: 0;
-  opacity: 0;          /* visually hide */
+  opacity: 0;
 }
 
 #workspaces.current button:not(.active) {

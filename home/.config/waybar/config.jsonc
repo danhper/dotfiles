@@ -23,18 +23,11 @@
     "sort-by": "name",
     "format": "{icon}",
     "format-icons": {
-      "visible": "",
-      "active": "",                 // focused on other monitor
-      "default": "",
+      "active": "",
+      "default": "",
       "empty": "",
-      "persistent": ""
     },
-    "persistent-workspaces": { "*": 1 }
-  },
-  "hyprland/workspaces#current": {
-    "format": "{name}",
-    "active-only": true,
-    "all-outputs": true
+    "persistent-workspaces": { "*": [1, 11, 21] }
   },
   "tray": {
     "spacing": 5

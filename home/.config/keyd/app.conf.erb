@@ -1,0 +1,18 @@
+<% # erb -T 1 ~/.config/keyd/app.conf.erb > ~/.config/keyd/app.conf %>
+<% apps = ["google-chrome", "org-telegram-desktop", "slack"] %>
+<% apps.each do |app| %>
+[<%= app %>]
+control.f = right
+control.b = left
+control.a = home
+control.e = end
+control.h = backspace
+control.d = delete
+control.k = macro(S-end delete)
+control.s = C-f
+alt.f = C-right
+alt.b = C-left
+alt.d = C-delete
+alt.h = C-backspace
+
+<% end %>
