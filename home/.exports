@@ -23,6 +23,8 @@ export PINENTRY_USER_DATA="TTY=1"
 export PASSWORD_STORE_DIR="$HOME/Dropbox/passwords"
 export ENCFS6_CONFIG=$HOME/.secrets/dropbox-encfs.xml
 
+export QT_QPA_PLATFORMTHEME=xdgdesktopportal
+
 export GOPATH="$HOME/workspace/go"
 export EC2_URL=https://ec2.ap-northeast-1.amazonaws.com
 export NLTK_DATA="$HOME/.nltk_data"
