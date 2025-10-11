@@ -2,7 +2,8 @@
 Description=Telegram Desktop
 
 [Service]
-ExecStart=/usr/bin/telegram-desktop -startintray
+Environment=QT_QPA_PLATFORMTHEME=xdgdesktopportal
+ExecStart=/usr/bin/Telegram -startintray
 
 [Install]
 WantedBy=user-applications.target
