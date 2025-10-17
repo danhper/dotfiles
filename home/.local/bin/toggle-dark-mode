@@ -17,6 +17,7 @@ if [ "$theme" = "dark" ]; then
     sed -i -e 's/gtk-application-prefer-dark-theme = true/gtk-application-prefer-dark-theme = false/g' $HOME/.config/gtk-4.0/settings.ini
     gsettings reset org.gnome.desktop.interface color-scheme
     gsettings set org.gnome.desktop.interface gtk-theme Arc
+    gsettings set org.gnome.desktop.interface icon-theme Arc
     ln -srf $HOME/.config/kitty/solarized-light.conf $HOME/.config/kitty/colorscheme.conf
     ln -srf $HOME/.tmux/solarized-light.conf $HOME/.tmux/colorscheme.conf
     sed -i -e 's/ui-dark/ui-light/' $HOME/.config/Mailspring/config.json
@@ -30,6 +31,7 @@ else
     sed -i -e 's/gtk-application-prefer-dark-theme = false/gtk-application-prefer-dark-theme = true/g' $HOME/.config/gtk-4.0/settings.ini
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
     gsettings set org.gnome.desktop.interface gtk-theme Arc-Dark
+    gsettings set org.gnome.desktop.interface icon-theme Arc-Dark
     ln -srf $HOME/.config/kitty/tomorrow-night.conf $HOME/.config/kitty/colorscheme.conf
     ln -srf $HOME/.tmux/dark-scheme.conf $HOME/.tmux/colorscheme.conf
     sed -i -e 's/ui-light/ui-dark/' $HOME/.config/Mailspring/config.json
