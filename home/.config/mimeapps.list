@@ -19,6 +19,7 @@ application/xhtml+xml=firefox-developer-edition.desktop
 application/x-extension-xhtml=firefox-developer-edition.desktop
 application/x-extension-xht=firefox-developer-edition.desktop
 x-scheme-handler/mailspring=Mailspring.desktop
+x-scheme-handler/clickup=ClickUp.desktop
 
 [Removed Associations]
 x-scheme-handler/https=google-chrome.desktop
