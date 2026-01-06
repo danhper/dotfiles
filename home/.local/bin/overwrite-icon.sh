@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH=/usr/bin
+
 set -e
 
 app_name="$1"
