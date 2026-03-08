@@ -1,66 +1,109 @@
-complete -c envio -n "__fish_use_subcommand" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_use_subcommand" -f -a "create" -d 'Create a new profile'
-complete -c envio -n "__fish_use_subcommand" -f -a "add" -d 'Add envionment variables to a profile'
-complete -c envio -n "__fish_use_subcommand" -f -a "show" -d 'Show a specific environment variable from a profile'
-complete -c envio -n "__fish_use_subcommand" -f -a "load" -d 'Load all environment variables in a profile for use in your terminal sessions'
-complete -c envio -n "__fish_seen_subcommand_from add" -f -a "(envio list -p -v)"
-complete -c envio -n "__fish_seen_subcommand_from load" -f -a "(envio list -p -v)"
-complete -c envio -n "__fish_use_subcommand" -f -a "unload" -d 'Unload a profile'
-complete -c envio -n "__fish_use_subcommand" -f -a "launch" -d 'Run a command with the environment variables from a profile'
-complete -c envio -n "__fish_use_subcommand" -f -a "remove" -d 'Remove a environment variable from a profile'
-complete -c envio -n "__fish_use_subcommand" -f -a "list" -d 'List all the environment variables in a profile or all the profiles currenty stored'
-complete -c envio -n "__fish_use_subcommand" -f -a "update" -d 'Update environment variables in a profile'
-complete -c envio -n "__fish_use_subcommand" -f -a "export" -d 'Export a profile to a file if no file is specified it will be exported to a file named .env'
-complete -c envio -n "__fish_use_subcommand" -f -a "import" -d 'Download a profile over the internet and import it into the system or import a locally stored profile into your current envio installation'
-complete -c envio -n "__fish_use_subcommand" -f -a "version" -d 'Print the version'
-complete -c envio -n "__fish_use_subcommand" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
-complete -c envio -n "__fish_seen_subcommand_from create" -s f -l file-to-import-envs-from -r
-complete -c envio -n "__fish_seen_subcommand_from create" -s e -l envs -r
-complete -c envio -n "__fish_seen_subcommand_from create" -s g -l gpg-key-fingerprint -r
-complete -c envio -n "__fish_seen_subcommand_from create" -s c -l add-comments
-complete -c envio -n "__fish_seen_subcommand_from create" -s x -l add-expiration-date
-complete -c envio -n "__fish_seen_subcommand_from create" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from add" -s e -l envs -r
-complete -c envio -n "__fish_seen_subcommand_from add" -s c -l add-comments
-complete -c envio -n "__fish_seen_subcommand_from add" -s x -l add-expiration-date
-complete -c envio -n "__fish_seen_subcommand_from add" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from load" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from show" -f -a "(envio list -v | cut -d '=' -f 1)"
-complete -c envio -n "__fish_seen_subcommand_from unload" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from launch" -s c -l command -r
-complete -c envio -n "__fish_seen_subcommand_from launch" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from remove" -s e -l envs-to-remove -r
-complete -c envio -n "__fish_seen_subcommand_from remove" -f -a "(envio list -v | cut -d '=' -f 1)"
-complete -c envio -n "__fish_seen_subcommand_from remove" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from list; and not __fish_prev_arg_in -n --profile-name" -s n -l profile-name -r
-complete -c envio -n "__fish_seen_subcommand_from list; and not __fish_prev_arg_in -n --profile-name" -s p -l profiles
-complete -c envio -n "__fish_seen_subcommand_from list; and not __fish_prev_arg_in -n --profile-name" -s v -l no-pretty-print
-complete -c envio -n "__fish_seen_subcommand_from list; and not __fish_prev_arg_in -n --profile-name" -s c -l display-comments
-complete -c envio -n "__fish_seen_subcommand_from list; and not __fish_prev_arg_in -n --profile-name" -s x -l display-expiration-date
-complete -c envio -n "__fish_seen_subcommand_from list; and not __fish_prev_arg_in -n --profile-name" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from list; and __fish_contains_opt -s n profile-name" -f -a "(envio list -p -v)"
-complete -c envio -n "__fish_seen_subcommand_from update" -s e -l envs -r
-complete -c envio -n "__fish_seen_subcommand_from update" -s v -l update-values
-complete -c envio -n "__fish_seen_subcommand_from update" -s c -l update-comments
-complete -c envio -n "__fish_seen_subcommand_from update" -s x -l update-expiration-date
-complete -c envio -n "__fish_seen_subcommand_from update" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from export" -s f -l file-to-export-to -r
-complete -c envio -n "__fish_seen_subcommand_from export" -s e -l envs -r
-complete -c envio -n "__fish_seen_subcommand_from export" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from import" -s f -l file-to-import-from -r
-complete -c envio -n "__fish_seen_subcommand_from import" -s u -l url -r
-complete -c envio -n "__fish_seen_subcommand_from import" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from version" -s v -l verbose
-complete -c envio -n "__fish_seen_subcommand_from version" -s h -l help -d 'Print help'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "create" -d 'Create a new profile'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "add" -d 'Add envionment variables to a profile'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "load" -d 'Load all environment variables in a profile for use in your terminal sessions'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "unload" -d 'Unload a profile'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "launch" -d 'Run a command with the environment variables from a profile'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "remove" -d 'Remove a environment variable from a profile'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "list" -d 'List all the environment variables in a profile or all the profiles currenty stored'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "update" -d 'Update environment variables in a profile'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "export" -d 'Export a profile to a file if no file is specified it will be exported to a file named .env'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "import" -d 'Download a profile over the internet and import it into the system or import a locally stored profile into your current envio installation'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "version" -d 'Print the version'
-complete -c envio -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from create; and not __fish_seen_subcommand_from add; and not __fish_seen_subcommand_from load; and not __fish_seen_subcommand_from unload; and not __fish_seen_subcommand_from launch; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from export; and not __fish_seen_subcommand_from import; and not __fish_seen_subcommand_from version; and not __fish_seen_subcommand_from help" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
+# Print an optspec for argparse to handle cmd's options that are independent of any subcommand.
+function __fish_envio_global_optspecs
+	string join \n diagnostic h/help
+end
+
+function __fish_envio_needs_command
+	# Figure out if the current invocation already has a command.
+	set -l cmd (commandline -opc)
+	set -e cmd[1]
+	argparse -s (__fish_envio_global_optspecs) -- $cmd 2>/dev/null
+	or return
+	if set -q argv[1]
+		# Also print the command, so this can be used to figure out what it is.
+		echo $argv[1]
+		return 1
+	end
+	return 0
+end
+
+function __fish_envio_using_subcommand
+	set -l cmd (__fish_envio_needs_command)
+	test -z "$cmd"
+	and return 1
+	contains -- $cmd[1] $argv
+end
+
+complete -c envio -n "__fish_envio_needs_command" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_needs_command" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_needs_command" -f -a "init" -d 'Initialize envio to be used in the current project directory'
+complete -c envio -n "__fish_envio_needs_command" -f -a "create" -d 'Create a new profile'
+complete -c envio -n "__fish_envio_needs_command" -f -a "new" -d 'Create a new profile'
+complete -c envio -n "__fish_envio_needs_command" -f -a "delete" -d 'Delete a profile'
+complete -c envio -n "__fish_envio_needs_command" -f -a "remove" -d 'Delete a profile'
+complete -c envio -n "__fish_envio_needs_command" -f -a "list" -d 'List all profiles'
+complete -c envio -n "__fish_envio_needs_command" -f -a "ls" -d 'List all profiles'
+complete -c envio -n "__fish_envio_needs_command" -f -a "show" -d 'Show environment variables in a profile'
+complete -c envio -n "__fish_envio_needs_command" -f -a "set" -d 'Set or update environment variables in a profile'
+complete -c envio -n "__fish_envio_needs_command" -f -a "unset" -d 'Remove environment variables from a profile'
+complete -c envio -n "__fish_envio_needs_command" -f -a "shell" -d 'Spawn a new shell with environment variables loaded from the profile'
+complete -c envio -n "__fish_envio_needs_command" -f -a "run" -d 'Run a command using environment variables from a profile'
+complete -c envio -n "__fish_envio_needs_command" -f -a "import" -d 'Import a profile from a file or url'
+complete -c envio -n "__fish_envio_needs_command" -f -a "export" -d 'Export the environment variables of a profile to a file'
+complete -c envio -n "__fish_envio_needs_command" -f -a "add-key" -d 'Add a profile encryption key to the keyring'
+complete -c envio -n "__fish_envio_needs_command" -f -a "remove-key" -d 'Remove a profile encryption key from the keyring'
+complete -c envio -n "__fish_envio_needs_command" -f -a "tui" -d 'Launch the interactive TUI application'
+complete -c envio -n "__fish_envio_needs_command" -f -a "completion" -d 'Show shell completion for the provided shell'
+complete -c envio -n "__fish_envio_needs_command" -f -a "version" -d 'Print version information'
+complete -c envio -n "__fish_envio_using_subcommand init" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand init" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand create" -s d -l description -d 'optional note or description of the profile' -r
+complete -c envio -n "__fish_envio_using_subcommand create" -s f -l from-file -d 'file path to load environment variables from' -r
+complete -c envio -n "__fish_envio_using_subcommand create" -s e -l envs -d 'environment variables to add (format: KEY=VALUE or only provide KEY and the value will be prompted for)' -r
+complete -c envio -n "__fish_envio_using_subcommand create" -s k -l cipher-kind -d 'encryption cipher to use' -r
+complete -c envio -n "__fish_envio_using_subcommand create" -s c -l comments -d 'add comments to the provided environment variables'
+complete -c envio -n "__fish_envio_using_subcommand create" -s x -l expires -d 'add expiration dates to the provided environment variables'
+complete -c envio -n "__fish_envio_using_subcommand create" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand create" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand new" -s d -l description -d 'optional note or description of the profile' -r
+complete -c envio -n "__fish_envio_using_subcommand new" -s f -l from-file -d 'file path to load environment variables from' -r
+complete -c envio -n "__fish_envio_using_subcommand new" -s e -l envs -d 'environment variables to add (format: KEY=VALUE or only provide KEY and the value will be prompted for)' -r
+complete -c envio -n "__fish_envio_using_subcommand new" -s k -l cipher-kind -d 'encryption cipher to use' -r
+complete -c envio -n "__fish_envio_using_subcommand new" -s c -l comments -d 'add comments to the provided environment variables'
+complete -c envio -n "__fish_envio_using_subcommand new" -s x -l expires -d 'add expiration dates to the provided environment variables'
+complete -c envio -n "__fish_envio_using_subcommand new" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand new" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand delete" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand delete" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand remove" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand remove" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand list" -l no-pretty-print -d 'disable pretty printing'
+complete -c envio -n "__fish_envio_using_subcommand list" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand list" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand ls" -l no-pretty-print -d 'disable pretty printing'
+complete -c envio -n "__fish_envio_using_subcommand ls" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand ls" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand show" -s c -l show-comments -d 'display comments'
+complete -c envio -n "__fish_envio_using_subcommand show" -s x -l show-expiration -d 'display expiration dates'
+complete -c envio -n "__fish_envio_using_subcommand show" -l no-pretty-print -d 'disable pretty printing'
+complete -c envio -n "__fish_envio_using_subcommand show" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand show" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand set" -s c -l comments -d 'add comments to the provided environment variables'
+complete -c envio -n "__fish_envio_using_subcommand set" -s x -l expires -d 'add expiration dates to the provided environment variables'
+complete -c envio -n "__fish_envio_using_subcommand set" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand set" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand unset" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand unset" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand shell" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand shell" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand run" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand run" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand import" -s n -l profile-name -d 'name for the imported profile' -r
+complete -c envio -n "__fish_envio_using_subcommand import" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand import" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand export" -s o -l output-file-path -d 'output file path (default: .env)' -r
+complete -c envio -n "__fish_envio_using_subcommand export" -s k -l keys -d 'comma-separated list of keys to export (type \'select\' to choose interactively)' -r
+complete -c envio -n "__fish_envio_using_subcommand export" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand export" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand add-key" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand add-key" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand remove-key" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand remove-key" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand tui" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand tui" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand completion" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand completion" -s h -l help -d 'Print help'
+complete -c envio -n "__fish_envio_using_subcommand version" -s v -l verbose -d 'show verbose version information'
+complete -c envio -n "__fish_envio_using_subcommand version" -l diagnostic -d 'Show diagnostic information for bug reports'
+complete -c envio -n "__fish_envio_using_subcommand version" -s h -l help -d 'Print help'
+
