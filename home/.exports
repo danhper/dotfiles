@@ -52,6 +52,7 @@ pathdirs=(
   $GOPATH/bin
   $HOME/.nix-profile/bin
   $HOME/.foundry/bin
+  $HOME/.tempo/bin
   /nix/var/nix/profiles/default/bin
   /opt/android-sdk/build-tools/current
   /opt/android-sdk/platform-tools

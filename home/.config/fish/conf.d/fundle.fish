@@ -10,5 +10,6 @@ fundle plugin 'danhper/fish-pubs'
 fundle plugin 'aliz-ai/google-cloud-sdk-fish-completion'
 fundle plugin 'jorgebucaran/autopair.fish'
 fundle plugin 'danhper/fish-brownie'
+fundle plugin 'danhper/fish-codex-gen'
 
 fundle init

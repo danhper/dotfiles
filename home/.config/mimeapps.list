@@ -20,6 +20,7 @@ application/x-extension-xhtml=google-chrome.desktop
 application/x-extension-xht=google-chrome.desktop
 x-scheme-handler/mailspring=Mailspring.desktop
 x-scheme-handler/clickup=ClickUp.desktop
+x-scheme-handler/bruno=bruno.desktop
 
 [Removed Associations]
 x-scheme-handler/https=firefox-developer-edition.desktop
