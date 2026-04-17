@@ -56,3 +56,4 @@ TAGS
 .envio
 .nvimlog
 .claude/settings.local.json
+.codex
