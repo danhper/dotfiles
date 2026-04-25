@@ -5,9 +5,11 @@ PATH=/usr/bin
 set -e
 
 app_name="$1"
+base_dir_override="${2:-${BASE_DIR:-}}"
 
 if [ -z "$app_name" ]; then
-    echo "Usage: $0 <app_name>"
+    echo "Usage: $0 <app_name> [base_dir]"
+    echo "       BASE_DIR=/path $0 <app_name>"
     exit 1
 fi
 
@@ -28,21 +30,25 @@ case $app_name in
 		;;
 esac
 
+if [ -n "$base_dir_override" ]; then
+    BASE_DIR="$base_dir_override"
+fi
+
 CURRENT_DIR=$(pwd)
 
 TEMP_DIR=$(mktemp -d)
 
-cd $TEMP_DIR
+cd "$TEMP_DIR"
 
-cp $BASE_DIR/resources/app.asar app.asar
-cp -r $BASE_DIR/resources/app.asar.unpacked app.asar.unpacked
+cp "$BASE_DIR/resources/app.asar" app.asar
+cp -r "$BASE_DIR/resources/app.asar.unpacked" app.asar.unpacked
 npx asar extract app.asar app_src
 rm app.asar
 for icon in $ICONS; do
-    cp $icon $TARGET_DIR
+    cp "$icon" "$TARGET_DIR"
 done
 npx asar pack app_src app.asar
-sudo cp app.asar $BASE_DIR/resources/app.asar
+sudo cp app.asar "$BASE_DIR/resources/app.asar"
 
-cd $CURRENT_DIR
-rm -rf $TEMP_DIR
+cd "$CURRENT_DIR"
+rm -rf "$TEMP_DIR"
