@@ -41,18 +41,19 @@ pathdirs=(
   $HOME/.local/bin
   $HOME/.bin
   $HOME/.cabal/bin
-  $HOME/.ghcup/bin
   $HOME/.yarn/bin
   $HOME/.stack/bin
   $HOME/.mix/escripts
   $HOME/.asdf/shims
   $HOME/.config/composer/vendor/bin
+  $HOME/.miniforge3/bin
   $HOME/.cargo/bin
   $HOME/.dotnet/tools
   $GOPATH/bin
   $HOME/.nix-profile/bin
   $HOME/.foundry/bin
   $HOME/.tempo/bin
+  /opt/homebrew/bin
   /nix/var/nix/profiles/default/bin
   /opt/android-sdk/build-tools/current
   /opt/android-sdk/platform-tools
@@ -72,4 +73,6 @@ for dir in $pathdirs; do
 done
 
 [[ -f ~/.secrets/exports ]] && . ~/.secrets/exports
+[[ -f ~/.env/global.env ]] && . ~/.env/global.env
+[[ -f ~/.env/local.env ]] && . ~/.env/local.env
 
