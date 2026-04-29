@@ -1,0 +1,31 @@
+#!/bin/sh
+set -eu
+
+slot="${1:-}"
+action="${2:-workspace}"
+
+case "$slot" in
+    1|2|3|4|5) ;;
+    *)
+        echo "usage: aerospace-workspace-for-monitor 1|2|3|4|5 [workspace|move-node-to-workspace]" >&2
+        exit 64
+        ;;
+esac
+
+case "$action" in
+    workspace|move-node-to-workspace) ;;
+    *)
+        echo "unsupported action: $action" >&2
+        exit 64
+        ;;
+esac
+
+monitor_id="$(aerospace list-monitors --focused --format '%{monitor-id}')"
+
+case "$monitor_id" in
+    1) target="$slot" ;;
+    2) target="$((slot + 5))" ;;
+    *) target="$slot" ;;
+esac
+
+aerospace "$action" "$target"
