@@ -5,11 +5,17 @@ alias ch='google-chrome-stable'
 alias sl='ls'
 alias v='nvim'
 alias py='python'
-alias pbcopy='wl-copy'
-alias pbpaste='wl-paste'
 alias em="emacsclient -nc"
 alias emt="emacsclient -t -c -a ''"
 alias gcal='gcalcli'
+
+if test (uname) = Darwin
+    alias ls='ls --color'
+else
+    alias pbcopy='wl-copy'
+    alias pbpaste='wl-paste'
+end
+
 
 abbr -a bi 'bundle install'
 abbr -a be 'bundle exec'
