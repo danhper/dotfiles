@@ -8,6 +8,7 @@ alias py='python'
 alias em="emacsclient -nc"
 alias emt="emacsclient -t -c -a ''"
 alias gcal='gcalcli'
+alias yaegi='rlwrap yaegi'
 
 if test (uname) = Darwin
     alias ls='ls --color'
