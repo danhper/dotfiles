@@ -1,0 +1,4 @@
+# Pick the theme from the terminal background, with readable light/dark choices.
+--theme="auto"
+--theme-light="GitHub"
+--theme-dark="TwoDark"
