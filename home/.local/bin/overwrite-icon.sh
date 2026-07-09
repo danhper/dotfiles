@@ -5,10 +5,23 @@ PATH=/usr/bin
 set -euo pipefail
 
 app_name="${1:-}"
-target_override="${2:-${BASE_DIR:-}}"
+mode_override=""
+target_override="${BASE_DIR:-}"
+
+case "${2:-}" in
+    installed|appimage)
+        mode_override="$2"
+        target_override="${3:-${BASE_DIR:-}}"
+        ;;
+    "")
+        ;;
+    *)
+        target_override="$2"
+        ;;
+esac
 
 if [ -z "$app_name" ]; then
-    echo "Usage: $0 <app_name> [base_dir_or_appimage]"
+    echo "Usage: $0 <app_name> [installed|appimage] [base_dir_or_appimage]"
     echo "       BASE_DIR=/path $0 <app_name>"
     exit 1
 fi
@@ -21,13 +34,29 @@ case $app_name in
         TARGET_DIR=app_src/images
         ;;
     "clickup")
-        MODE="appimage"
+        BASE_DIR="/opt/clickup"
+        if [ -n "$mode_override" ]; then
+            MODE="$mode_override"
+        elif [ -f "$BASE_DIR/resources/app.asar" ]; then
+            MODE="installed"
+        else
+            MODE="appimage"
+        fi
         APPIMAGE="/home/daniel/Applications/clickup-3.5.230x86_64_d6aecde6aa4ce5e832de92852adbb6d0.AppImage"
         ICONS=("$HOME"/Dropbox/misc/app-icons/clickup/tray-icon-production-Template*)
         TARGET_DIR=app_src
         ;;
     *)
         echo "Invalid app name: $app_name"
+        exit 1
+        ;;
+esac
+
+case "$app_name:$MODE" in
+    1password:installed|clickup:installed|clickup:appimage)
+        ;;
+    *)
+        echo "Invalid mode for $app_name: $MODE" >&2
         exit 1
         ;;
 esac
