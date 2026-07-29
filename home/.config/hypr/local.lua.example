@@ -1,0 +1,64 @@
+-------------------
+---- ENVIRONMENT ----
+-------------------
+
+hl.env("WLR_DRM_NO_ATOMIC", "1")
+
+hl.config({
+    cursor = {
+        no_hardware_cursors = true,
+    },
+})
+
+-------------------
+---- MONITORS ----
+-------------------
+
+hl.monitor({
+    output = "DP-2",
+    mode = "3840x2160@60",
+    position = "-1296x0",
+    scale = 1.6667,
+    transform = 3,
+})
+hl.monitor({
+    output = "HDMI-A-2",
+    mode = "3840x2160@60",
+    position = "0x0",
+    scale = 1.5,
+})
+
+-------------------
+---- WORKSPACES ----
+-------------------
+
+hl.workspace_rule({ workspace = "1", default_name = "2-1" })
+hl.workspace_rule({ workspace = "2", default_name = "2-2" })
+hl.workspace_rule({ workspace = "3", default_name = "2-3" })
+hl.workspace_rule({ workspace = "4", default_name = "2-4" })
+hl.workspace_rule({ workspace = "5", default_name = "2-5" })
+hl.workspace_rule({ workspace = "6", default_name = "2-6" })
+hl.workspace_rule({ workspace = "7", default_name = "2-7" })
+hl.workspace_rule({ workspace = "8", default_name = "2-8" })
+hl.workspace_rule({ workspace = "9", default_name = "2-9" })
+hl.workspace_rule({ workspace = "10", default_name = "2-10" })
+hl.workspace_rule({ workspace = "11", default_name = "1-1" })
+hl.workspace_rule({ workspace = "12", default_name = "1-2" })
+hl.workspace_rule({ workspace = "13", default_name = "1-3" })
+hl.workspace_rule({ workspace = "14", default_name = "1-4" })
+hl.workspace_rule({ workspace = "15", default_name = "1-5" })
+hl.workspace_rule({ workspace = "16", default_name = "1-6" })
+hl.workspace_rule({ workspace = "17", default_name = "1-7" })
+hl.workspace_rule({ workspace = "18", default_name = "1-8" })
+hl.workspace_rule({ workspace = "19", default_name = "1-9" })
+hl.workspace_rule({ workspace = "20", default_name = "1-10" })
+
+-------------------
+---- BINDINGS ----
+-------------------
+
+hl.bind("SUPER + a", hl.dsp.focus({ monitor = "DP-2" }))
+hl.bind("SUPER + s", hl.dsp.focus({ monitor = "HDMI-A-2" }))
+
+hl.bind("SUPER + SHIFT + a", hl.dsp.window.move({ monitor = "DP-2" }))
+hl.bind("SUPER + SHIFT + s", hl.dsp.window.move({ monitor = "HDMI-A-2" }))
