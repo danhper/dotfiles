@@ -51,7 +51,7 @@
      tuvistavie
      ;; secret
      ;; nodemisc
-     wanderlust
+     ;; wanderlust
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -229,10 +229,10 @@
   (setq vc-follow-symlinks t)
 
   (setq-default dotspacemacs-default-font '("Inconsolata"
-                                          :size 20
-                                          :weight normal
-                                          :width normal
-                                          :powerline-scale 1.1))
+                                            :size 20
+                                            :weight normal
+                                            :width normal
+                                            :powerline-scale 1.1))
   (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty"))
 
   (let ((personal-settings "~/.spacemacs.d/local/user-init.el"))
@@ -241,10 +241,13 @@
 
   ;; workaround for --daemon mode
   (spacemacs|do-after-display-system-init
-   (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty")))
+    (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty")))
 
 
   (require 'iso-transl)
+
+  (setq ispell-program-name "hunspell"
+        ispell-dictionary "en_GB")
 
   (add-hook 'comint-mode-hook
             (function (lambda ()
