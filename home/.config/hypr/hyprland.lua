@@ -11,7 +11,7 @@ local screenshot = "hyprshot -m region --clipboard-only"
 local screenshot_window = "hyprshot -m window -m active --clipboard-only"
 local email = "mailspring --password-store=gnome-libsecret --ozone-platform=wayland"
 local calendar = "morgen"
-local locker = "dm-tool lock"
+local locker = "hyprlock"
 local clipboardHist = "cliphist list | rofi -dmenu -display-columns 2 -p copy | cliphist decode | wl-copy"
 local passwordManager = "1password --quick-access"
 
@@ -22,32 +22,24 @@ local passwordManager = "1password --quick-access"
 
 require("local")
 
+package.path = package.path .. ";./?.lua;./?/init.lua"
+local smw = require("plugins.split-monitor-workspaces")
+
+smw.setup({
+    workspace_count = 10,
+    enable_persistent_workspaces = true,
+})
+
 -------------------
 ---- AUTOSTART ----
 -------------------
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("hyprpm reload")
     hl.exec_cmd("keyd-application-mapper -d")
     hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Arc'")
     hl.exec_cmd("gsettings set org.gnome.desktop.interface icon-theme 'Arc'")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
 end)
-
--------------------
----- PLUGINS ----
--------------------
-
-hl.config({
-    plugin = {
-        split_monitor_workspaces = {
-            count = 10,
-            enable_persistent_workspaces = 1,
-        },
-    },
-})
-
-
 
 -----------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -259,28 +251,13 @@ hl.define_submap("resize", function()
     hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
-hl.bind("SUPER + 1", function() hl.plugin.split_monitor_workspaces.workspace(1) end)
-hl.bind("SUPER + 2", function() hl.plugin.split_monitor_workspaces.workspace(2) end)
-hl.bind("SUPER + 3", function() hl.plugin.split_monitor_workspaces.workspace(3) end)
-hl.bind("SUPER + 4", function() hl.plugin.split_monitor_workspaces.workspace(4) end)
-hl.bind("SUPER + 5", function() hl.plugin.split_monitor_workspaces.workspace(5) end)
-hl.bind("SUPER + 6", function() hl.plugin.split_monitor_workspaces.workspace(6) end)
-hl.bind("SUPER + 7", function() hl.plugin.split_monitor_workspaces.workspace(7) end)
-hl.bind("SUPER + 8", function() hl.plugin.split_monitor_workspaces.workspace(8) end)
-hl.bind("SUPER + 9", function() hl.plugin.split_monitor_workspaces.workspace(9) end)
-hl.bind("SUPER + 0", function() hl.plugin.split_monitor_workspaces.workspace(10) end)
+for workspace = 1, smw.get_amount_of_workspaces() do
+    local key = workspace == 10 and "0" or tostring(workspace)
+    local target = tostring(workspace)
 
--- move window to workspace N on the focused monitor
-hl.bind("SUPER + SHIFT + 1", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(1) end)
-hl.bind("SUPER + SHIFT + 2", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(2) end)
-hl.bind("SUPER + SHIFT + 3", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(3) end)
-hl.bind("SUPER + SHIFT + 4", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(4) end)
-hl.bind("SUPER + SHIFT + 5", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(5) end)
-hl.bind("SUPER + SHIFT + 6", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(6) end)
-hl.bind("SUPER + SHIFT + 7", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(7) end)
-hl.bind("SUPER + SHIFT + 8", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(8) end)
-hl.bind("SUPER + SHIFT + 9", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(9) end)
-hl.bind("SUPER + SHIFT + 0", function() hl.plugin.split_monitor_workspaces.move_to_workspace_silent(10) end)
+    hl.bind("SUPER + " .. key, smw.workspace(target))
+    hl.bind("SUPER + SHIFT + " .. key, smw.move_to_workspace_silent(target))
+end
 
 hl.config({
     binds = {
