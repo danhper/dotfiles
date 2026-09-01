@@ -23,6 +23,10 @@ x-scheme-handler/clickup=ClickUp.desktop
 x-scheme-handler/bruno=bruno.desktop
 x-scheme-handler/mailto=Mailspring.desktop
 x-scheme-handler/slack=slack.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/linear=linear-linux-handler.desktop
+x-scheme-handler/linear-linux=linear-linux-handler.desktop
+x-scheme-handler/codex=chatgpt.desktop
 
 [Removed Associations]
 x-scheme-handler/https=firefox-developer-edition.desktop
