@@ -2,3 +2,6 @@
 	path = home/.config/hypr/plugins/split-monitor-workspaces
 	url = https://github.com/zjeffer/split-monitor-workspaces.git
 	branch = release/0.56.x
+[submodule "home/.tmux/plugins/tmux-agent-sidebar"]
+	path = home/.tmux/plugins/tmux-agent-sidebar
+	url = https://github.com/danhper/tmux-agent-sidebar.git
