@@ -1,9 +1,14 @@
 #!/bin/sh
 
 if uname | grep -q 'Darwin'; then
-        /opt/homebrew/bin/pinentry-mac "$@"
+	exec /opt/homebrew/bin/pinentry-mac "$@"
+
 elif [ "$PINENTRY_USER_DATA" = "TTY=1" ]; then
-        /usr/bin/pinentry-tty "$@"
+	exec /usr/bin/pinentry-tty "$@"
+elif [ "$PINENTRY_USER_DATA" = "GUI=1" ]; then
+	exec /usr/bin/pinentry-gnome3 "$@"
+elif [ -n "$WAYLAND_DISPLAY" ] || [ -n "$DISPLAY" ]; then
+	exec /usr/bin/pinentry-gnome3 "$@"
 else
-        /usr/bin/pinentry-gnome3 "$@"
+	exec /usr/bin/pinentry-tty "$@"
 fi
