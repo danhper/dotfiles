@@ -67,6 +67,12 @@ setup_display() {
 merge_xresources() {
     [[ -f $HOME/.Xdefaults ]] && xrdb -merge $HOME/.Xdefaults
     [[ -f $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources
+    theme=$(cat "$HOME/.cache/theme" 2>/dev/null || echo dark)
+    if [ "$theme" = light ]; then
+        xrdb -merge "$HOME/.xresources.d/solarized-light"
+    else
+        xrdb -merge "$HOME/.xresources.d/tomorrow-night"
+    fi
 }
 
 start_applications() {

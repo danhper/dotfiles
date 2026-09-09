@@ -12,7 +12,7 @@ fi
 
 if [ "$theme" = "dark" ]; then
     # switch to light
-    ln -srf $HOME/.xresources.d/solarized-light $HOME/.xresources.d/colorscheme
+    xrdb -merge $HOME/.xresources.d/solarized-light
     sed -i -e 's/gtk-application-prefer-dark-theme = true/gtk-application-prefer-dark-theme = false/g' $HOME/.config/gtk-3.0/settings.ini
     sed -i -e 's/gtk-application-prefer-dark-theme = true/gtk-application-prefer-dark-theme = false/g' $HOME/.config/gtk-4.0/settings.ini
     gsettings reset org.gnome.desktop.interface color-scheme
@@ -23,7 +23,7 @@ if [ "$theme" = "dark" ]; then
     echo light > $THEME_FILE
 else
     # switch to dark
-    ln -srf $HOME/.xresources.d/tomorrow-night $HOME/.xresources.d/colorscheme
+    xrdb -merge $HOME/.xresources.d/tomorrow-night
     sed -i -e 's/gtk-application-prefer-dark-theme = false/gtk-application-prefer-dark-theme = true/g' $HOME/.config/gtk-3.0/settings.ini
     sed -i -e 's/gtk-application-prefer-dark-theme = false/gtk-application-prefer-dark-theme = true/g' $HOME/.config/gtk-4.0/settings.ini
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark

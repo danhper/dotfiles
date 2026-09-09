@@ -69,7 +69,4 @@ URxvt.pointerBlank:         true
 
 !!*fading: 40
 
-#include ".xresources.d/colorscheme"
-
-
 Emacs*UseXIM: false
