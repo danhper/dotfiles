@@ -58,6 +58,7 @@ pathdirs=(
   /opt/android-sdk/platform-tools
   /opt/android-sdk/tools
   /nix/var/nix/profiles/per-user/$USER/profile/bin
+  /Library/TeX/texbin
   /var/lib/snapd/snap/bin
   /usr/local/bin
   /opt/homebrew/bin
