@@ -10,7 +10,7 @@ local browser = "google-chrome-stable --disable-features=WaylandWpColorManagerV1
 local screenshot = "hyprshot -m region --clipboard-only"
 local screenshot_window = "hyprshot -m window -m active --clipboard-only"
 local email = "mailspring --password-store=gnome-libsecret --ozone-platform=wayland"
-local calendar = "morgen"
+local calendar = "open-morgen"
 local locker = "hyprlock"
 local clipboardHist = "cliphist list | rofi -dmenu -display-columns 2 -p copy | cliphist decode | wl-copy"
 local passwordManager = "1password --quick-access"

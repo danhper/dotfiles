@@ -1,0 +1,37 @@
+#!/bin/sh
+
+clients=$(hyprctl clients -j) || exit 1
+address=$(printf '%s' "$clients" | jq -r '
+    map(select((.class // "" | ascii_downcase) == "morgen"))[0].address // empty
+')
+
+if [ -z "$address" ]; then
+    morgen_pid=$(pgrep -xo morgen)
+    if [ -n "$morgen_pid" ]; then
+        service=$(busctl --user list --no-legend |
+            awk -v pid="$morgen_pid" '$2 == pid { service=$1 } END { print service }')
+        show_id=$(busctl --user call -- "$service" /com/canonical/dbusmenu \
+            com.canonical.dbusmenu GetLayout iias 0 -1 0 2>/dev/null |
+            sed -n 's/.*(ia{sv}av) \([0-9][0-9]*\) 1 "label" s "Show Morgen".*/\1/p')
+
+        if [ -n "$show_id" ]; then
+            busctl --user call "$service" /com/canonical/dbusmenu \
+                com.canonical.dbusmenu Event isvu \
+                "$show_id" clicked s "" 0 >/dev/null && exit 0
+        fi
+    fi
+
+    exec morgen "$@"
+fi
+
+active_address=$(hyprctl activewindow -j | jq -r '.address // empty')
+
+[ "$active_address" = "$address" ] && exit 0
+
+hyprctl eval '
+    for _, window in pairs(hl.get_windows()) do
+        if window.class == "Morgen" then
+            return hl.dispatch(hl.dsp.focus({ window = window }))
+        end
+    end
+'
