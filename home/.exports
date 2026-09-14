@@ -1,8 +1,8 @@
 export DEFAULT_USER=daniel
 export EDITOR=nvim
-export BROWSER=firefox-developer-edition
 export CHROME_BIN=google-chrome-stable
-export VMAIL_BROWSER=firefox-developer-edition
+export BROWSER=$CHROME_BIN
+export VMAIL_BROWSER=$BROWSER
 export NODE_REPL_HISTORY_FILE=~/.node_history
 export MIX_HOME=$HOME/.mix
 export ERL_AFLAGS="-kernel shell_history enabled"
