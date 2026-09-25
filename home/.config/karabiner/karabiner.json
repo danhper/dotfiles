@@ -5,9 +5,15 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Exchange semicolon and colon",
+                        "description": "Exchange semicolon and colon only in English input sources",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "language": "^en$" }],
+                                        "type": "input_source_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "semicolon",
                                     "modifiers": {
@@ -19,6 +25,12 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "language": "^en$" }],
+                                        "type": "input_source_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "semicolon",
                                     "modifiers": { "optional": ["caps_lock"] }
