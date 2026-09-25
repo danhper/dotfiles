@@ -53,6 +53,7 @@ pathdirs=(
   $HOME/.foundry/bin
   $HOME/.tempo/bin
   /opt/homebrew/bin
+  /opt/homebrew/sbin
   /nix/var/nix/profiles/default/bin
   /opt/android-sdk/build-tools/current
   /opt/android-sdk/platform-tools
