@@ -3,6 +3,9 @@
 	email = daniel@perez.sh
 	signingkey = daniel@perez.sh
 
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed_signers
+
 [push]
 	default=simple
 	autoSetupRemote = true
