@@ -1,0 +1,12 @@
+; Git config for coding agents, selected by ~/.local/bin/agent-env.
+; Includes the normal config and only swaps in the agent SSH signing key.
+[include]
+	path = ~/.gitconfig
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /home/daniel/.local/bin/ssh-keygen-signing
+[user]
+	signingkey = /home/daniel/.ssh/agent_signing.pub
+[commit]
+	gpgsign = true

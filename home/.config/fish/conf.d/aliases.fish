@@ -10,6 +10,15 @@ alias emt="emacsclient -t -c -a ''"
 alias gcal='gcalcli'
 alias yaegi='rlwrap yaegi'
 
+# Coding agents sign commits with the agent SSH key (see ~/.local/bin/agent-env)
+alias claude='agent-env claude'
+alias claude-perso='CLAUDE_CONFIG_DIR=$HOME/.claude.personal agent-env claude'
+alias codex='agent-env codex'
+alias cursor='agent-env cursor'
+alias cursor-agent='agent-env cursor-agent'
+alias pi='agent-env pi'
+alias agent-unlock='SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-signing.sock ssh-add -t 10h ~/.ssh/agent_signing'
+
 if test (uname) = Darwin
     alias ls='ls --color'
 else

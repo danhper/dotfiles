@@ -1,0 +1,9 @@
+[Unit]
+Description=SSH agent for agent commit signing
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ssh-agent -D -a %t/ssh-signing.sock
+
+[Install]
+WantedBy=default.target

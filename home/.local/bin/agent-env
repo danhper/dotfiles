@@ -1,0 +1,4 @@
+#!/bin/sh
+# Run a coding agent with git signing through the agent SSH key.
+export GIT_CONFIG_GLOBAL="$HOME/.config/git/agent.gitconfig"
+exec "$@"
