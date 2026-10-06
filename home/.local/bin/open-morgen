@@ -8,17 +8,21 @@ address=$(printf '%s' "$clients" | jq -r '
 if [ -z "$address" ]; then
     morgen_pid=$(pgrep -xo morgen)
     if [ -n "$morgen_pid" ]; then
-        service=$(busctl --user list --no-legend |
-            awk -v pid="$morgen_pid" '$2 == pid { service=$1 } END { print service }')
-        show_id=$(busctl --user call -- "$service" /com/canonical/dbusmenu \
-            com.canonical.dbusmenu GetLayout iias 0 -1 0 2>/dev/null |
-            sed -n 's/.*(ia{sv}av) \([0-9][0-9]*\) 1 "label" s "Show Morgen".*/\1/p')
+        # Electron has multiple bus connections; only the tray connection
+        # exports this menu. Others may never reply.
+        services=$(busctl --user --augment-creds=no list --no-legend |
+            awk -v pid="$morgen_pid" '$2 == pid { print $1 }')
+        for service in $services; do
+            show_id=$(busctl --user --timeout=1s call -- "$service" /com/canonical/dbusmenu \
+                com.canonical.dbusmenu GetLayout iias 0 -1 0 2>/dev/null |
+                sed -n 's/.*(ia{sv}av) \([0-9][0-9]*\) 1 "label" s "Show Morgen".*/\1/p')
 
-        if [ -n "$show_id" ]; then
-            busctl --user call "$service" /com/canonical/dbusmenu \
-                com.canonical.dbusmenu Event isvu \
-                "$show_id" clicked s "" 0 >/dev/null && exit 0
-        fi
+            if [ -n "$show_id" ]; then
+                busctl --user --timeout=1s call "$service" /com/canonical/dbusmenu \
+                    com.canonical.dbusmenu Event isvu \
+                    "$show_id" clicked s "" 0 >/dev/null && exit 0
+            fi
+        done
     fi
 
     exec morgen "$@"
