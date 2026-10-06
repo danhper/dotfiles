@@ -17,7 +17,6 @@ alias codex='agent-env codex'
 alias cursor='agent-env cursor'
 alias cursor-agent='agent-env cursor-agent'
 alias pi='agent-env pi'
-alias agent-unlock='SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-signing.sock ssh-add -t 10h ~/.ssh/agent_signing'
 
 if test (uname) = Darwin
     alias ls='ls --color'

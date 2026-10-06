@@ -1,0 +1,3 @@
+#!/bin/sh
+# Unlock the signing key for ten hours without changing the SSH auth agent.
+exec "$HOME/.local/bin/ssh-signing-env" ssh-add -t 10h "$HOME/.ssh/agent_signing"

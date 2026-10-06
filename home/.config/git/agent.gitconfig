@@ -5,8 +5,8 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	program = /home/daniel/.local/bin/ssh-keygen-signing
+	program = ~/.local/bin/ssh-keygen-signing
 [user]
-	signingkey = /home/daniel/.ssh/agent_signing.pub
+	signingkey = ~/.ssh/agent_signing.pub
 [commit]
 	gpgsign = true

@@ -1,0 +1,8 @@
+#!/bin/sh
+# Run a command against the dedicated signing agent.
+case "$(uname -s)" in
+    Darwin) SSH_AUTH_SOCK="$HOME/.ssh/ssh-signing.sock" ;;
+    *) SSH_AUTH_SOCK="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/ssh-signing.sock" ;;
+esac
+export SSH_AUTH_SOCK
+exec "$@"
