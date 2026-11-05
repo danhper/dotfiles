@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Use the tray action so a second Electron launch cannot open a composer.
+items=$(busctl --user --json=short get-property \
+    org.kde.StatusNotifierWatcher /StatusNotifierWatcher \
+    org.kde.StatusNotifierWatcher RegisteredStatusNotifierItems 2>/dev/null |
+    jq -r '.data[]')
+
+for item in $items; do
+    service=${item%%/*}
+    path=/${item#*/}
+    id=$(busctl --user --timeout=1s --json=short get-property \
+        "$service" "$path" org.kde.StatusNotifierItem Id 2>/dev/null |
+        jq -r '.data')
+    case "$id" in
+        Mailspring_status_icon_*) ;;
+        *) continue ;;
+    esac
+
+    menu=$(busctl --user --timeout=1s --json=short get-property \
+        "$service" "$path" org.kde.StatusNotifierItem Menu |
+        jq -r '.data') || exit 1
+    inbox_id=$(busctl --user --timeout=1s --json=short call -- \
+        "$service" "$menu" com.canonical.dbusmenu GetLayout iias 0 -1 0 |
+        jq -r '.data[1][2][] | .data | select(.[1].label.data == "Open Inbox") | .[0]')
+    [ -n "$inbox_id" ] || exit 1
+
+    exec busctl --user --timeout=1s call -- "$service" "$menu" \
+        com.canonical.dbusmenu Event isvu "$inbox_id" clicked s "" 0
+done
+
+exec mailspring --password-store=gnome-libsecret --ozone-platform=wayland \
+    mailspring://open-inbox "$@"
